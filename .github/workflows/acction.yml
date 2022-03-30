@@ -21,7 +21,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           # 选择要使用的 node 版本
-          node-version: '14'
+          node-version: "14"
 
       # 缓存 node_modules
       - name: Cache dependencies
@@ -42,8 +42,6 @@ jobs:
       # 运行构建脚本
       - name: Build site
         run: yarn build
-      - name: echo cname
-        run: echo 'cinet.cc' > dist/CNAME
 
       # 查看 workflow 的文档来获取更多信息
       # @see https://github.com/crazy-max/ghaction-github-pages
