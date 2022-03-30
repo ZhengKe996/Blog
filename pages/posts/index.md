@@ -1,6 +1,6 @@
 ---
-title: Blog - Fenta
-display: ''
+title: Blog - ZK
+display: ""
 ---
 
 <SubNav/>
