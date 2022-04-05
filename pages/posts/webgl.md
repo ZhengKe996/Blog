@@ -118,3 +118,66 @@ gl.useProgram(shaderProgram);
 ```javascript
 gl.drawArrays(gl.POINTS, 0, 1);
 ```
+
+## 绘制三角形
+
+![webgl](/public/images/webgl//2-1.png)
+
+#### 多点绘制三角形的方法
+
+###### attribute 变量
+
+一种存储限定符, 表示定义一个 attribute 的全局变量, 这种变量的数据将由外部向顶点着色器内传输, 并保存 **顶点** 相关的数据,只有顶点着色器才能使用
+
+###### 使用 attribute 变量
+
+1. 在顶点着色器中,声明一个 attribute 变量
+2. 将 attribute 变量赋值给 gl_Position 变量
+3. 向 attribute 变量传输数据
+
+```javascript
+const VSHADER_SOURCE =
+  `attribute vec4 a_Position;` +
+  `void main(){
+      gl_Position = a_Position;
+  }`;
+```
+
+###### 使用缓存区关联 attribute 变量
+
+1. 创建缓存区对象
+
+```javascript
+const vertexBuffer = gl.createBuffer();
+```
+
+2. 绑定缓存区对象
+
+```javascript
+gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
+```
+
+3. 将数据写入对象
+
+```javascript
+gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW);
+```
+
+4. 将缓存区对象分配给 attribute 变量
+
+```javascript
+const a_Position = gl.getAttribLocation(shaderProgram, "a_Position");
+gl.vertexAttribPointer(a_Position, 2, gl.FLOAT, false, 0, 0);
+```
+
+5. 开启 attribute 变量
+
+```javascript
+gl.enableVertexAttribArray(a_Position);
+```
+
+6. 绘制
+
+```javascript
+gl.drawArrays(gl.TRIANGLES, 0, 3);
+```
