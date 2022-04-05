@@ -17,7 +17,7 @@ duration: 20min
 1. 添加一个画布元素
 
 ```html
-<canvas id="cvs" width="200" height="200" style="border: dashed 1px red">
+<canvas id="cvs" width="200" height="200">
   你的浏览器不支持Canvas画布元素
 </canvas>
 ```
@@ -38,4 +38,83 @@ const gl = cvs.getContext("webgl");
 gl.clearColor(0.0, 1.0, 0.0, 1.0);
 
 gl.clear(gl.COLOR_BUFFER_BIT);
+```
+
+#### 着色器绘制第一个 WebGL 图形
+
+###### WebGL 中的坐标系统
+
+![webgl](/public/images/webgl/1-2.jpg)
+
+###### 着色器
+
+**顶点着色器** 将输入顶点从原始坐标系转换到 WebGL 使用的缩放空间坐标系, 每个轴的坐标范围从-1.0 到 1.0, 顶点着色器对顶点坐标进行必要的转换后, 保存在名称为 gl_Position 的特殊变量中 <br />
+
+**片段着色器** 在顶点着色器处理完图形的顶点后, 会被要绘制的每个图形的每个像素点调用一次, 它的功能是确定像素的颜色值, 并保存在名称为 gl_FragColor 的特殊变量中, 该颜色值将最终绘制到图形像素的对应位置中
+
+![webgl](/public/images/webgl/1-3.png)
+
+实现的步骤：
+
+1. 着色器绘制图形的准备工作
+
+```javascript
+let cvs = document.getElementById("cvs");
+const gl = cvs.getContext("webgl");
+
+// 顶点着色器变量
+const VSHADER_SOURCE = `
+      void main(){
+        gl_Position = vec4(0.0,0.0,0.0,1.0);
+        gl_PointSize = 10.0; 
+      }`;
+
+// 片段着色器变量
+const FSHADER_SOURCE = `
+      void main(){
+        gl_FragColor = vec4(0.0,1.0,0.0,1.0);
+      }`;
+```
+
+2. 编译装载完成的着色器对象
+
+```javascript
+// 新建用于装载顶点字符串的着色器对象
+const vertShader = gl.createShader(gl.VERTEX_SHADER);
+
+// 加载保存好的顶点字符串变量
+gl.shaderSource(vertShader, VSHADER_SOURCE);
+
+// 编译顶点着色器
+gl.compileShader(vertShader);
+
+// 新建用于装载片段字符串的着色器对象
+const fragShader = gl.createShader(gl.FRAGMENT_SHADER);
+
+// 加载保存好的片段字符串变量
+gl.shaderSource(fragShader, FSHADER_SOURCE);
+
+// 编译片段着色器
+gl.compileShader(fragShader);
+```
+
+3. 链接编译完成的着色器程序并使用
+
+```javascript
+// 新建程序附加编译完成的着色器对象
+const shaderProgram = gl.createProgram();
+gl.attachShader(shaderProgram, vertShader);
+gl.attachShader(shaderProgram, fragShader);
+
+// 链接两个附加好的着色器程序
+gl.linkProgram(shaderProgram);
+
+// 开启程序使用
+gl.useProgram(shaderProgram);
+```
+
+4. 使用着色器程序绘制图形
+
+```javascript
+gl.drawArrays(gl.POINTS, 0, 1);
 ```
