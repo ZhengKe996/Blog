@@ -119,9 +119,9 @@ gl.useProgram(shaderProgram);
 gl.drawArrays(gl.POINTS, 0, 1);
 ```
 
-## 绘制三角形
+## 绘制多点绘制
 
-![webgl](/public/images/webgl//2-1.png)
+![webgl](/public/images/webgl/2-1.png)
 
 #### 多点绘制三角形的方法
 
@@ -181,3 +181,58 @@ gl.enableVertexAttribArray(a_Position);
 ```javascript
 gl.drawArrays(gl.TRIANGLES, 0, 3);
 ```
+
+## WebGL 动画
+
+#### 图形的移动
+
+![webgl](/public/images/webgl/4-1.png)
+
+###### 平移原理
+
+平移一个三角形, 只需要对它的每个顶点进行移动, 即每个顶点加上一个分量, 得到一个新的坐标
+
+###### uniform 类型变量
+
+用于保存和传输一致的数据, 既可用于顶点, 也可用于片断
+
+##### 实现步骤
+
+1. 使用存储限定符定义一个接受一致偏移量的变量
+
+```javascript
+const VSHADER_SOURCE = `
+  attribute vec4 a_Position;
+  uniform vec4 u_Translation;
+  void main(){
+    gl_Position = a_Position + u_Translation;
+  }`;
+```
+
+2. 定义各坐标点的统一偏移量
+
+```javascript
+const Tx = 0.4,
+  Ty = 0.3,
+  Tz = 0.0;
+```
+
+3. 获取到顶点着色器中 uniform 变量
+
+```javascript
+const u_Translation = gl.getUniformLocation(shaderProgram, "u_Translation");
+```
+
+4. 将多个偏移量赋值值给 uniform 变量
+
+```javascript
+gl.uniform4f(u_Translation, Tx, Ty, Tz, 0.0);
+```
+
+5. 绘制
+
+```javascript
+gl.drawArrays(gl.TRIANGLES, 0, 3);
+```
+
+#### 图形的旋转
