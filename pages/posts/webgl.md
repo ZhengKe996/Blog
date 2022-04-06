@@ -196,7 +196,7 @@ gl.drawArrays(gl.TRIANGLES, 0, 3);
 
 用于保存和传输一致的数据, 既可用于顶点, 也可用于片断
 
-##### 实现步骤
+###### 实现步骤
 
 1. 使用存储限定符定义一个接受一致偏移量的变量
 
@@ -236,3 +236,71 @@ gl.drawArrays(gl.TRIANGLES, 0, 3);
 ```
 
 #### 图形的旋转
+
+![webgl](/public/images/webgl/4-2.png)
+
+###### 旋转原理
+
+1. 旋转轴(围绕 X 和 Y 轴旋转)
+
+2. 旋转的方向(顺时针和逆时针)，负值是为顺时针，正值时为逆时针
+
+3. 旋转的角度(图形经过的角度)
+   ![webgl](/public/images/webgl/4-3.png)
+   ![webgl](/public/images/webgl/4-4.png)
+
+###### 实现步骤
+
+1. 顶点着色器变量
+
+```js
+const VSHADER_SOURCE = `
+  attribute vec4 a_Position;
+  uniform float u_CosB,u_SinB;
+  void main(){
+    gl_Position.x = a_Position.x * u_CosB - a_Position.y * u_SinB;
+    gl_Position.y = a_Position.x * u_SinB + a_Position.y * u_CosB;
+    gl_Position.z = a_Position.z;
+    gl_Position.w = 1.0;        
+  }
+`;
+```
+
+2. 设置需要旋转的角度
+
+```js
+const ANGLE = 30.0; // 顺时针
+```
+
+3. 将角度转成弧度用于函数的计算
+
+```js
+const radian = (Math.PI * ANGLE) / 180.0;
+```
+
+4. 计算并保存正弦和余弦的值
+
+```js
+const cosB = Math.cos(radian);
+const sinB = Math.sin(radian);
+```
+
+5. 分别取出从顶点着色器并保存
+
+```js
+const u_CosB = gl.getUniformLocation(shaderProgram, "u_CosB");
+const u_SinB = gl.getUniformLocation(shaderProgram, "u_SinB");
+```
+
+6. 将保存好的函数值赋给变量
+
+```js
+gl.uniform1f(u_CosB, cosB);
+gl.uniform1f(u_SinB, sinB);
+```
+
+7. 绘制
+
+```js
+gl.drawArrays(gl.TRIANGLES, 0, 3);
+```
