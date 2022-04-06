@@ -304,3 +304,74 @@ gl.uniform1f(u_SinB, sinB);
 ```js
 gl.drawArrays(gl.TRIANGLES, 0, 3);
 ```
+
+#### 图形的缩放
+
+![webgl](/public/images/webgl/4-5.png)
+
+###### 缩放的原理
+
+通过改变原有图形中的矩阵值, 实现图形的拉大和缩下效果, 因此, 只需要修改原有图形的矩阵值即可
+![webgl](/public/images/webgl/4-6.png)
+
+###### 实现方法
+
+1. 顶点着色器变量
+
+```js
+const VSHADER_SOURCE = `
+  attribute vec4 a_Position;
+  uniform mat4 u_xformMatrix;
+  void main(){
+    gl_Position = a_Position * u_xformMatrix;
+  }`;
+```
+
+2. 设置缩放的距离值
+
+```js
+const Sx = 0.5,
+  Sy = 0.5,
+  Sz = 1.0;
+```
+
+3. 定义 4 \* 4 的矩阵
+
+```js
+const xformMatrix = new Float32Array([
+  Sx,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  Sy,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  Sz,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  1.0,
+]);
+```
+
+4. 获取顶点着色器中距阵变量
+
+```js
+const u_xformMatrix = gl.getUniformLocation(shaderProgram, "u_xformMatrix");
+```
+
+5. 将设置的值赋值给变量
+
+```js
+gl.uniformMatrix4fv(u_xformMatrix, false, xformMatrix);
+```
+
+6. 绘制
+
+```js
+gl.drawArrays(gl.TRIANGLES, 0, 3);
+```
