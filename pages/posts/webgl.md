@@ -6,6 +6,8 @@ lang: zh
 duration: 20min
 ---
 
+[WebGL 配套演示 Dome](https://github.com/ZhengKe996/WebGLDemo)
+
 ## 初识 WebGL
 
 #### 手动绘制第一个 WebGL 图形
