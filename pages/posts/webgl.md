@@ -375,3 +375,94 @@ gl.uniformMatrix4fv(u_xformMatrix, false, xformMatrix);
 ```js
 gl.drawArrays(gl.TRIANGLES, 0, 3);
 ```
+
+#### 平滑旋转三角形
+
+![webgl](/public/images/webgl/4-7.jpg)
+
+###### 屏幕刷新频率
+
+图像在屏幕上更新的速度, 也即屏幕上的图像每秒钟出现的次数, 一般是 60Hz 的屏幕每 16.7ms 刷新一次
+
+###### 动画原理
+
+    图像被刷新时, 引起以连贯的、平滑的方式进行过渡变化.
+
+###### 实现方法
+
+1. 顶点着色器变量
+
+```js
+const VSHADER_SOURCE = `
+  attribute vec4 a_Position;
+  uniform float u_CosB,u_SinB;
+  void main(){
+    gl_Position.x = a_Position.x * u_CosB - a_Position.y * u_SinB;
+    gl_Position.y = a_Position.x * u_SinB + a_Position.y * u_CosB;
+    gl_Position.z = a_Position.z;
+    gl_Position.w = 1.0;
+  }`;
+```
+
+2. 封装绘制旋转三角形脚本
+
+```js
+const draw = (ANGLE) => {
+  const radian = (Math.PI * ANGLE) / 180.0;
+  const cosB = Math.cos(radian);
+  const sinB = Math.sin(radian);
+
+  const u_CosB = gl.getUniformLocation(shaderProgram, "u_CosB");
+  const u_SinB = gl.getUniformLocation(shaderProgram, "u_SinB");
+
+  gl.uniform1f(u_CosB, cosB);
+  gl.uniform1f(u_SinB, sinB);
+
+  gl.drawArrays(gl.TRIANGLES, 0, 3);
+};
+```
+
+3. 计算每秒绘制的角度
+
+```js
+// 获取旋转前的时间
+let cur_time = Date.now();
+// 旋转角度
+let ANGLE_STEP = -10.0;
+// 初始状态角度值
+let ANGLE_INIT = 20.0;
+// 执行时的角度值
+let ANGLE_ACT = 0.0;
+```
+
+4. 封装计算角度函数
+
+```js
+const animate = (c1, a1, a2) => {
+  // 计算距离上次调用经过了多少时间
+  let act_time = Date.now();
+  // 得到这次调用与上次调用的时间间隔
+  let dif_time = act_time - c1;
+  c1 = act_time;
+  let ANGLE_NEW = a1 + a2 * (dif_time / 1000.0);
+  // 返回一个始终是小于360度的角度
+  return (ANGLE_NEW %= 360);
+};
+```
+
+5. 定义用于绘制的函数
+
+```js
+const tick = () => {
+  // 获取每次旋转的角度
+  ANGLE_ACT = animate(cur_time, ANGLE_INIT, ANGLE_STEP);
+  draw(ANGLE_ACT);
+  window.requestAnimationFrame(tick);
+};
+```
+
+6. 调用绘制的函数
+
+```js
+tick();
+```
