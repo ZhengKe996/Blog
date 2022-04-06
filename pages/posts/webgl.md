@@ -466,3 +466,85 @@ const tick = () => {
 ```js
 tick();
 ```
+
+## WebGL 颜色
+
+![webgl](/public/images/webgl/4-8.png)
+
+###### 颜色添加步骤
+
+1. 在顶点着色器中定义一个接收外部传入颜色值的属性变量 a_Color 和用于传输获取到的颜色值变量 v_Color
+
+```js
+const VSHADER_SOURCE = `
+  attribute vec4 a_Position;
+  attribute vec4 a_Color;
+  varying vec4 v_Color;
+  void main(){
+    gl_Position = a_Position;
+    v_Color = a_Color;
+  }`;
+```
+
+2. 在片段着色器中定义一个同一类型和名称的 v_Color 变量接收传顶点传入的值。
+
+```js
+const FSHADER_SOURCE = `
+precision mediump float;
+varying vec4 v_Color;
+  void main(){
+    gl_FragColor = v_Color;
+  }`;
+```
+
+3. 重新传入到顶点坐标和颜色值的类型化数组
+
+```js
+// 定义类型数组保存顶点坐标值
+const vertices = new Float32Array([
+  // x,y,Red,Green,Blue
+  0.0, 0.5, 1.0, 0.0, 0.0,
+  // x,y,Red,Green,Blue
+  -0.5, -0.5, 0.0, 1.0, 0.0,
+  // x,y,Red,Green,Blue
+  0.5, -0.5, 0.0, 0.0, 1.0,
+]);
+...
+
+let FSIZE = vertices.BYTES_PER_ELEMENT;
+
+```
+
+4. 将数组值传入缓存中并取出, 赋值给顶点的两个变量
+
+```js
+const a_Position = gl.getAttribLocation(shaderProgram, "a_Position");
+
+gl.vertexAttribPointer(a_Position, 2, gl.FLOAT, false, FSIZE * 5, 0);
+
+gl.enableVertexAttribArray(a_Position);
+
+const a_Color = gl.getAttribLocation(shaderProgram, "a_Color");
+
+gl.vertexAttribPointer(a_Color, 3, gl.FLOAT, false, FSIZE * 5, FSIZE * 2);
+gl.enableVertexAttribArray(a_Color);
+```
+
+5. 接收缓存值并绘制图形和颜色
+
+```js
+gl.drawArrays(gl.TRIANGLES, 0, 3);
+```
+
+#### vertexAttribPointer 方法
+
+|    参数     | 说明                                                                           |
+| :---------: | ------------------------------------------------------------------------------ |
+| 第 1 个参数 | 指定待分配 attribute 变量的存储位置                                            |
+| 第 2 个参数 | 指定缓存区中每个顶点的分量个数（1~4）                                          |
+| 第 3 个参数 | 类型有，无符号字节，短整数，无符号短整数，整型，无符号整型，浮点型             |
+| 第 4 个参数 | 表示是否将非浮点型的数据归到[0,1][-1,1]区间                                    |
+| 第 5 个参数 | 相邻两个顶点的字节数。默认为 0                                                 |
+| 第 6 个参数 | 表示缓存区对象的偏移量（以字节为单位），attribute 变量从缓冲区中的何处开始存储 |
+
+....
