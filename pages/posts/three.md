@@ -211,8 +211,6 @@ camera.position.set 函数是设置当前相机的位置, 函数传的三个值�
 
 这个方法不光能够在场景内使用, 而且也可以将一个`3d`对象添加到另一个`3d`对象里面:
 
-S
-
 ###### 获取一个 3d 对象
 
     ```js
@@ -313,15 +311,15 @@ S
 区别:
 
 - Geometry
-  - 使用了 Three.js 提供的 THREE.Vector3 或者 THREE.Color 这样的对象来存储数据
-  - 易与阅读和编辑
-  - 性能弱一些
-  - 适合动画场景
+- 使用了 Three.js 提供的 THREE.Vector3 或者 THREE.Color 这样的对象来存储数据
+- 易与阅读和编辑
+- 性能弱一些
+- 适合动画场景
 - BufferGeometry
-  - 存储数据原始
-  - 不易阅读和编辑
-  - **性能好**
-  - 适合存储一些放入场景内不需要再额外操作的模型
+- 存储数据原始
+- 不易阅读和编辑
+- **性能好**
+- 适合存储一些放入场景内不需要再额外操作的模型
 
 ###### 互转
 
@@ -339,13 +337,13 @@ BufferGeometry`转换成`Geometry
 
 Geometry`转换成`BufferGeometry
 
-    ```js
-    // 实例化一个BufferGeometry对象
-    const bufferGeo = new THREE.BufferGeometry();
-    // 调用对象的fromGeometry方法, 并将需要转换的geometry传入
-    bufferGeo.fromGeometry(geometry);
-    // bufferGeo为geometry转换成的BufferGeometry
-    ```
+```js
+// 实例化一个BufferGeometry对象
+const bufferGeo = new THREE.BufferGeometry();
+// 调用对象的fromGeometry方法, 并将需要转换的geometry传入
+bufferGeo.fromGeometry(geometry);
+// bufferGeo为geometry转换成的BufferGeometry
+```
 
 #### 立方体
 
@@ -353,18 +351,18 @@ Geometry`转换成`BufferGeometry
 
 ###### 创建
 
-    ```js
-    const geometry = new THREE.BoxGeometry(1, 1, 1);
-    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-    const cube = new THREE.Mesh(geometry, material);
-    scene.add(cube);
-    ```
+```js
+const geometry = new THREE.BoxGeometry(1, 1, 1);
+const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+const cube = new THREE.Mesh(geometry, material);
+scene.add(cube);
+```
 
 ###### 构造函数
 
-    ```js
-    BoxGeometry(width : 浮点类型, height : 浮点类型, depth : 浮点类型, widthSegments : 整数类型, heightSegments : 整数类型, depthSegments : 整数类型)
-    ```
+```js
+BoxGeometry(width : 浮点类型, height : 浮点类型, depth : 浮点类型, widthSegments : 整数类型, heightSegments : 整数类型, depthSegments : 整数类型)
+```
 
 - width — 沿 x 轴的宽度, 默认值为 1
 - height — 沿 y 轴的高度, 默认值为 1
@@ -381,18 +379,18 @@ Geometry`转换成`BufferGeometry
 
 **圆形是由多个三角形分段构成**, 这些三角形分段围绕一个中心点延伸并且延伸到给定半径以外
 
-    ```js
-    const geometry = new THREE.CircleGeometry(5, 32);
-    const material = new THREE.MeshBasicMaterial({ color: 0xffff00 });
-    const circle = new THREE.Mesh(geometry, material);
-    scene.add(circle);
-    ```
+```js
+const geometry = new THREE.CircleGeometry(5, 32);
+const material = new THREE.MeshBasicMaterial({ color: 0xffff00 });
+const circle = new THREE.Mesh(geometry, material);
+scene.add(circle);
+```
 
 ###### 构造函数
 
-    ```js
-    CircleGeometry(radius : 浮点类型, segments : 整数类型, thetaStart : 浮点类型, thetaLength : 浮点类型)
-    ```
+```js
+CircleGeometry(radius : 浮点类型, segments : 整数类型, thetaStart : 浮点类型, thetaLength : 浮点类型)
+```
 
 - radius — 圆的半径, 默认值为 1
 - segments — 段数（三角形）,最小值为 3, 默认值为 8
@@ -407,18 +405,18 @@ Geometry`转换成`BufferGeometry
 
 ###### 创建
 
-    ```js
-    const geometry = new THREE.ConeGeometry(5, 20, 32);
-    const material = new THREE.MeshBasicMaterial({ color: 0xffff00 });
-    const cone = new THREE.Mesh(geometry, material);
-    scene.add(cone);
-    ```
+```js
+const geometry = new THREE.ConeGeometry(5, 20, 32);
+const material = new THREE.MeshBasicMaterial({ color: 0xffff00 });
+const cone = new THREE.Mesh(geometry, material);
+scene.add(cone);
+```
 
 ###### 构造函数
 
-    ```js
-    ConeGeometry(radius : 浮点类型, height : 浮点类型, radialSegments : 整数类型, heightSegments : 整数类型, openEnded : 布尔类型, thetaStart : 浮点类型, thetaLength : 浮点类型)
-    ```
+```js
+ConeGeometry(radius : 浮点类型, height : 浮点类型, radialSegments : 整数类型, heightSegments : 整数类型, openEnded : 布尔类型, thetaStart : 浮点类型, thetaLength : 浮点类型)
+```
 
 - radius — 底部圆锥的半径, 默认值为 1。
 - height — 圆锥体的高度, 默认值为 1。
@@ -436,18 +434,18 @@ Geometry`转换成`BufferGeometry
 
 ###### 创建
 
-    ```js
-    const geometry = new THREE.CylinderGeometry(5, 5, 20, 32);
-    const material = new THREE.MeshBasicMaterial({ color: 0xffff00 });
-    const cylinder = new THREE.Mesh(geometry, material);
-    scene.add(cylinder);
-    ```
+```js
+const geometry = new THREE.CylinderGeometry(5, 5, 20, 32);
+const material = new THREE.MeshBasicMaterial({ color: 0xffff00 });
+const cylinder = new THREE.Mesh(geometry, material);
+scene.add(cylinder);
+```
 
 ###### 构造函数
 
-    ```js
-    CylinderGeometry(radiusTop : 浮点类型, radiusBottom : 浮点类型, height : 浮点类型, radialSegments : 整数类型, heightSegments : 整数类型, openEnded : 布尔类型, thetaStart : 浮点类型, thetaLength : 浮点类型)
-    ```
+```js
+CylinderGeometry(radiusTop : 浮点类型, radiusBottom : 浮点类型, height : 浮点类型, radialSegments : 整数类型, heightSegments : 整数类型, openEnded : 布尔类型, thetaStart : 浮点类型, thetaLength : 浮点类型)
+```
 
 - radiusTop — 顶部圆柱体的半径。默认值为 1.
 - radiusBottom — 底部圆柱体的半径。默认值为 1.
@@ -466,12 +464,12 @@ Geometry`转换成`BufferGeometry
 
 ###### 创建
 
-    ```js
-    const geometry = new THREE.SphereGeometry(5, 32, 32);
-    const material = new THREE.MeshBasicMaterial({ color: 0xffff00 });
-    const sphere = new THREE.Mesh(geometry, material);
-    scene.add(sphere);
-    ```
+```js
+const geometry = new THREE.SphereGeometry(5, 32, 32);
+const material = new THREE.MeshBasicMaterial({ color: 0xffff00 });
+const sphere = new THREE.Mesh(geometry, material);
+scene.add(sphere);
+```
 
 ###### 构造函数
 
