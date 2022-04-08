@@ -554,14 +554,6 @@ const mesh = new THREE.Mesh(geometry, material);
 scene.add(mesh);
 ```
 
-```
-
-```
-
-```
-
-```
-
 2.set 修改 color
 
 ```js
@@ -1217,7 +1209,7 @@ const pointsMaterial = new THREE.PointsMaterial({
 pointsMaterial.lights = true; // 开启受光照影响
 ```
 
-    我们也可以设置粒子不受到距离的影响产生近大远小的效果:
+我们也可以设置粒子不受到距离的影响产生近大远小的效果:
 
 ```js
 const pointsMaterial = new THREE.PointsMaterial({
