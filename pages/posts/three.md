@@ -8,7 +8,7 @@ duration: 25min
 
 ## 我的第一个 Three.js
 
-![three.js](https://zhengke996.github.io/ThreeDemo/)
+[ThreeDemo](https://zhengke996.github.io/ThreeDemo/)
 
 ````html
 <script src="https://cdn.bootcdn.net/ajax/libs/three.js/r128/three.min.js"></script>
@@ -1555,6 +1555,119 @@ const render = () => {
 
   renderer.render(scene, camera);
 };
+```
+
+## 性能优化建议
+
+#### 尽量共用几何体和材质
+
+如果你需要创建三百个简单的相同颜色的立方体模型：
+
+```js
+for (let i = 0; i < 300; i++) {
+  let geometry = new THREE.BoxGeometry(10, 10, 10);
+  let material = new THREE.MeshLambertMaterial({ color: 0x00ffff });
+  let mesh = new THREE.Mesh(geometry, material);
+  // 随机位置
+  mesh.position.set(
+    THREE.Math.randFloatSpread(200),
+    THREE.Math.randFloatSpread(200),
+    THREE.Math.randFloatSpread(200)
+  );
+  group.add(mesh);
+}
+```
+
+我们尽量共用相同的几何体和材质：
+
+```js
+let geometry = new THREE.BoxGeometry(10, 10, 10);
+let material = new THREE.MeshLambertMaterial({color: 0x00ffff});
+for (let i = 0; i < 300; i++) {
+    let mesh = new THREE.Mesh(geometry, material);
+    / /随机位置
+    mesh.position.set(THREE.Math.randFloatSpread(200), THREE.Math.randFloatSpread(200), THREE.Math.randFloatSpread(200));
+    group.add(mesh);
+}
+
+```
+
+#### 删除模型时，将材质和几何体从内存中清除
+
+使用`remove()`将模型从场景内删除掉，大家会发现内存基本上没有怎么降低。因为几何体和材质还保存在内存当中，我们需要手动调用`dispose()`方法将其从内存中删除。
+
+```js
+// 删除group
+function deleteGroup(name) {
+  let group = scene.getObjectByName(name);
+  if (!group) return;
+  // 删除掉所有的模型组内的mesh
+  group.traverse(function (item) {
+    if (item instanceof THREE.Mesh) {
+      item.geometry.dispose(); // 删除几何体
+      item.material.dispose(); // 删除材质
+    }
+  });
+
+  scene.remove(group);
+}
+```
+
+#### 使用 merge 方法合并不需要单独操作的模型
+
+这个方法新版本整合在了几何体上面，主要应用场景为大量几何体相同材质的模型。我们可以通过将多个几何体拼接成一个单个整体的几何体来节约性能，缺点就是将缺少对单个模型的控制。
+如果在不选中 combined 的时候，选择 redraw20000 个模型的话，一般只有十几帧的帧率。但是如果选中 combined，会发现渲染的帧率能够达到满帧（60 帧），性能巨大提升。
+
+merge 使用方法：
+
+```js
+// 合并模型，则使用merge方法合并
+var geometry = new THREE.Geometry();
+// merge方法将两个几何体对象或者Object3D里面的几何体对象合并,(使用对象的变换)将几何体的顶点,面,UV分别合并.
+// THREE.GeometryUtils: .merge() has been moved to Geometry. Use geometry.merge( geometry2, matrix, materialIndexOffset ) instead. 如果新版本用老版本的会报这个错
+for (var i = 0; i < 20000; i++) {
+  var cube = addCube(); // 创建了一个随机位置的几何体模型
+  cube.updateMatrix(); // 手动更新模型的矩阵
+  geometry.merge(cube.geometry, cube.matrix); //将几何体合并
+}
+
+scene.add(new THREE.Mesh(geometry, cubeMaterial));
+```
+
+#### 在循环渲染中避免使用更新
+
+这里的更新指的是当前的几何体、材质、纹理等发生了修改，需要`Three.js`重新更新显存的数据，具体包括：
+
+```js
+geometry.verticesNeedUpdate = true; // 顶点发生了修改
+geometry.elementsNeedUpdate = true; // 面发生了修改
+geometry.morphTargetsNeedUpdate = true; // 变形目标发生了修改
+geometry.uvsNeedUpdate = true; // uv映射发生了修改
+geometry.normalsNeedUpdate = true; // 法向发生了修改
+geometry.colorsNeedUpdate = true; // 顶点颜色发生的修改
+
+material.needsUpdate = true;
+
+texture.needsUpdate = true;
+```
+
+如果它们发生更新，则将其设置为`true`，`Three.js`会通过判断，将数据重新传输到显存当中，并将配置项重新修改为`false`。这是一个很耗运行效率的过程，所以我们尽量只在需要的时候修改，不要放到`render()`方法当中循环设置。
+
+#### 只在需要的时候渲染
+
+如果在没有操作的时候，让循环一直渲染属于浪费资源，接下来我来带给大家一个只在需要时渲染的方法。
+
+```js
+var renderEnabled;
+function animate() {
+  if (renderEnabled) {
+    renderer.render(scene, camera);
+  }
+
+  requestAnimationFrame(animate);
+}
+
+animate();
 ```
 
 ...
