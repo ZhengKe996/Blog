@@ -8,7 +8,7 @@ duration: 25min
 
 ## 我的第一个 Three.js
 
-![three.js](/public/images/threejs/1-0.png)
+![three.js](https://zhengke996.github.io/ThreeDemo/)
 
 ````html
 <script src="https://cdn.bootcdn.net/ajax/libs/three.js/r128/three.min.js"></script>
