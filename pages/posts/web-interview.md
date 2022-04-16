@@ -119,6 +119,17 @@ export function rotate2(arr: number[], k: number): number[] {
 - 栈, 逻辑结构。理论模型, 不管如何实现, 不受任何语言的限制
 - 数组, 物理结构, 真实的功能实现, 受限于编程语言
 
+# 队列
+
+- 先进先出
+- API: add delete length
+
+### 逻辑结构 VS 物理结构
+
+- 队列是逻辑结构, 抽象模型
+- 简单的, 可以用数组、链表实现
+- 复杂的队列服务, 需单独设计
+
 # 判断字符串是否括号匹配
 
 ```
@@ -176,3 +187,59 @@ export function matchBracket(str: string): boolean {
 
 - 时间复杂度: O(n)
 - 空间复杂度: O(n)
+
+# 两个栈实现一个队列
+
+```
+两个栈实现一个队列
+```
+
+### 实现方法
+
+```ts
+/**
+ * @description 两个栈实现一个队列
+ */
+
+export class MyQueue {
+  private stack1: number[] = [];
+  private stack2: number[] = [];
+  add(n: number) {
+    this.stack1.push(n);
+  }
+  delete(): number | null {
+    let res;
+
+    const stack1 = this.stack1;
+    const stack2 = this.stack2;
+
+    // 将 stack1 所有元素移动到 stack2中
+    while (stack1.length) {
+      const n = stack1.pop();
+      if (n != null) {
+        stack2.push(n);
+      }
+    }
+
+    // stack2 pop
+    res = stack2.pop();
+
+    // 将 stack2 所有元素“还给” stack1
+    while (stack2.length) {
+      const n = stack2.pop();
+      if (n != null) {
+        stack1.push(n);
+      }
+    }
+    return res || null;
+  }
+  get length(): number {
+    return this.stack1.length;
+  }
+}
+```
+
+### 性能分析
+
+- 时间复杂度: add O(1) delete O(n)
+- 空间复杂度: 整体是 O(n)
