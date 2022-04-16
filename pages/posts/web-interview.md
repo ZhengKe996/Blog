@@ -123,12 +123,27 @@ export function rotate2(arr: number[], k: number): number[] {
 
 - 先进先出
 - API: add delete length
+  ![队列](/public/images/web-interview/1-2.png)
 
 ### 逻辑结构 VS 物理结构
 
 - 队列是逻辑结构, 抽象模型
 - 简单的, 可以用数组、链表实现
 - 复杂的队列服务, 需单独设计
+
+# 链表
+
+- 链表是一种物理结构(非逻辑结构), 类似于数组
+- 数组需要一段连续的内存区间, 而链表是零散的
+- 链表节点的数据结构 {value,next?,prev?}
+
+![链表](/public/images/web-interview/1-3.png)
+
+### 链表 VS 数组
+
+- 都是有序结构
+- 链表: 查询慢 O(n), 新增和删除快 O(1)
+- 数组: 查询快 O(1), 新增和删除慢 O(n)
 
 # 判断字符串是否括号匹配
 
@@ -243,3 +258,88 @@ export class MyQueue {
 
 - 时间复杂度: add O(1) delete O(n)
 - 空间复杂度: 整体是 O(n)
+
+# 链表反转
+
+```
+输入一个单向链表, 输出它的反转( 头变尾,尾变头 )
+```
+
+### 解题思路
+
+- 反转, 即节点 next 指向前一个节点
+- 很容易造成 nextNode 的丢失
+- 需要三个指针 prevNode curNode nextNode
+
+### 实现方法
+
+```ts
+/**
+ * @description 链表反转
+ * 输入一个单向链表, 输出它的反转( 头变尾,尾变头 )
+ */
+
+interface ILinkListNode {
+  value: number;
+  next?: ILinkListNode;
+}
+
+export function reverseLinkList(listNode: ILinkListNode): ILinkListNode {
+  // 定义三个指针
+  let prevNode: ILinkListNode | undefined = undefined;
+  let curNode: ILinkListNode | undefined = undefined;
+  let nextNode: ILinkListNode | undefined = listNode;
+
+  // 以 nextNode 为主, 遍历链表
+  while (nextNode) {
+    // 第一个元素, 删掉next, 防止循环引用
+    if (curNode && !prevNode) {
+      // @ts-ignore
+      delete curNode.next;
+    }
+
+    // 反转指针
+    if (curNode && prevNode) {
+      // @ts-ignore
+      curNode.next = prevNode;
+    }
+
+    // 整体向后移动指针
+    prevNode = curNode;
+    curNode = nextNode;
+    nextNode = nextNode?.next;
+  }
+  // 当 nextNode 空时, 此时 curNode 尚未设置 next
+  curNode!.next = prevNode;
+  return curNode!;
+}
+
+/**
+ * 根据数组创建单向链表
+ * @param arr number arr
+ * @returns
+ */
+export function createLinkList(arr: number[]): ILinkListNode {
+  const length = arr.length;
+  if (length === 0) throw new Error("arr is empty");
+
+  let curNode: ILinkListNode = {
+    value: arr[length - 1],
+  };
+  if (length === 1) return curNode;
+
+  for (let i = length - 2; i >= 0; i--) {
+    curNode = {
+      value: arr[i],
+      next: curNode,
+    };
+  }
+  return curNode;
+}
+```
+
+### 划重点
+
+- 链表, 链表 VS 数组
+- 如何让 nextNode 不丢失
+- 链表的代码逻辑比较繁琐, 调试成本高
