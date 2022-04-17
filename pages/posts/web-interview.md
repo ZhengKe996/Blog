@@ -343,3 +343,95 @@ export function createLinkList(arr: number[]): ILinkListNode {
 - 链表, 链表 VS 数组
 - 如何让 nextNode 不丢失
 - 链表的代码逻辑比较繁琐, 调试成本高
+
+# 链表和数组, 哪个实现队列更快?
+
+### 分析
+
+- 数组是连续存储, push 很快, shift 很慢
+- 链表是非连续存储, add 和 delete 都很快(查找很慢)
+- 结论: 链表实现队列更快
+
+### 链表实现队列
+
+- 单向链表, 同时要记录 head 和 tail
+- 要从 tail 入队, 从 head 出队, 否则出队时 tail 不好定位
+- length 要实时记录, 不可遍历链表获取
+
+### 实现方法
+
+```ts
+/**
+ * @description 使用链表实现队列
+ */
+
+export interface IListNode {
+  value: number;
+  next: IListNode | null;
+}
+
+export class MyQueue {
+  private head: IListNode | null = null;
+  private tail: IListNode | null = null;
+  private len: number = 0;
+  /**
+   * 入队列, 在tail位置
+   * @param n number
+   */
+  add(n: number) {
+    const newNode: IListNode = {
+      value: n,
+      next: null,
+    };
+
+    // 处理 head
+    if (this.head == null) {
+      this.head = newNode;
+    }
+
+    // 处理 tail
+    const tailNode = this.tail;
+    if (tailNode) {
+      tailNode.next = newNode;
+    }
+    this.tail = newNode;
+
+    this.len++;
+  }
+
+  /**
+   * 出队列, 在head位置
+   */
+  delete(): number | null {
+    const headNode = this.head;
+    if (headNode == null) return null;
+    if (this.len <= 0) return null;
+
+    // 取值
+    const value = headNode.value;
+
+    // 处理 head
+    this.head = headNode.next;
+
+    // 记录长度
+    this.len--;
+    return value;
+  }
+  /**
+   * length 要单独存储, 不能遍历链表获取(时间复杂度太高)
+   */
+  get length(): number {
+    return this.len;
+  }
+}
+```
+
+### 性能分析
+- 空间复杂度都是O(n)
+- add 时间复杂度: 链表O(1); 数组O(1)
+- delete 时间复杂度: 链表O(1); 数组O(n）
+
+### 划重点
+- 链表, 链表 VS 数组
+- 数据结构的选择 比 算法优化更重要
+- 时间复杂度的敏感性, 如 length 不能遍历查找
