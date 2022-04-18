@@ -515,6 +515,58 @@ export function binarySearchRecursive(arr: number[], target: number, startIndex?
 ```
 
 ### 划重点
+
 - 凡有序, 必二分
-- 凡二分, 时间复杂度必包含O(logn)
+- 凡二分, 时间复杂度必包含 O(logn)
 - 递归 VS 非递归
+
+# 找出数组中和为 n 的两个元素
+
+```
+有个递增数组[1,2,4,7,11,15] 和 一个 n = 15
+
+数组中有两个数和是n, 即 4 + 11 = 15
+```
+
+### 常规思路与实现方法
+
+- 嵌套循环, 找到一个数, 然后去遍历下一个数,判断 n
+- 时间复杂度 O(n^2) 不可用
+
+```ts
+/**
+ * 寻找 和为 n 的两个数 (嵌套循环)
+ * @param arr
+ * @param n
+ * @returns
+ */
+export function findTowNumberCycle(arr: number[], n: number): number[] {
+  const res: number[] = [];
+
+  const length = arr.length;
+  if (length === 0) return res;
+
+  for (let i = 0; i < length - 1; i++) {
+    const n1 = arr[i];
+    let flag = false;
+
+    for (let j = i + 1; j < length; j++) {
+      const n2 = arr[j];
+      if (n1 + n2 === n) {
+        res.push(n1);
+        res.push(n2);
+        flag = true;
+        break;
+      }
+    }
+
+    if (flag) break;
+  }
+  return res;
+}
+```
+
+### 利用递增(有序)的特性
+- 随便找两个数
+- 如果和大于n, 则继续向前寻找
+- 如果和小于n, 则需要向后 ———— 二分法
