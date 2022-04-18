@@ -427,11 +427,89 @@ export class MyQueue {
 ```
 
 ### 性能分析
-- 空间复杂度都是O(n)
-- add 时间复杂度: 链表O(1); 数组O(1)
-- delete 时间复杂度: 链表O(1); 数组O(n）
+
+- 空间复杂度都是 O(n)
+- add 时间复杂度: 链表 O(1); 数组 O(1)
+- delete 时间复杂度: 链表 O(1); 数组 O(n）
 
 ### 划重点
+
 - 链表, 链表 VS 数组
 - 数据结构的选择 比 算法优化更重要
 - 时间复杂度的敏感性, 如 length 不能遍历查找
+
+# 二分查找法
+
+- 递归 - 代码逻辑更加清晰
+- 非递归(循环) - 性能更好
+- 时间复杂度 O(logn) 非常快
+
+### 实现方法
+
+```ts
+/**
+ * 二分查找法(循环)
+ * @param arr number arr
+ * @param target target
+ * @returns
+ */
+export function binarySearchCycle(arr: number[], target: number): number {
+  const length = arr.length;
+  if (length === 0) return -1;
+  let startIndex = 0; // 开始位置
+  let endIndex = length - 1;
+
+  while (startIndex <= endIndex) {
+    const midIndex = Math.floor((startIndex + endIndex) / 2);
+    const midValue = arr[midIndex];
+
+    if (target < midValue) {
+      // 目标值较小, 则继续往左边查找
+      endIndex = midIndex - 1;
+    } else if (target > midValue) {
+      // 目标值较大, 则继续往右边查找
+      startIndex = midIndex + 1;
+    } else {
+      // 相等 返回
+      return midIndex;
+    }
+  }
+  return -1;
+}
+```
+
+```ts
+/**
+ * 二分查找(递归)
+ * @param arr arr
+ * @param target target
+ * @param startIndex start index
+ * @param endIndex end index
+ */
+export function binarySearchRecursive(arr: number[], target: number, startIndex?: number, endIndex?: number): number {
+  const length = arr.length;
+  if (length === 0) return -1;
+
+  // 开始和结束的范围
+  if (startIndex == null) startIndex = 0;
+  if (endIndex == null) endIndex = length - 1;
+
+  // 如果 startIndex 与 endIndex 相遇
+  if (startIndex > endIndex) return -1;
+
+  // 中间位置
+  const midIndex = Math.floor((startIndex + endIndex) / 2);
+  const midValue = arr[midIndex];
+
+  if (target < midValue) {
+    // 目标值较小, 则继续往左边查找
+    return binarySearchRecursive(arr, target, startIndex, midIndex - 1);
+  } else if (target > midValue) {
+    // 目标值较大, 则继续往右边查找
+    return binarySearchRecursive(arr, target, midIndex + 1, endIndex);
+  } else {
+    // 相等 返回
+    return midIndex;
+  }
+}
+```
