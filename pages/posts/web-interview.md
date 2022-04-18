@@ -567,6 +567,44 @@ export function findTowNumberCycle(arr: number[], n: number): number[] {
 ```
 
 ### 利用递增(有序)的特性
+
 - 随便找两个数
-- 如果和大于n, 则继续向前寻找
-- 如果和小于n, 则需要向后 ———— 二分法
+- 如果和大于 n, 则继续向前寻找
+- 如果和小于 n, 则需要向后 ———— 二分法
+
+```ts
+/**
+ * 寻找 和为 n 的两个数 (双指针)
+ * @param arr
+ * @param n
+ * @returns
+ */
+export function findTowNumberDoublePointer(arr: number[], n: number): number[] {
+  const res: number[] = [];
+  const length = arr.length;
+  if (length === 0) return res;
+
+  let i = 0; // 头
+  let j = length - 1; // 尾
+
+  while (i < j) {
+    const n1 = arr[i];
+    const n2 = arr[j];
+    const sum = n1 + n2;
+
+    if (sum > n) {
+      // sum 大于 n 则 j 要向前移动
+      j--;
+    } else if (sum < n) {
+      // sum 小于 n 则 i 要向前移动
+      i++;
+    } else {
+      // 祥腾
+      res.push(n1);
+      res.push(n2);
+      break;
+    }
+  }
+  return res;
+}
+```
