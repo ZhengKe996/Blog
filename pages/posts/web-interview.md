@@ -513,3 +513,8 @@ export function binarySearchRecursive(arr: number[], target: number, startIndex?
   }
 }
 ```
+
+### 划重点
+- 凡有序, 必二分
+- 凡二分, 时间复杂度必包含O(logn)
+- 递归 VS 非递归
