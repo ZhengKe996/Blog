@@ -726,3 +726,4 @@ export function getKthValue(node: ITreeNode, k: number): number | null {
 
 - 二叉树, 和三种(前序、中序、后序)遍历
 - 二叉搜索树的特点: left <= root; right >= root
+- 二叉搜索树的价值: 可以通过二分法进行快速查找
