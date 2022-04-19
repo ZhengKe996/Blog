@@ -608,3 +608,121 @@ export function findTowNumberDoublePointer(arr: number[], n: number): number[] {
   return res;
 }
 ```
+
+# 二叉树 (Binary Tree)
+
+- 是一颗树
+- 每个节点, 最多只能有 2 个字节点
+- 树节点的数据结构(value, left?, right?)
+
+```ts
+interface ITreeNode {
+  value: number;
+  left: ITreeNode | null;
+  right: ITreeNode | null;
+}
+```
+
+### 二叉树的遍历
+
+- 前序遍历: root -> left -> right
+
+  ```ts
+  /**
+   * 二叉树前序遍历
+   *
+   * @param node tree node
+   * @returns
+   */
+  function preOrderTraverse(node: ITreeNode | null) {
+    if (node == null) return;
+    arr.push(node.value);
+    preOrderTraverse(node.left);
+    preOrderTraverse(node.right);
+  }
+  ```
+
+- 中序遍历: left -> root -> right
+
+  ```ts
+  /**
+   * 二叉树中序遍历
+   *
+   * @param node tree node
+   * @returns
+   */
+  function inOrderTraverse(node: ITreeNode | null) {
+    if (node == null) return;
+    inOrderTraverse(node.left);
+    arr.push(node.value);
+    inOrderTraverse(node.right);
+  }
+  ```
+
+- 后序遍历: left -> right -> root
+
+  ```ts
+  /**
+   * 二叉树后序遍历
+   *
+   * @param node tree node
+   * @returns
+   */
+  function postOrderTraverse(node: ITreeNode | null) {
+    if (node == null) return;
+    postOrderTraverse(node.left);
+    postOrderTraverse(node.right);
+    arr.push(node.value);
+  }
+  ```
+
+### 二叉搜索树 BST (Binary Search Tree)
+
+- left(包括其后代) value <= root value
+- right(包括其后代) value >= root value
+- 可使用**二分法**进行快速查找
+
+# 求一个二插搜索树的第 K 小值
+
+![二叉树](/public/images/web-interview/1-5.png)
+
+### 实现方法
+
+```ts
+interface ITreeNode {
+  value: number;
+  left: ITreeNode | null;
+  right: ITreeNode | null;
+}
+const arr: number[] = [];
+
+/**
+ * 二叉树中序遍历
+ *
+ * @param node tree node
+ * @returns
+ */
+export function inOrderTraverse(node: ITreeNode | null) {
+  if (node == null) return;
+  inOrderTraverse(node.left);
+  arr.push(node.value);
+  inOrderTraverse(node.right);
+}
+
+/**
+ * 寻找 BST 里的 第 K 小值
+ *
+ * @param node tree node
+ * @param k 第几个值
+ * @returns
+ */
+export function getKthValue(node: ITreeNode, k: number): number | null {
+  inOrderTraverse(node);
+  return arr[k - 1] || null;
+}
+```
+
+### 划重点
+
+- 二叉树, 和三种(前序、中序、后序)遍历
+- 二叉搜索树的特点: left <= root; right >= root
