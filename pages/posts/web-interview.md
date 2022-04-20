@@ -486,7 +486,12 @@ export function binarySearchCycle(arr: number[], target: number): number {
  * @param startIndex start index
  * @param endIndex end index
  */
-export function binarySearchRecursive(arr: number[], target: number, startIndex?: number, endIndex?: number): number {
+export function binarySearchRecursive(
+  arr: number[],
+  target: number,
+  startIndex?: number,
+  endIndex?: number
+): number {
   const length = arr.length;
   if (length === 0) return -1;
 
@@ -727,3 +732,54 @@ export function getKthValue(node: ITreeNode, k: number): number | null {
 - 二叉树, 和三种(前序、中序、后序)遍历
 - 二叉搜索树的特点: left <= root; right >= root
 - 二叉搜索树的价值: 可以通过二分法进行快速查找
+
+# 为什么二叉树如此重要,而不是三叉树、四叉树?
+
+**性能 性能 性能**
+
+- 数组: 查找快 O(1), 增删慢 O(n)
+- 链表: 查找慢 O(n), 增删快 O(1)
+- 二叉搜索树 BST: 查找快、增删快 ———— '木桶效应'
+
+### 二叉搜索树 BST (Binary Search Tree)
+
+![二叉搜索树](/public/images/web-interview/1-7.png)
+
+### 平衡二叉树
+
+- BST 如果不平衡, 则变成链表
+- 所有要尽量平衡: 平衡二叉搜索树 BBST
+- BBST 增删查, 时间复杂度都是 O(login) 即树的高度
+
+### 红黑树
+
+- 一种自平衡二叉树
+- 分为 红/黑 两种颜色, 通过颜色转换来维持树的平衡
+- 相当于普通平衡二叉树, 它维持平衡的效率更高
+
+### B 树
+
+- 物理上是多叉树, 但逻辑上是二叉树
+- 一般用于高效 I/O, 关系型数据库常用 B 树来组织数据
+
+### 小结
+
+- 数组、链表有各自的缺点
+- 特定的二叉树(BBST) 可以让整体效果最优
+
+# 堆栈模型
+
+- 值类型变量, 存储在栈
+- 引用类型变量, 存储在堆
+
+### 逻辑结构 VS 物理结构
+
+- 堆, 逻辑结构是一棵二叉树
+- 堆: 物理结构是一个数组
+- 数组: 适合连续存储, 节省空间
+
+### 堆 VS BST
+
+- 查询比 BST 慢
+- 增删比 BST 快, 维持平衡快
+- 整体的时间复杂度在 O(logn)级别, 即树的高度
