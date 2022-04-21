@@ -783,3 +783,61 @@ export function getKthValue(node: ITreeNode, k: number): number | null {
 - 查询比 BST 慢
 - 增删比 BST 快, 维持平衡快
 - 整体的时间复杂度在 O(logn)级别, 即树的高度
+
+# 斐波那契数列
+
+```
+用JS计算斐波那契数列的第 N 个值
+注意时间复杂度
+```
+
+### 递归代码实现
+
+```ts
+/**
+ * 斐波那契数列(递归)
+ * @param n n
+ * @returns
+ */
+export function fibonacciRecursion(n: number): number {
+  if (n <= 0) return 0;
+  if (n === 1) return 1;
+
+  return fibonacciRecursion(n - 1) + fibonacciRecursion(n - 2);
+}
+```
+
+##### 递归 - 大量的重复计算
+
+![斐波那契数列](/public/images/web-interview/1-10.png)
+**时间复杂度 O(2^n)**
+
+### 优化
+
+- 不用递归, 使用循环
+- 记录中间结果
+- 时间复杂度 O(n)
+
+```ts
+/**
+ * 斐波那契数列(循环)
+ * @param n n
+ * @returns
+ */
+export function fibonacciCirculation(n: number): number {
+  if (n <= 0) return 0;
+  if (n === 1) return 1;
+
+  let n1 = 1; // 记录 n-1 的结果
+  let n2 = 0; // 记录 n-2 的结果
+  let res = 0;
+  for (let i = 2; i <= n; i++) {
+    res = n1 + n2;
+
+    // 记录中间结果
+    n2 = n1;
+    n1 = res;
+  }
+  return res;
+}
+```
