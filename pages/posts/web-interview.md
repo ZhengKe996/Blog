@@ -841,3 +841,9 @@ export function fibonacciCirculation(n: number): number {
   return res;
 }
 ```
+
+### 动态规划
+
+- 把一个大问题, 拆解为多个小问题, 逐级向下拆解
+- 用递归的思路去分析问题, 再改为循环实现
+- 算法三大核心思维: 贪心、二分、动态规划
