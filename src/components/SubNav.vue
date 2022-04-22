@@ -15,6 +15,13 @@
       >
         Talks
       </router-link>
+      <router-link
+        to="/podcasts"
+        class="!border-none !font-400"
+        :class="route.path === '/podcasts' ? '' : inactiveStyle"
+      >
+        Podcasts
+      </router-link>
     </div>
   </div>
 </template>
