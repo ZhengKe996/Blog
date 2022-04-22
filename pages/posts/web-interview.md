@@ -847,3 +847,96 @@ export function fibonacciCirculation(n: number): number {
 - 把一个大问题, 拆解为多个小问题, 逐级向下拆解
 - 用递归的思路去分析问题, 再改为循环实现
 - 算法三大核心思维: 贪心、二分、动态规划
+
+# 连环问: 青蛙 🐸 跳台阶
+
+- 一只青蛙, 一次可跳 1 级, 也可跳 2 级
+- 问: 🐸 跳到 n 级台阶, 总共有多少种方式?
+
+### 动态规划分析问题
+
+- 要跳到 1 级台阶, 就一种方式 f(1) = 1
+- 要跳到 2 级台阶, 就二种方式 f(2) = 2
+- 要跳到 n 级台阶, f(n) = f(n - 1) + f(n - 2)
+
+# 将数组中的 0 移动到末尾
+
+- 如输入[1,0,3,0,11,0] ， 输出 [1,3,11,0,0,0]
+- 只移动 0 其他顺序不变
+- 必须在原数组进行操作
+
+### 如果不限制'必须在原数组操作'
+
+- 定义 part1、part2 两个数组
+- 遍历数组, 非 0 push 到 part1, 0 push 到 part2
+- 返回 `part1.concat(part2)`
+
+### 传统思路 算法不可用
+
+- 遍历数组, 遇到 0 则 push 到数组末端
+- 用 splice 截取掉当前元素
+- 时间复杂度是 O(n^2)
+
+```ts
+/**
+ * 移动 0 到数组的末尾(嵌套循环)
+ * 时间复杂度 O(n^2）
+ * @param arr number arr
+ */
+export function moveZeroCirculation(arr: number[]): void {
+  const length = arr.length;
+
+  if (length === 0) return;
+  let zeroLength = 0;
+  for (let i = 0; i < length - zeroLength; i++) {
+    if (arr[i] === 0) {
+      arr.push(0);
+      arr.splice(i, 1); // 本身时间复杂度 O(n)
+      i--; // 数组截取了一个元素, 1. 要递减, 否则连续 0 时会有错误
+      zeroLength++; // 累加 0 的长度
+    }
+  }
+}
+```
+
+### 双指针实现
+
+- 定义 j 指向第一个 0, i 指向 j 后面的第一个非 0
+- 交换 i 和 j 的值, 继续向后移动
+- 只遍历一次, 时间复杂度是 O(n)
+
+```ts
+/**
+ * 移动 0 到数组的末尾(双指针)
+ * @param arr number arr
+ */
+export function moveZeroDobule(arr: number[]): void {
+  const length = arr.length;
+  if (length === 0) return;
+
+  let i;
+  let j = -1; // 指向第一个 0
+
+  for (i = 0; i < length; i++) {
+    if (arr[i] === 0) {
+      // 第一个 0
+      if (j < 0) j = i;
+    }
+
+    if (arr[i] !== 0 && j >= 0) {
+      // 交换
+      const n = arr[i];
+      arr[i] = arr[j];
+      arr[j] = n;
+
+      j++;
+    }
+  }
+}
+```
+
+### 划重点
+
+- 确认是否必须修改原数组
+- 数组是连续存储, 慎用 splice unshift 等 API
+- 双指针思路
