@@ -940,3 +940,111 @@ export function moveZeroDobule(arr: number[]): void {
 - 确认是否必须修改原数组
 - 数组是连续存储, 慎用 splice unshift 等 API
 - 双指针思路
+
+# 字符串中连续最多的字符以及次数
+
+### 传统思路
+
+- 嵌套循环, 找出每个字符的连接次数, 并记录
+- 看似时间复杂度是 O(n^2)
+- 实际时间复杂度 O(n) ————跳步
+
+```ts
+export interface IRes {
+  char: string;
+  length: number;
+}
+
+/**
+ * 求连续最多的字符和次数 (循环)
+ * @param str str
+ */
+export function findContinuousCharCirculation(str: string): IRes {
+  const res: IRes = {
+    char: "",
+    length: 0,
+  };
+
+  const length = str.length;
+  if (length === 0) return res;
+
+  let tempLength = 0; // 临时记录当前连续字符的长度
+
+  for (let i = 0; i < length; i++) {
+    tempLength = 0; // 重置
+    for (let j = i; j < length; j++) {
+      if (str[i] === str[j]) {
+        tempLength++;
+      }
+
+      if (str[i] !== str[j] || j === length - 1) {
+        // 不相等, 或者已经到了最后一个元素, 要判断最大值
+        if (tempLength > res.length) {
+          res.char = str[i];
+          res.length = tempLength;
+        }
+
+        if (i < length - 1) i = j - 1; // 跳步
+        break;
+      }
+    }
+  }
+  return res;
+}
+```
+
+### 双指针
+
+- 定义指针 i 和 j, j 不动, i 继续移动
+- 如果 i 和 j 的值一直相等, 则 i 继续移动
+- 直到 i 和 j 的值不相等, 记录处理, 让 j 追上 i. 继续第一步
+
+```ts
+export interface IRes {
+  char: string;
+  length: number;
+}
+/**
+ * 求连续最多的字符和次数 (双指针)
+ * @param str str
+ */
+export function findContinuousCharDobule(str: string): IRes {
+  const res: IRes = {
+    char: "",
+    length: 0,
+  };
+
+  const length = str.length;
+  if (length === 0) return res;
+
+  let tempLength = 0; // 临时记录当前连续字符的长度
+  let i = 0;
+  let j = 0;
+  for (; i < length; i++) {
+    if (str[i] === str[j]) tempLength++;
+
+    if (str[i] !== str[j] || i === length - 1) {
+      // 不相等, 或 i 到了字符串的末尾
+      if (tempLength > res.length) {
+        res.char = str[j];
+        res.length = tempLength;
+      }
+
+      tempLength = 0; // reset
+
+      if (i < length - 1) {
+        j = i; // 让 j 追上 i
+        i--; // 细节
+      }
+    }
+  }
+  return res;
+}
+```
+
+### 其他方法
+
+- 正则表达式 ———— 效率特别低
+- 累计各个元素的连续长度, 最后求最大值 ———— 徒增空间复杂度
+
+**注意: 算法题尽量使用低级代码, 慎用语法糖或高级 API**
