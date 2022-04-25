@@ -1142,3 +1142,292 @@ export function quickSortSlice(arr: number[]): number[] {
 - 算法本身的时间复杂度足够高 O(n\*logn)
 - splice 是逐步二分之后执行, 二分会快速削减数量级
 - 单独比较 splice 和 slice 效果会非常明显
+
+# 对称数
+
+- 求 1 - 10000 之间的所有对称数(回文)
+- 例如: 0,1,2,11,22,101,232,1221...
+
+### 使用数组反转、比较
+
+- 数字转为字符串, 再转换为数组
+- 数组 reverse 再 join 为字符串
+- 前后字符串进行对比
+
+```ts
+/**
+ * 查询 1 - max 的所有对称数 数组反转
+ * @param max max
+ * @returns
+ */
+export function findPalindromeNumberArr(max: number): number[] {
+  const res: number[] = [];
+  if (max <= 0) return res;
+
+  for (let i = 1; i <= max; i++) {
+    // 转换为字符串 -> 转化为数组 -> 反转 -> 比较
+    const s = i.toString();
+    if (s === s.split("").reverse().join("")) {
+      res.push(i);
+    }
+  }
+
+  return res;
+}
+```
+
+### 字符串头尾比较
+
+- 数字转化为字符串
+- 字符串头字符比较
+- 也可以使用栈, 参考括号匹配, 注意奇偶数
+
+```ts
+export function findPalindromeNumberStr(max: number): number[] {
+  const res: number[] = [];
+  if (max <= 0) return res;
+
+  for (let i = 1; i <= max; i++) {
+    const s = i.toString();
+    const length = s.length;
+
+    // 字符串头尾比较
+    let flag = true;
+    let startIndex = 0; // 字符串开始
+    let endIndex = length - 1; // 字符串结束
+    while (startIndex < endIndex) {
+      if (s[startIndex] !== s[endIndex]) {
+        flag = false;
+        break;
+      } else {
+        // 继续比较
+        startIndex++;
+        endIndex--;
+      }
+    }
+
+    if (flag) res.push(i);
+  }
+  return res;
+}
+```
+
+### 生成反转数
+
+- 使用 `%` 和 `Math.floor` 生成反转数
+- 前后数字进行对比
+- (全程操作数字)
+
+```ts
+/**
+ * 查询 1 - max 的所有对称数 翻转数字
+ * @param max max
+ * @returns
+ */
+export function findPalindromeNumberNum(max: number): number[] {
+  const res: number[] = [];
+  if (max <= 0) return res;
+
+  for (let i = 1; i <= max; i++) {
+    let n = i;
+    let rev = 0; // 存储翻转数
+
+    // 生成翻转数
+    while (n > 0) {
+      rev = rev * 10 + (n % 10);
+      n = Math.floor(n / 10);
+    }
+
+    if (i === rev) res.push(i);
+  }
+  return res;
+}
+```
+
+# 高效的字符串前缀匹配
+
+- 有一个英文单词库(数组), 里面有几十万个英文单词
+- 输入一个字符串, 快速判断是不是某一个单词的前缀
+
+### 常规思路
+
+1. 遍历单词库数组
+2. indexOf 判断前缀
+
+注: 实际时间复杂度超过了 O(n), 因为要考虑 indexOf 的计算量
+
+### 优化
+
+- 英文字母一共 26 个, 可以提前把单词库数组拆分为 26 个
+- 第一层拆分为 26 个, 第二层、第三层还可以继续拆分
+- 最后把单词库拆分为一颗
+
+### 性能分析
+
+1. 如果遍历数组, 时间复杂度至少 O(n) 起步(n 是数组长度)
+2. 树, 时间复杂度降低到 O(m) (m 是单词长度)
+
+注: 哈希表(对象) 通过 key 查询, 时间复杂度是 O(1)
+
+# 数字千分位格式化
+
+- 将数字千分位格式化, 输出字符串
+- 如: 输入数字 12050100, 输出字符串 12,050,100
+
+注: 逆序判断
+
+### 常规思路
+
+- 转换为数组, reverse, 每三位拆分
+- 使用正则表达式 (性能较差)
+- 使用字符串拆分
+
+### 使用数组
+
+```ts
+/**
+ * 千分位格式化(使用数组)
+ * @param n number
+ */
+export function formatArr(n: number): string {
+  n = Math.floor(n);
+  const s = n.toString();
+  const arr = s.split("").reverse();
+
+  return arr.reduce((prev, val, index) => {
+    if (index % 3 === 0) {
+      if (prev) {
+        return val + "," + prev;
+      } else {
+        return val;
+      }
+    } else {
+      return val + prev;
+    }
+  }, "");
+}
+```
+
+### 使用字符串
+
+```ts
+/**
+ * 千分位格式化(使用字符串)
+ * @param n number
+ */
+export function formatStr(n: number): string {
+  n = Math.floor(n);
+
+  let res = "";
+  const s = n.toString();
+  const length = s.length;
+
+  for (let i = length - 1; i >= 0; i--) {
+    const j = length - i;
+    if (j % 3 === 0) {
+      if (i === 0) {
+        res = s[i] + res;
+      } else {
+        res = "," + s[i] + res;
+      }
+    } else {
+      res = s[i] + res;
+    }
+  }
+  return res;
+}
+```
+
+### 性能分析
+
+- 使用数组, 转换影响性能
+- 使用正则, 性能较差
+- 使用字符串, 性能较好
+
+### 划重点
+
+- 顺序: 从尾到头
+- 尽量不要转换数据结构
+- 不要使用正则表达式
+
+# 切换字母大小写
+
+- 输入一个字符串, 切换其中字母的大小写
+- 如: 输入字符串 12aBc34 输出字符串 12AbC34
+
+### 常见思路
+
+- 正则表达式
+- 通过 ASCII 码判断
+
+### 正则表达式
+
+```ts
+/**
+ * 切换字母大小写(正则)
+ * @param s str
+ *
+ */
+export function switchLetterCaseReg(s: string): string {
+  let res = "";
+
+  const length = s.length;
+  if (length === 0) return res;
+
+  const reg1 = /[a-z]/;
+  const reg2 = /[A-Z]/;
+
+  for (let i = 0; i < length; i++) {
+    const c = s[i];
+    if (reg1.test(c)) {
+      res += c.toUpperCase();
+    } else if (reg2.test(c)) {
+      res += c.toLowerCase();
+    } else {
+      res += c;
+    }
+  }
+  return res;
+}
+```
+
+### ASCII 码
+
+```ts
+/**
+ * 切换字母大小写(ascii)
+ * @param s str
+ *
+ */
+export function switchLetterCaseAscii(s: string): string {
+  let res = "";
+
+  const length = s.length;
+  if (length === 0) return res;
+
+  for (let i = 0; i < length; i++) {
+    const c = s[i];
+    const code = c.charCodeAt(0);
+
+    if (code >= 65 && code <= 90) {
+      res += c.toLowerCase();
+    } else if (code >= 97 && code <= 122) {
+      res += c.toUpperCase();
+    } else {
+      res += c;
+    }
+  }
+
+  return res;
+}
+```
+
+### 性能分析
+
+- 正则表达式 性能较差
+- ASCII 性能较好
+
+### 划重点
+
+- 慎用 正则表达式
+- 常见字符的 ASCII 吗
