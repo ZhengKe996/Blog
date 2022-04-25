@@ -1048,3 +1048,97 @@ export function findContinuousCharDobule(str: string): IRes {
 - 累计各个元素的连续长度, 最后求最大值 ———— 徒增空间复杂度
 
 **注意: 算法题尽量使用低级代码, 慎用语法糖或高级 API**
+
+# JavaScript 实现快速排序
+
+### 传统思路
+
+- 找到中间位置 midValue
+- 遍历数组, 小于 midValue 放在 left, 否则放在 fight
+- 继续递归, 最后 concat 拼接返回
+
+##### 细节
+
+获取 midValue 的两种方式
+
+- 使用 splice, 会修改数组结构
+- 使用 slice, 不会修改原数组 ———— 推荐
+
+### 使用 splice
+
+```ts
+/**
+ * 快速排序(splice)
+ * @param arr number arr
+ * @returns
+ */
+export function quickSortSplice(arr: number[]): number[] {
+  const length = arr.length;
+  if (length === 0) return arr;
+
+  const midIndex = Math.floor(length / 2);
+  const midValue = arr.splice(midIndex, 1)[0];
+
+  const left: number[] = [];
+  const right: number[] = [];
+
+  // 这里不直接使用 length, 而是使用 arr.length 因为 arr 已经被 splice 修改了
+  for (let i = 0; i < arr.length; i++) {
+    const n = arr[i];
+    if (n < midValue) {
+      // 小于 midValue 则放在 left
+      left.push(n);
+    } else {
+      // 大于 midValue 则放在right
+      right.push(n);
+    }
+  }
+  return quickSortSplice(left).concat([midValue], quickSortSplice(right));
+}
+```
+
+### 使用 slice
+
+```ts
+/**
+ * 快速排序(slice)
+ * @param arr number arr
+ * @returns
+ */
+export function quickSortSlice(arr: number[]): number[] {
+  const length = arr.length;
+  if (length === 0) return arr;
+
+  const midIndex = Math.floor(length / 2);
+  const midValue = arr.slice(midIndex, midIndex + 1)[0];
+
+  const left: number[] = [];
+  const right: number[] = [];
+
+  for (let i = 0; i < length; i++) {
+    if (i !== midIndex) {
+      const n = arr[i];
+      if (n < midValue) {
+        // 小于 midValue 则放在 left
+        left.push(n);
+      } else {
+        // 大于 midValue 则放在right
+        right.push(n);
+      }
+    }
+  }
+  return quickSortSlice(left).concat([midValue], quickSortSlice(right));
+}
+```
+
+### 时间复杂度
+
+- 有遍历有二分———— O(n\*logn)
+
+- 常规排序、嵌套循环 复杂度是 O(n^2)
+
+##### splice 和 slice 没有区分出来
+
+- 算法本身的时间复杂度足够高 O(n\*logn)
+- splice 是逐步二分之后执行, 二分会快速削减数量级
+- 单独比较 splice 和 slice 效果会非常明显
