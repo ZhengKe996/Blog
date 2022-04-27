@@ -118,3 +118,70 @@ function throttle(fun, delay = 100) {
 
 - 过程(限制频率) VS 结果
 - 实际工作可使用 [lodash](https://lodash.com/)
+
+# px % em rem vm/vh 有什么区别
+
+### px 和 %
+
+- px 基本单位, 绝对单位(其他的都是相对单位)
+- % 相对于父元素的宽度比例
+
+### em 和 rem
+
+- em 相对于当前元素的 font-size
+- rem 相对于根节点的 font-size
+
+### vw/vh
+
+- vw 屏幕宽度的 1%
+- vh 屏幕高度的 1%
+- vmin 两者的最小值, vmax 两者的最大值
+
+# 箭头函数
+
+- 箭头函数有什么缺点?
+- 什么时候不能使用箭头函数?
+
+### 箭头函数的缺点
+
+1. 没有 arguments
+2. 无法通过 apply call bind 改变 this
+3. 某些箭头函数代码难以阅读
+
+##### 不适用
+
+1. 对象方法(this 没有指向对象)
+2. 原型方法(this 没有指向原型)
+3. 构造方法
+4. 动态上下文中的回调函数
+5. Vue 生命周期 和 method (option API)
+
+### 划重点
+
+- 要熟练应用箭头函数, 也要对函数 `this arguments` 敏感
+- 传统 Vue 组件是 js 对象, 传统的 React 组件是 class, 两者不同
+
+# 请描述 TCP 三次握手和四次挥手
+
+### 建立 TCP 连接
+
+1. 先建立连接(确保双方都有收发消息的能力)
+2. 再传输内容(如: 发送一个 get 请求)
+3. 网络连接 TCP 协议, 传输内容是 HTTP 协议
+
+### 三次握手 建立连接
+
+1. Client 发包, Server 接收. Server: 有 Client 要找我
+2. Server 发包, Client 接收. Client: Server 已经收到信息了
+3. Client 发包, Server 接收. Server: Client 要准备发送了
+
+### 四次挥手 关闭连接
+
+1. Client 发包, Server 接收. Server: 可以关闭了(关闭连接)
+
+...
+
+### 划重点
+
+- 握手是连接, 挥手是告别
+- 不要追求深入的细节
