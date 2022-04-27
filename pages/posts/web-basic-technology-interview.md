@@ -1,5 +1,5 @@
 ---
-title: 前端基础技术面试题
+title: 前端基础技术
 date: 2022-04-22
 draft: true
 lang: zh
