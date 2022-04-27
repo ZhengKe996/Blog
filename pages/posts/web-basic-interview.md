@@ -117,4 +117,4 @@ function throttle(fun, delay = 100) {
 ### 划重点
 
 - 过程(限制频率) VS 结果
-- 实际工作可使用 ![lodash](https://lodash.com/)
+- 实际工作可使用 [lodash](https://lodash.com/)
