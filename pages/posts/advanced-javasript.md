@@ -70,3 +70,110 @@ duration: 25min
    - PrePare: 预解析
      - 并不是所有的 JavaScript 代码在一开始就被执行, 对所有的 JavaScript 代码进行解析影响网页的运行效率
      - V8 引擎实现了 Lazy Parsing(延迟解析) 的方案, 将不必要的函数进行预解析. 只解析需要的内容, 对函数的全量解析是在函数被调用时才会进行
+
+### 全局代码的执行过程
+
+1. 代码被解析, v8 引擎内部会帮助我们创建一个对象(GlobalObject -> go)
+2. 运行代码
+   1. v8 为了执行代码, 引擎内部会有一个执行上下文栈(Execution Context Stack ECStack)(函数调用栈)
+   2. 我们执行的是全局代码, 为了全局代码能够正常的执行, 需要创建 全局执行上下文(Global Execution Context)(全局代码需要被执行时才会创建)
+
+![全局代码的执行过程](/public/images/advanced-javasript/1-4.jpg)
+
+##### 函数
+
+- 执行过程中执行到一个函数时, 就会根据函数体创建一个函数执行上下文(FEC)并且压入 EC Stack 中
+- FEC 中包含三部分内容:
+  - 在解析函数成为 AST 树结构时, 会创建一个 Activation Object(AO)(包含形参、arguments、函数定义和函数对象、定义的变量)
+  - 作用域链
+  - this 绑定的值
+
+![函数](/public/images/advanced-javasript/1-5.png)
+
+##### 作用域链
+
+当我们查找一个对象时, 真实的查找是沿着作用域链查找
+![作用域链](/public/images/advanced-javasript/1-6.png)
+
+##### 嵌套函数
+
+![嵌套函数](/public/images/advanced-javasript/1-7.png)
+
+### 函数调用函数执行过程
+
+```js
+var message = "Hello Global";
+
+function foo() {
+  console.log(message); // 打印 Hello Global
+}
+
+function bar() {
+  var message = "Hello Bar";
+  foo();
+}
+bar();
+```
+
+![函数调用函数的执行过程](/public/images/advanced-javasript/1-8.png)
+
+### 作用域提升面试题
+
+```js
+var n = 100;
+function foo() {
+  n = 200;
+}
+foo();
+console.log(n); // 200
+```
+
+```js
+function foo() {
+  console.log(n); // undefined
+  var n = 200;
+  console.log(n); // 200
+}
+var n = 100;
+foo();
+```
+
+```js
+var n = 100;
+
+function foo() {
+  console.log(n); // 100
+}
+
+function bar() {
+  var n = 200;
+  console.log(n); // 200
+  foo();
+}
+bar();
+console.log(n); // 100
+```
+
+```js
+var a = 100;
+function foo() {
+  console.log(a); // undefined
+  return;
+  var a = 100;
+}
+foo();
+```
+
+```js
+function foo() {
+  var a = (b = 100); // => b = 100; var a = 100;
+}
+foo();
+
+console.log(a); // not defined
+console.log(b); // 100
+```
+
+# JavaScript 的内存管理和闭包
+
+### 内存管理
