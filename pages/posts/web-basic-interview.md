@@ -185,3 +185,130 @@ function throttle(fun, delay = 100) {
 
 - 握手是连接, 挥手是告别
 - 不要追求深入的细节
+
+# for...in 和 for...of 有什么区别
+
+**答:**
+
+- for...in 用于可枚举数据, 如 对象、数组、字符串, 得到 key
+- for...of 用于可迭代数据, 如 数组、字符串、Map、Set,得到 value
+
+### key 和 value
+
+- for...in 遍历得到 key
+- for...of 遍历得到 value
+
+### 适用于不同的数据类型
+
+- 遍历对象: for...in
+- 遍历 Map Set: for...of
+- 遍历 generator: for...of
+
+### 可枚举 VS 可迭代
+
+- for...in: 用于**可枚举**数据, 如 对象、数组、字符串
+- for...of: 用于**可迭代**数据, 如 数组、字符串、Map、Set
+
+# for await...of 有什么作用?
+
+**答:**
+
+- for await...of 用于遍历多个 Promise
+
+```js
+...
+
+const list = [p1, p2, p3];
+Promise.all(list).then((res) => console.log(res));
+
+for await (let res of list) {
+  console.log(res);
+}
+```
+
+# offsetHeight scrollHeight clientHeight 的区别
+
+### 计算规则
+
+- offsetHeight offsetWidth: border + padding + content
+- clientHeight clientWidth: padding + content
+- scrollHeight scrollWidth: padding + 实际内容尺寸
+
+# HTMLCollection 和 NodeList 区别
+
+### Node 和 Element
+
+- DOM 是一棵树, 所有节点都是 Node
+- Node 是 Element 的基类
+- ELement 是其他 HTML 元素的基类, 如 HTMLDivElement
+
+![Node和Element](/public/images/web-interview/2-5.png)
+
+### HTMLCollection 和 NodeList
+
+- HTMLCollection 是 Element 的集合
+- NodeList 是 Node 集合
+
+### 划重点
+
+- 获取 Node 和 Element 的返回结果可能不一样
+- 如: elem.childNodes 和 elem.children 不一样
+- 前者会包含 Text 和 Comment 节点, 后者不会
+
+### 扩展: 类数组 -> 数组
+
+**HTMLCollection 和 NodeList 都不是数组, 而是"类数组"**
+
+# Vue computed 和 watch 的区别
+
+**答:**
+
+- computed 用于计算产出新的数据, 有缓存
+- watch 用于监听现有数据
+
+### 两者用途不同
+
+- computed 用于计算产生新的数据
+- watch 用于监听现有数据
+
+### computed 有缓存
+
+- computed 有缓存
+- method 没有缓存
+
+# Vue 组件通信有几种方式, 尽量全面
+
+- props 和 $emit
+- 自定义事件
+- $attrs
+- $parent
+- $refs
+- provide/inject
+- Vuex
+
+### 不同场景
+
+- 父子组件
+- 上下级组件(跨多级)通信
+- 全局组件
+
+##### props 和 $emit
+
+- Vue2 与 Vue3 相同
+- OptionAPI 与 CompositionAPI 用法差异
+
+##### 自定义事件
+
+- Vue2: new Vue() => event
+- Vue3: 引入第三方的自定义事件
+
+- 组件销毁时需要 off 事件
+- on 和 off 的时候 需要指定函数名字
+
+##### $attrs
+
+- Vue3 中 把$listeners 合并到了$attrs
+- Props 和 emits 的候补
+- inheritAttrs: 去除 attrs
+- 当子节点只有一个独立节点时, 节点会继承一些 DOM 属性
+- 可以实现上下级透传, 需要依赖 v-bind='$attrs'
