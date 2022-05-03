@@ -253,7 +253,7 @@ console.log(b); // 100
   - 从广义角度来说: JavaScript 中的函数都是闭包
   - 从狭义角度来说: JavaScript 中的函数, 如果访问了外层作用域的变量, 那它是一个闭包
 
-##### JavaScript 中函数是一等公民
+### JavaScript 中函数是一等公民
 
 **JavaScript 中函数是非常重要的, 并且是一等公民**
 
@@ -276,7 +276,7 @@ obj.foo();
 nums.filter();
 ```
 
-##### 数组中常用的五个高阶函数
+### 数组中常用的五个高阶函数
 
 **高阶函数: 把一个函数如果接受另外一个函数作为参数,或者该函数会返回另外一个函数作为返回值的函数, 那么这个函数就称之为是一个高阶函数**
 
@@ -286,7 +286,7 @@ nums.filter();
 4. find / findIndex
 5. reduce: 累加
 
-##### 闭包的访问过程
+### 闭包的访问过程
 
 ```js
 function makeAdder(count) {
@@ -301,11 +301,11 @@ console.log(add10);
 
 ![闭包的访问过程](/public/images/advanced-javasript/2-6.png)
 
-##### 闭包的执行过程
+### 闭包的执行过程
 
 ![闭包的执行过程](/public/images/advanced-javasript/2-5.png)
 
-##### 闭包的内存泄露
+### 闭包的内存泄露
 
 **为什么经常会说闭包有内存泄露?**
 

@@ -312,3 +312,98 @@ for await (let res of list) {
 - inheritAttrs: 去除 attrs
 - 当子节点只有一个独立节点时, 节点会继承一些 DOM 属性
 - 可以实现上下级透传, 需要依赖 v-bind='$attrs'
+
+##### $parent
+
+- mounted(onMounted)生命周期中获取
+- this.$parent.xxx 获取父组件
+
+##### $refs
+
+- mounted(onMounted)生命周期中获取
+- this.$refs.xxx 获取子组件
+
+##### provide inject
+
+传递静态数据
+
+```js
+...
+provide:{ info:"xxx" }
+...
+```
+
+```js
+...
+inject:["info"]
+...
+```
+
+传递非静态数据
+
+```js
+...
+data(){
+  return{
+    name:"张三"
+  }
+},
+provide(){
+  return{
+    info:computed(()=>this.name)
+  }
+}
+...
+```
+
+# Vuex mutation action 区别
+
+**答:**
+
+- mutation: 原子操作, 必须同步代码
+- action: 可包含多个 mutation, 可以同步异步代码
+
+# JavaScript 严格模式有什么特点(重点)
+
+### 开启严格模式
+
+##### 全局开启
+
+```js
+"use strict";
+```
+
+##### 某个函数开启
+
+```js
+function foo() {
+  "use strict";
+}
+```
+
+### 特点
+
+- 全局变量必须先声明
+- 禁止使用 with
+- 创建 eval 作用域
+- 禁止 this 指向 window
+- 函数参数不能重名
+
+# HTTP 跨域请求时为什么要发送 options 请求
+
+**答:**
+
+- options 请求是跨域请求之前的预检查
+- 浏览器自行发起,无需人为干预
+- 不会影响实际的功能
+
+### 跨域请求
+
+- 浏览器同源策略
+- 同源策略一般限制 Ajax 网络请求, 不能跨域请求 server
+- 不会限制<link><img><script><iframe>加载第三方资源
+
+### 多余的 options 请求
+
+跨域请求会发现 Request Method:OPTIONS
+Access-Control-Allow-Methods:GET,HEAD,PUT,PATCH,POST,DELETE
