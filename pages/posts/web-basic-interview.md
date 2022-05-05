@@ -401,7 +401,7 @@ function foo() {
 
 - 浏览器同源策略
 - 同源策略一般限制 Ajax 网络请求, 不能跨域请求 server
-- 不会限制<link><img><script><iframe>加载第三方资源
+- 不会限制` <link>``<img>``<script>``<iframe> `加载第三方资源
 
 ### 多余的 options 请求
 
