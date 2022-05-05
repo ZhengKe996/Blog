@@ -580,6 +580,10 @@ if (cluster.isMaster) {
 
 **答:**
 
+- React diff - 仅右移
+- Vue2 - 双端比较
+- Vue3 - 最长递增子序列
+
 ### diff 算法
 
 - diff 算法很早就有
@@ -607,3 +611,24 @@ if (cluster.isMaster) {
 ### Vue3 - 最长递增子序列
 
 ![Vue3](/public/images/web-interview/3-6.png)
+
+# Vue React 为何循环时必须使用 key?
+
+**答:**
+
+- vdom diff 算法会根据 key 判断元素是否要删除？
+- 匹配了 key, 则只移动元素 - 性能较好
+- 未匹配 key, 则删除重建 - 性能较差
+
+![React](/public/images/web-interview/3-7.png)
+
+# Vue-router MemoryHistory(abstract)
+
+**答:**
+URL 不会发生变化
+
+### Vue-router 三种模式
+
+- Hash
+- WebHistory
+- MemoryHistory(V4 之前叫做 abstract history)
