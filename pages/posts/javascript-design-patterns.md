@@ -248,3 +248,275 @@ class Creator {
 - 一个 对象/实例 只能被创建一次
 - 创建之后缓存起来，以后继续用
 - 即：一个系统只有一个
+
+### TypeScript 静态属性实现单例
+
+![静态属性](/public/images/design-patterns/010.png)
+
+```ts
+class SingleTon {
+  private constructor() {}
+  private static instance: SingleTon | null;
+
+  static getInstance(): SingleTon {
+    if (SingleTon.instance == null) {
+      SingleTon.instance = new SingleTon();
+    }
+    return SingleTon.instance;
+  }
+}
+```
+
+### JavaScript 实现单例
+
+```js
+function genGetInstance() {
+  let instance;
+  class Singleton {}
+
+  return () => {
+    if (instance == null) {
+      instance = new Singleton();
+    }
+    return instance;
+  };
+}
+```
+
+### 是否符合设计原则？
+
+- 内部封装 getInstance 高内聚，低耦合
+
+### 单例思想应用场景
+
+- 自定义事件 EventBus 全局唯一
+- Vuex Redux 的 store 全局唯一
+- 登录框等
+- (严格的单例模式应用不多，单例思想随处可见)
+
+# 观察者模式
+
+![观察者模式演示](/public/images/design-patterns/011.png)
+
+```ts
+class Subject {
+  private state: number = 0;
+  private observers: Observer[] = [];
+
+  getState(): number {
+    return this.state;
+  }
+
+  setState(newState: number) {
+    this.state = newState;
+    this.notify();
+  }
+
+  // 添加观察者
+  attach(observer: Observer) {
+    this.observers.push(observer);
+  }
+
+  // 通知
+  private notify() {
+    this.observers.forEach((observer) => {
+      observer.update(this.state);
+    });
+  }
+}
+
+class Observer {
+  name: string;
+  constructor(name: string) {
+    this.name = name;
+  }
+
+  update(state: number) {
+    console.log(`${this.name} updated, state is ${state}`);
+  }
+}
+```
+
+### 是否符合设计原则?
+
+- Observer 与 Subject 分离 解耦
+- Observer 可自由扩展
+- Subject 可自由扩展
+
+### 观察者模式使用场景
+
+- DOM 事件
+- Vue React 组件生命周期
+- Vue watch
+- Vue 组件更新过程
+- 各种异步回调
+- MutationObserver
+
+### 各种异步回调函数
+
+- 定时器 setTimeout setInterval
+- Promise.then
+- Node.js - stream readline httpServer
+
+# 迭代器模式
+
+- 顺序访问有序结构(数组、NodeList)
+- 不知道数据的长度和内部结构
+- 高内聚、低耦合
+
+![迭代器模式演示](/public/images/design-patterns/012.png)
+
+```ts
+class DataIterator {
+  private data: number[];
+  private index = 0;
+  constructor(container) {
+    this.data = container.data;
+  }
+
+  next(): number | null {
+    if (this.hasNext()) {
+      return this.data[this.index++];
+    }
+  }
+
+  hasNext(): boolean {
+    if (this.index >= this.data.length) return false;
+    return true;
+  }
+}
+
+class DataContainer {
+  data: number[] = [10, 20, 30, 40, 50];
+  getIterator() {
+    return new DataIterator(this);
+  }
+}
+```
+
+### 是否符合设计原则
+
+- 使用者和目标分离 解耦
+- 目标能自行控制其内部逻辑
+- 使用者不关心目标的内部结构
+
+### 普通的 for 循环不是迭代器
+
+```ts
+const arr: number[] = [10, 20, 30];
+const length = arr.length;
+for (let i = 0; i < length; i++) {
+  console.log(arr[i]);
+}
+```
+
+### 简易迭代器
+
+```ts
+const pList = document.querySelectorAll("p");
+pList.forEach((p) => console.log(p));
+```
+
+### 迭代器模式 场景
+
+- 有序结构
+- Symbol.iterator 和迭代器
+- 迭代器的应用
+
+### 有序结构
+
+1. 字符串
+2. 数组
+3. NodeList 等 DOM 集合
+4. Map
+5. Set
+
+### Symbol.iterator
+
+- 所有有序对象，都内置 Symbol.iterator 方法
+- 执行该方法，返回一个迭代器对象
+
+```ts
+interface IteratorRes {
+  value: number | undefined;
+  done: boolean;
+}
+
+class CustomIterator {
+  private length = 3;
+  private index = 0;
+
+  next(): IteratorRes {
+    this.index++;
+    if (this.index <= this.length) {
+      return { value: this.index, done: false };
+    }
+    return { value: undefined, done: true };
+  }
+
+  [Symbol.interator]() {
+    return this;
+  }
+}
+```
+
+### 迭代器的作用
+
+- 用于 for...of (对比 for...in)
+- 数组：解构、扩展运算符、Array.from
+- 用于 Promise.all Promise.race
+- 用于 yield\*
+
+### Generator 生成器
+
+```ts
+function* genNums() {
+  yield 10;
+  yield 20;
+  yield 30;
+  yield 40;
+}
+const numsIterator = genNums();
+console.log(numsIterator.next());
+```
+
+```ts
+function* genNums() {
+  yield* [1, 2, 3, 4, 5]; // 有序结构，已经实现了 [Symbol.Iterator]
+}
+const numsIterator = genNums();
+console.log(numsIterator.next());
+```
+
+```ts
+class CustomIterator {
+  private data: number[];
+  constructor() {
+    this.data = [100, 200, 300];
+  }
+
+  *[Symbol.iterator]() {
+    yield* this.data;
+  }
+}
+
+const iterator = new CustomIterator();
+for (let n of iterator) {
+  console.log(n);
+}
+```
+
+##### Generator + yield 遍历 DOM 树
+
+```ts
+function* traverse(elemList: Element[]): any {
+  for (const elem of elemList) {
+    yield elem;
+
+    const children = Array.from(elem.children);
+    if (children.length) {
+      yield* traverse(children);
+    }
+  }
+}
+```
