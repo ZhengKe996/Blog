@@ -520,3 +520,21 @@ function* traverse(elemList: Element[]): any {
   }
 }
 ```
+
+# 原型模式
+
+![原型模式演示](/public/images/design-patterns/013.png)
+
+### 原型
+
+- 函数 （class）都有显示原型 prototype
+- 对象都有隐式原型 `__proto__`
+- 对象 `__proto__` 指向其构造函数的 prototype
+
+### 原型链
+
+![原型链演示](/public/images/design-patterns/014.png)
+
+### 原型模式场景
+
+- Object.create
