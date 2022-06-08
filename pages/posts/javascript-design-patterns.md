@@ -538,3 +538,154 @@ function* traverse(elemList: Element[]): any {
 ### 原型模式场景
 
 - Object.create
+
+### 面试题: {} 和 Object.create({})有什么区别?
+
+- {}: 当前默认的 proptype 的显示原型
+- Object.create({}): 隐式原型指向空对象{}
+
+### 对象属性描述符
+
+##### 获取和设置
+
+`Object.getOwnPropertyDescriptor(obj,'x')`
+
+`Object.defineProperty(obj,'y')`
+
+##### 有哪些属性描述符
+
+- value
+- configurable
+- writable
+- enumerable
+
+##### value
+
+- 定义属性值
+- 没有 value 则看不到对象属性
+
+##### configurable
+
+- 是否可以 delete 删除并重新定义
+- 是否可以修改其他属性描述符
+- 是否可以修改 get set
+
+##### writable
+
+- 属性值是否可以被修改
+- 对比 Object.freeze() '冻结'
+  1. 现有属性不可被修改
+  2. 不可添加新属性
+- 对比 Object.seal() '密封'
+  1. 现有属性可以被修改
+  2. 不可添加新属性
+
+##### enumerable
+
+- 是否可以通过 for...in 遍历
+
+##### 原型属性的 enumerable
+
+- 多年之前，for...in 可以遍历出原型属性
+- 当时需要 hasOwnProperty 来判断: 是否是原型属性
+- 现在 for...in 通过 enumerable 来判断
+
+### 如何遍历 Symbol 属性?
+
+`Reflect.ownkeys(obj)`
+
+### 注意事项
+
+- 原型模式不常用，但原型链是 JavaScript 基础，必须掌握
+- 属性描述符日常不会直接使用，但它是理解对象属性的重要基础
+
+# 装饰器模式
+
+针对一个对象，动态的添加新功能，但不改变它原有的功能
+
+![装饰器模式演示](/public/images/design-patterns/015.png)
+
+```ts
+class Circle {
+  draw() {
+    console.log("画一个圆");
+  }
+}
+
+class Decorator {
+  private circle: Circle;
+  constructor(circle: Circle) {
+    this.circle = circle;
+  }
+
+  draw() {
+    this.circle.draw();
+    this.setBorder();
+  }
+  private setBorder() {
+    console.log("设置边框颜色");
+  }
+}
+```
+
+### 是否符合开发封闭原则
+
+- 装饰器和目标分离，解耦
+- 装饰器可以自由扩展
+- 目标可以自由扩展
+
+### TypeScript 装饰器语法
+
+**注意: `tsconfig.json` 中新增 `experimentalDecorators:true`**
+
+##### 装饰 class
+
+```ts
+function testable(target: any) {
+  target.isTestable = true;
+}
+
+@testable
+class Foo {
+  static isTestable?: boolean;
+}
+```
+
+##### 装饰 class method
+
+```ts
+function readOnly(target: any, key: string, descriptor: PropertyDescriptor) {
+  descriptor.writable = false;
+}
+
+function configurable(value: boolean) {
+  return function (target: any, key: string, descriptor: PropertyDescriptor) {
+    descriptor.configurable = value;
+  };
+}
+
+class Foo {
+  private name = "张三";
+  private age = 20;
+
+  @readOnly
+  getName() {
+    return this.name;
+  }
+
+  @configurable(false)
+  getAge() {
+    return this.age;
+  }
+}
+```
+
+装饰器就是一个函数，结合 ES 的 Decorator 语法
+
+# AOP
+
+- Aspect Oriented Program 面向切面编程
+- 业务和系统基础功能分离，和 Decorator 很配
+- AOP 和 OOP 并不冲突
+
+![AOP演示](/public/images/design-patterns/016.png)
