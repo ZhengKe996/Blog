@@ -402,3 +402,52 @@ Vue React 默认屏蔽 XSS 攻击
 6. `position:absolute/fixed;`
 
 # 如何实现网页多标签通讯?
+
+- WebSocket 需要服务端，成本较高
+- localStorage 简单易用，推荐
+- SharedWorker 调试不方便，不兼容 IE11
+
+### 使用 WebSocket
+
+- 无跨域限制
+- 需要服务端支持，成本高
+
+### 通过 localStorage 通讯
+
+- 同域的 A 和 B 两个页面
+- A 页面设置 localStorage
+- B 页面可以监听到 localStorage 值的修改
+
+### 通过 SharedWorker 通讯
+
+- SharedWorker 是 WebWorker 的一种
+- WebWorker 可以开启子进程执行 JavaScript，但不能操作 DOM
+- SharedWorker 可以单独开启一个进程，用于同域页面通讯
+
+# 网页和 iframe 如何通讯?
+
+- 使用 postMessage 通讯
+- 使用 message 接受
+- 注意跨域限制和判断
+
+**父页面**
+![通讯](/public/images/web-interview/4-13.png)
+**子页面**
+![通讯](/public/images/web-interview/4-14.png)
+
+**通讯结果**
+![通讯](/public/images/web-interview/4-15.png)
+
+# 请描述 koa2 洋葱圈模型
+
+![洋葱圈模型](/public/images/web-interview/4-16.png)
+
+### koa2
+
+- 一个简约、流行的 nodejs 框架
+- 通过中间件组织代码
+- 多个中间件以 洋葱圈模型 执行
+
+### 代码执行顺序
+
+![代码执行顺序](/public/images/web-interview/4-15.png)
