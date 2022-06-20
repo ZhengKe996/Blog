@@ -14,6 +14,7 @@ duration: 25min
 协议 域名 端口 同域
 
 http://www.fanzhengke.top:9999
+
 http://www.fanzhengke.top:8888
 
 ### 为什么浏览器不支持跨域
