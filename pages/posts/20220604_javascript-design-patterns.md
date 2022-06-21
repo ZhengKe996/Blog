@@ -689,3 +689,63 @@ class Foo {
 - AOP 和 OOP 并不冲突
 
 ![AOP演示](/public/images/design-patterns/016.png)
+
+# 代理模式
+
+- 针对一个对象
+- 设置代理，控制这个对象的访问
+- 用户不得直接访问对象，而要通过代理
+
+![代理模式](/public/images/design-patterns/017.png)
+
+![代理模式](/public/images/design-patterns/018.png)
+
+```ts
+class RealImg {
+  fileName: string;
+  constructor(fileName: string) {
+    this.fileName = fileName;
+  }
+  display() {
+    this.loadFromDist();
+    console.log("display", this.fileName);
+  }
+  private loadFromDist() {
+    console.log("loading", this.fileName);
+  }
+}
+
+class ProxyImg {
+  realImg: RealImg;
+  constructor(fileName: string) {
+    this.realImg = new RealImg(fileName);
+  }
+  // 代理
+  display() {
+    this.realImg.display();
+  }
+}
+```
+
+### 是否符合设计原则
+
+- 代理和目标分离、解耦
+- 代理可自行扩展
+- 目标也可自行扩展
+
+### 代理模式场景
+
+- DOM 事件代理（委托）
+- Webpack devServer proxy
+- Nginx 反向代理
+
+### DOM 事件代理
+
+- 事件绑定到父容器上，而非目标节点
+- 适合目标较多或数量不确定（如无线加载的瀑布流图片列表）
+
+### Webpack devServer proxy
+
+- 开发环境，前端请求服务端 API
+- 代理到本地服务器，或者 mock 接口
+- 正向代理
