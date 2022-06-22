@@ -749,3 +749,239 @@ class ProxyImg {
 - 开发环境，前端请求服务端 API
 - 代理到本地服务器，或者 mock 接口
 - 正向代理
+
+# Proxy 语法
+
+```ts
+const start = {
+  name: "zhangsan",
+  age: 18,
+  phone: "10086",
+  price: 0,
+};
+
+const agent = new Proxy(start, {
+  get(target, key) {
+    if (key === "phone") {
+      return "10010";
+    }
+    if (key === "price") {
+      return 100 * 1000;
+    }
+    return Reflect.get(target, key); // 反射 return target[key]
+  },
+
+  set(target, key, value): boolean {
+    if (key === "price") {
+      if (value < 100 * 1000) {
+       return throw new Error("价格低了");
+      }
+      console.log('报价成功',value)
+      return Reflect.set(target,key,value)
+    }
+    return false
+  },
+});
+```
+
+### Proxy 使用场景
+
+- 跟踪属性访问
+- 隐藏属性
+- 验证属性
+- 记录实例
+
+### Proxy 可能遇到的坑
+
+- 捕获器不变式
+- 关于 this
+
+##### 捕获器不变式
+
+```ts
+const obj = { x: 100, y: 0 };
+
+Object.defineProperty(obj, "y", {
+  value: 200,
+  writable: false,
+  configurable: false,
+});
+
+const proxy = new Proxy(obj, {
+  get() {
+    return "abc";
+  },
+});
+
+console.log(proxy.x); // abc
+console.log(proxy.y); //报错
+```
+
+##### 关于 this
+
+```ts
+const user = {
+  name: "张三",
+  getName() {
+    console.log("this...", this);
+    return this.name;
+  },
+};
+
+const proxy = new Proxy(user, {});
+
+proxy.getName();
+```
+
+# 职责链模式
+
+- 一个流程，需要多个角色处理
+- 把多个角色分开，通过一个'链'条串联起来
+- 各个角色相互分离，互不干扰（高内聚低耦合）
+
+### 职责链场景
+
+- JQuery 链式操作
+- Promise 链式操作
+
+# 策略模式
+
+- 多个条件分支
+- 不用很多 if...else 或 switch...case
+- 每个分支单独处理，相互隔离
+
+```ts
+interface IUser {
+  buy: () => void;
+}
+
+class OrdinaryUser implements IUser {
+  buy() {
+    console.log("普通用户的购买");
+  }
+}
+
+class MemberUser implements IUser {
+  buy() {
+    console.log("会员用户的购买");
+  }
+}
+
+class VIPUser implements IUser {
+  buy() {
+    console.log("VIP 用户的购买");
+  }
+}
+```
+
+# 适配器模式
+
+- 我们要使用一个对象
+- 而它 API 返回格式不一定完全适合我们
+- 需要通过适配器转换一下
+
+# MVC MVVM
+
+### MVC
+
+- View 传送指令到 COntroller
+- COntroller 执行业务逻辑，修改 Model
+- Model 变化重新渲染 View
+
+![MVC](/public/images/design-patterns/019.png)
+
+### MVVM
+
+- View - Vue template
+- Model - Vue data
+- ViewModel - Vue 其他核心功能，负责连接 View 和 Model
+
+![MVVM](/public/images/design-patterns/020.png)
+
+# 打车(面试题)
+
+1. 打车时，你可以打快车和专车
+2. 无论什么车，都有车牌号和车辆名称
+3. 价格不同，快车每公里 1 元，专车每公里 2 元
+4. 打车时，要启动行程并显示车辆信息
+5. 结束行程时，显示价格（假定行驶了 5 公里）
+
+### 分析
+
+##### 数据模型
+
+1. 车 父类
+2. 快车，专车 子类
+3. 行程，和车是引用关系
+
+##### 定义属性和方法
+
+- 车：车牌号，名称（父类），价格（子类）
+- 行程：开始，结束，关联的车辆
+
+![打车问题](/public/images/design-patterns/021.png)
+
+### 代码演示
+
+```ts
+abstract class Car {
+  name: string;
+  number: string;
+  abstract price: number;
+  constructor(name: string, number: string) {
+    this.name = name;
+    this.number = number;
+  }
+}
+
+class ExpressCar extends Car {
+  price = 1;
+  constructor(name: string, number: string) {
+    super(name, number);
+  }
+}
+
+class SpecialCar extends Car {
+  price = 2;
+  constructor(name: string, number: string) {
+    super(name, number);
+  }
+}
+
+class Trip {
+  car: Car; // 类型是 Car 这样可以兼容 Car的子类（依赖倒置原则）
+  constructor(car: Car) {
+    this.car = car;
+  }
+  start() {
+    console.log(`行程开始，name ${this.car.name}, number ${this.car.number}`);
+  }
+  end() {
+    console.log(`行程结束，价格${this.car.price * 5}`);
+  }
+}
+```
+
+# 停车场(面试题)
+
+1. 某停车场，分 3 层，每层 100 车位
+2. 每个车位可以监控车辆的进入和离开
+3. 车辆进入前，显示每层的空余车位数量
+4. 车辆进入时，摄像头可识别车牌号和时间
+5. 车辆出来时，出口显示器显示车牌号和停车时长
+
+### 分析
+
+##### 数据模型
+
+- 车
+- 停车场，层，成为
+- 摄像头，出口显示屏
+
+### 流程
+
+1. 进入之前：显示当前空余车位
+2. 进入：停车数量 +1，计算开始时间
+3. 离开：计算结束时间，停车数量 -1
+
+![停车场问题](/public/images/design-patterns/022.png)
