@@ -7,9 +7,7 @@ lang: zh
 duration: 25min
 ---
 
-# 九种常见跨域手段
-
-### 同源策略
+#### 同源策略
 
 协议 域名 端口 同域
 
@@ -17,13 +15,13 @@ http://www.fanzhengke.top:9999
 
 http://www.fanzhengke.top:8888
 
-### 为什么浏览器不支持跨域
+#### 为什么浏览器不支持跨域
 
 cookie LocalStorage
 DOM 元素也有同源策略 iframe
 Ajax 也不支持跨域
 
-### 实现跨域
+#### 实现跨域
 
 1. jsonp
 2. cors

@@ -6,9 +6,9 @@ lang: zh
 duration: 35min
 ---
 
-# 面向对象 和 UML 类图
+## 面向对象 和 UML 类图
 
-### 面向对象
+#### 面向对象
 
 - OOP - Object Oriented Program
 - 将抽象的编程概念 想象成一个对象，更好理解
@@ -25,7 +25,7 @@ duration: 35min
 - 封装 - 高内聚，低耦合
 - 多态 - 更好的扩展性
 
-### UML
+#### UML
 
 - 统一建模语言 Unified Modeling Language
 - 软件设计的绘图标准
@@ -44,19 +44,19 @@ duration: 35min
 - 泛化 - 继承父类
 - 关联 - A 是 B 的是属性
 
-###### 实现
+##### 实现
 
 ![UML实现接口](/public/images/design-patterns/002.png)
 
-###### 泛化
+##### 泛化
 
 ![UML泛化](/public/images/design-patterns/003.png)
 
-###### 关联
+##### 关联
 
 ![UML关联](/public/images/design-patterns/004.png)
 
-### 关联关系的细化
+#### 关联关系的细化
 
 - 聚合 - 整体包含部分，部分可以脱离整体而单独存在
 - 组合 - 整体包含部分，部分不可以脱离整体
@@ -64,9 +64,9 @@ duration: 35min
 
 ![UML关联关系的细化](/public/images/design-patterns/005.png)
 
-# 设计原则: 先设计 后模式
+## 设计原则: 先设计 后模式
 
-### S O L I D 五大设计原则
+#### S O L I D 五大设计原则
 
 - S 单一职责原则
 - O 开放封闭原则
@@ -103,13 +103,13 @@ duration: 35min
 - 面向接口编程
 - 而非面向实例
 
-# 《Unix/Linux》设计哲学
+## 《Unix/Linux》设计哲学
 
-### 大型系统的设计
+#### 大型系统的设计
 
 ![大型系统的设计](/public/images/design-patterns/006.png)
 
-### 设计准则
+#### 设计准则
 
 - 小即是美
 - 让每个程序只做一件事
@@ -120,23 +120,23 @@ duration: 35min
 - 允许用户定制环境(考虑多环境、扩展性)
 - 寻求 90% 的解决方案
 
-# 23 种设计模式
+## 23 种设计模式
 
 ![大型系统的设计](/public/images/design-patterns/007.png)
 
-### 从设计到模式
+#### 从设计到模式
 
 - 设计，即设计原则，设计思想
 - 模式，前辈们总结出来的固定套路，直接套用
 - 1955 年《设计模式：可复面向对象软件的基础》23 种设计模式
 
-### 设计的价值
+#### 设计的价值
 
 - 从需求到设计，从设计到开发
 - 为何需要设计?
 - 为何需要模式?
 
-# 前端常用的 7 种设计模式
+## 前端常用的 7 种设计模式
 
 - 工厂模式
 - 单例模式
@@ -146,9 +146,9 @@ duration: 35min
 - 装饰器模式
 - 代理模式
 
-# 工厂模式
+## 工厂模式
 
-### 简易的工厂模式
+#### 简易的工厂模式
 
 ![简易的工厂模式](/public/images/design-patterns/008.png)
 
@@ -184,7 +184,7 @@ const p1 = creator.create("p1");
 const p2 = creator.create("p2");
 ```
 
-### 标准的工厂模式
+#### 标准的工厂模式
 
 ![标准的工厂模式](/public/images/design-patterns/009.png)
 
@@ -235,13 +235,13 @@ class Creator {
 }
 ```
 
-### 是否符合设计原则
+#### 是否符合设计原则
 
 - 工厂和类分离，解耦
 - 可以扩展多个类（派生类或平行的类）
 - 工厂的创建逻辑也可以自由扩展
 
-# 单例模式
+## 单例模式
 
 前端对单例模式并不常用，但是单例思想随处可见
 
@@ -249,7 +249,7 @@ class Creator {
 - 创建之后缓存起来，以后继续用
 - 即：一个系统只有一个
 
-### TypeScript 静态属性实现单例
+#### TypeScript 静态属性实现单例
 
 ![静态属性](/public/images/design-patterns/010.png)
 
@@ -267,7 +267,7 @@ class SingleTon {
 }
 ```
 
-### JavaScript 实现单例
+#### JavaScript 实现单例
 
 ```js
 function genGetInstance() {
@@ -283,18 +283,18 @@ function genGetInstance() {
 }
 ```
 
-### 是否符合设计原则？
+#### 是否符合设计原则？
 
 - 内部封装 getInstance 高内聚，低耦合
 
-### 单例思想应用场景
+#### 单例思想应用场景
 
 - 自定义事件 EventBus 全局唯一
 - Vuex Redux 的 store 全局唯一
 - 登录框等
 - (严格的单例模式应用不多，单例思想随处可见)
 
-# 观察者模式
+## 观察者模式
 
 ![观察者模式演示](/public/images/design-patterns/011.png)
 
@@ -337,13 +337,13 @@ class Observer {
 }
 ```
 
-### 是否符合设计原则?
+#### 是否符合设计原则?
 
 - Observer 与 Subject 分离 解耦
 - Observer 可自由扩展
 - Subject 可自由扩展
 
-### 观察者模式使用场景
+#### 观察者模式使用场景
 
 - DOM 事件
 - Vue React 组件生命周期
@@ -352,13 +352,13 @@ class Observer {
 - 各种异步回调
 - MutationObserver
 
-### 各种异步回调函数
+#### 各种异步回调函数
 
 - 定时器 setTimeout setInterval
 - Promise.then
 - Node.js - stream readline httpServer
 
-# 迭代器模式
+## 迭代器模式
 
 - 顺序访问有序结构(数组、NodeList)
 - 不知道数据的长度和内部结构
@@ -394,13 +394,13 @@ class DataContainer {
 }
 ```
 
-### 是否符合设计原则
+#### 是否符合设计原则
 
 - 使用者和目标分离 解耦
 - 目标能自行控制其内部逻辑
 - 使用者不关心目标的内部结构
 
-### 普通的 for 循环不是迭代器
+#### 普通的 for 循环不是迭代器
 
 ```ts
 const arr: number[] = [10, 20, 30];
@@ -410,20 +410,20 @@ for (let i = 0; i < length; i++) {
 }
 ```
 
-### 简易迭代器
+#### 简易迭代器
 
 ```ts
 const pList = document.querySelectorAll("p");
 pList.forEach((p) => console.log(p));
 ```
 
-### 迭代器模式 场景
+#### 迭代器模式 场景
 
 - 有序结构
 - Symbol.iterator 和迭代器
 - 迭代器的应用
 
-### 有序结构
+#### 有序结构
 
 1. 字符串
 2. 数组
@@ -431,7 +431,7 @@ pList.forEach((p) => console.log(p));
 4. Map
 5. Set
 
-### Symbol.iterator
+#### Symbol.iterator
 
 - 所有有序对象，都内置 Symbol.iterator 方法
 - 执行该方法，返回一个迭代器对象
@@ -460,14 +460,14 @@ class CustomIterator {
 }
 ```
 
-### 迭代器的作用
+#### 迭代器的作用
 
 - 用于 for...of (对比 for...in)
 - 数组：解构、扩展运算符、Array.from
 - 用于 Promise.all Promise.race
 - 用于 yield\*
 
-### Generator 生成器
+#### Generator 生成器
 
 ```ts
 function* genNums() {
@@ -521,30 +521,30 @@ function* traverse(elemList: Element[]): any {
 }
 ```
 
-# 原型模式
+## 原型模式
 
 ![原型模式演示](/public/images/design-patterns/013.png)
 
-### 原型
+#### 原型
 
 - 函数 （class）都有显示原型 prototype
 - 对象都有隐式原型 `__proto__`
 - 对象 `__proto__` 指向其构造函数的 prototype
 
-### 原型链
+#### 原型链
 
 ![原型链演示](/public/images/design-patterns/014.png)
 
-### 原型模式场景
+#### 原型模式场景
 
 - Object.create
 
-### 面试题: {} 和 Object.create({})有什么区别?
+#### 面试题: {} 和 Object.create({})有什么区别?
 
 - {}: 当前默认的 proptype 的显示原型
 - Object.create({}): 隐式原型指向空对象{}
 
-### 对象属性描述符
+#### 对象属性描述符
 
 ##### 获取和设置
 
@@ -590,16 +590,16 @@ function* traverse(elemList: Element[]): any {
 - 当时需要 hasOwnProperty 来判断: 是否是原型属性
 - 现在 for...in 通过 enumerable 来判断
 
-### 如何遍历 Symbol 属性?
+#### 如何遍历 Symbol 属性?
 
 `Reflect.ownkeys(obj)`
 
-### 注意事项
+#### 注意事项
 
 - 原型模式不常用，但原型链是 JavaScript 基础，必须掌握
 - 属性描述符日常不会直接使用，但它是理解对象属性的重要基础
 
-# 装饰器模式
+## 装饰器模式
 
 针对一个对象，动态的添加新功能，但不改变它原有的功能
 
@@ -628,13 +628,13 @@ class Decorator {
 }
 ```
 
-### 是否符合开发封闭原则
+#### 是否符合开发封闭原则
 
 - 装饰器和目标分离，解耦
 - 装饰器可以自由扩展
 - 目标可以自由扩展
 
-### TypeScript 装饰器语法
+#### TypeScript 装饰器语法
 
 **注意: `tsconfig.json` 中新增 `experimentalDecorators:true`**
 
@@ -682,7 +682,7 @@ class Foo {
 
 装饰器就是一个函数，结合 ES 的 Decorator 语法
 
-# AOP
+## AOP
 
 - Aspect Oriented Program 面向切面编程
 - 业务和系统基础功能分离，和 Decorator 很配
@@ -690,7 +690,7 @@ class Foo {
 
 ![AOP演示](/public/images/design-patterns/016.png)
 
-# 代理模式
+## 代理模式
 
 - 针对一个对象
 - 设置代理，控制这个对象的访问
@@ -727,30 +727,30 @@ class ProxyImg {
 }
 ```
 
-### 是否符合设计原则
+#### 是否符合设计原则
 
 - 代理和目标分离、解耦
 - 代理可自行扩展
 - 目标也可自行扩展
 
-### 代理模式场景
+#### 代理模式场景
 
 - DOM 事件代理（委托）
 - Webpack devServer proxy
 - Nginx 反向代理
 
-### DOM 事件代理
+#### DOM 事件代理
 
 - 事件绑定到父容器上，而非目标节点
 - 适合目标较多或数量不确定（如无线加载的瀑布流图片列表）
 
-### Webpack devServer proxy
+#### Webpack devServer proxy
 
 - 开发环境，前端请求服务端 API
 - 代理到本地服务器，或者 mock 接口
 - 正向代理
 
-# Proxy 语法
+## Proxy 语法
 
 ```ts
 const start = {
@@ -784,14 +784,14 @@ const agent = new Proxy(start, {
 });
 ```
 
-### Proxy 使用场景
+#### Proxy 使用场景
 
 - 跟踪属性访问
 - 隐藏属性
 - 验证属性
 - 记录实例
 
-### Proxy 可能遇到的坑
+#### Proxy 可能遇到的坑
 
 - 捕获器不变式
 - 关于 this
@@ -833,18 +833,18 @@ const proxy = new Proxy(user, {});
 proxy.getName();
 ```
 
-# 职责链模式
+## 职责链模式
 
 - 一个流程，需要多个角色处理
 - 把多个角色分开，通过一个'链'条串联起来
 - 各个角色相互分离，互不干扰（高内聚低耦合）
 
-### 职责链场景
+#### 职责链场景
 
 - JQuery 链式操作
 - Promise 链式操作
 
-# 策略模式
+## 策略模式
 
 - 多个条件分支
 - 不用很多 if...else 或 switch...case
@@ -874,15 +874,15 @@ class VIPUser implements IUser {
 }
 ```
 
-# 适配器模式
+## 适配器模式
 
 - 我们要使用一个对象
 - 而它 API 返回格式不一定完全适合我们
 - 需要通过适配器转换一下
 
-# MVC MVVM
+## MVC MVVM
 
-### MVC
+#### MVC
 
 - View 传送指令到 COntroller
 - COntroller 执行业务逻辑，修改 Model
@@ -890,7 +890,7 @@ class VIPUser implements IUser {
 
 ![MVC](/public/images/design-patterns/019.png)
 
-### MVVM
+#### MVVM
 
 - View - Vue template
 - Model - Vue data
@@ -898,7 +898,7 @@ class VIPUser implements IUser {
 
 ![MVVM](/public/images/design-patterns/020.png)
 
-# 打车(面试题)
+## 打车(面试题)
 
 1. 打车时，你可以打快车和专车
 2. 无论什么车，都有车牌号和车辆名称
@@ -906,7 +906,7 @@ class VIPUser implements IUser {
 4. 打车时，要启动行程并显示车辆信息
 5. 结束行程时，显示价格（假定行驶了 5 公里）
 
-### 分析
+#### 分析
 
 ##### 数据模型
 
@@ -921,7 +921,7 @@ class VIPUser implements IUser {
 
 ![打车问题](/public/images/design-patterns/021.png)
 
-### 代码演示
+#### 代码演示
 
 ```ts
 abstract class Car {
@@ -962,7 +962,7 @@ class Trip {
 }
 ```
 
-# 停车场(面试题)
+## 停车场(面试题)
 
 1. 某停车场，分 3 层，每层 100 车位
 2. 每个车位可以监控车辆的进入和离开
@@ -970,7 +970,7 @@ class Trip {
 4. 车辆进入时，摄像头可识别车牌号和时间
 5. 车辆出来时，出口显示器显示车牌号和停车时长
 
-### 分析
+#### 分析
 
 ##### 数据模型
 
@@ -978,7 +978,7 @@ class Trip {
 - 停车场，层，成为
 - 摄像头，出口显示屏
 
-### 流程
+#### 流程
 
 1. 进入之前：显示当前空余车位
 2. 进入：停车数量 +1，计算开始时间

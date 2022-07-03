@@ -20,14 +20,17 @@ import { isDark } from "~/logics";
           <ri-article-line class="md:hidden" />
         </router-link>
         <router-link to="/talks" class="lt-md:hidden"> Talks </router-link>
+
+        <router-link to="/leetcode" title="LeetCode">
+          <span class="lt-md:hidden">LeetCode</span>
+          <ri-lightbulb-line class="md:hidden" />
+        </router-link>
         <router-link to="/projects">
           <span class="lt-md:hidden">Projects</span>
           <ri-lightbulb-line class="md:hidden" />
         </router-link>
+
         <router-link to="/bookmarks" title="Bookmarks">
-          <ri-bookmark-line />
-        </router-link>
-        <router-link to="/leetcode" title="LeetCode">
           <ri-bookmark-line />
         </router-link>
         <a

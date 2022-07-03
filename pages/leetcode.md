@@ -9,5 +9,5 @@ display: ""
   <Plum/>
 </ClientOnly>
 
-### LeetCode 列表
-<ListPosts type="talk"/>
+
+<ListPosts type="LeetCode"/>
