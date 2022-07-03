@@ -1,0 +1,1 @@
+import{_ as o}from"./Post.5d3ff09a.js";import{u as s,o as c,c as n,w as r,a as _}from"./app.8b00054c.js";const m=_("div",{class:"prose m-auto"},null,-1),h=[],x={__name:"this",setup(p,{expose:a}){const t={meta:[]};return a({frontmatter:t}),s({meta:[]}),(d,f)=>{const e=o;return c(),n(e,{frontmatter:t},{default:r(()=>[m]),_:1})}}};export{x as default,h as meta};
