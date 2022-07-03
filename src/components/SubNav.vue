@@ -15,6 +15,13 @@
       >
         Talks
       </router-link>
+      <router-link
+        to="/leetcode"
+        class="!border-none !font-400"
+        :class="route.path === '/leetcode' ? '' : inactiveStyle"
+      >
+        LeetCode
+      </router-link>
     </div>
   </div>
 </template>

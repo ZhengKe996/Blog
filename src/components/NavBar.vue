@@ -27,6 +27,9 @@ import { isDark } from "~/logics";
         <router-link to="/bookmarks" title="Bookmarks">
           <ri-bookmark-line />
         </router-link>
+        <router-link to="/leetcode" title="LeetCode">
+          <ri-bookmark-line />
+        </router-link>
         <a
           href="https://github.com/ZhengKe996"
           target="_blank"
