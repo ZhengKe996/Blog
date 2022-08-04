@@ -553,3 +553,8 @@ func (node *treeNode) setValue(value int) {
 - 表示任何类型：interface{}
 - Type Assertion
 - Type Switch
+
+### 特殊接口
+
+- Stringer
+- Reader/Writer
