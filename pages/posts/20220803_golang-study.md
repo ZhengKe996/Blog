@@ -21,7 +21,7 @@ func main() {
   }
 ```
 
-## 变量定义
+### 变量定义
 
 ##### 使用 var 关键字
 
@@ -42,14 +42,14 @@ func main() {
   a, b, c, s := 3, 4, true, "def"
 ```
 
-## 内建变量类型
+### 内建变量类型
 
 - bool, string
 - (u)int, (u)int8, (u)int16, (u)int32, (u)int64, uintptr
 - byte, rune
 - float32, float64, complex64, complex128
 
-## 强制类型转换
+### 强制类型转换
 
 类型转换是强制的
 ![强制类型转换](/public/images/golang-study/1-1.png)
@@ -60,7 +60,7 @@ var a,b int = 3,4
 var c int = int(main.Sqrt(float64(a*a + b*b)))
 ```
 
-## 常量的定义
+### 常量的定义
 
 const 数值可作为各种类型使用
 
@@ -96,14 +96,14 @@ const (
 )
 ```
 
-## 变量定义的要点
+### 变量定义的要点
 
 - 变量类型写在变量名之后
 - 编译器可推测变量类型
 - 没有 char，只有 rune
 - 原生支持复数类型
 
-## 结构控制: if
+### 结构控制: if
 
 - if 的条件不需要括号
 - if 的条件里可以赋值
@@ -121,7 +121,7 @@ func bounded(v int) int {
 }
 ```
 
-## 结构控制: switch
+### 结构控制: switch
 
 - switch 自动 break，除非使用 fallthrough
 - switch 之后可以没有表达式
@@ -145,7 +145,7 @@ func grade(score int) string {
 }
 ```
 
-## 结构控制: for
+### 结构控制: for
 
 - for 的条件里不需要括号
 - for 的条件里可以省略初始条件，结束条件，递增表达式
@@ -181,14 +181,14 @@ func forver() {
 }
 ```
 
-## 结构控制基本语法要点
+### 结构控制基本语法要点
 
 - for、if 后面的条件没有括号
 - if 条件里也可定义变量
 - 没有 while
 - switch 不需要 break，也可以直接 switch 多个条件
 
-## 函数
+### 函数
 
 - 返回值类型写在最后面
 - 函数返回多个值可以起名字（仅限于非常简单的函数）
@@ -208,7 +208,7 @@ func div(a, b int) (q, r int) {
 }
 ```
 
-## 指针
+### 指针
 
 - 指针不能运算
 
@@ -220,11 +220,11 @@ var pa *int = &a
 fmt.Println(a) // 3
 ```
 
-## 参数传递
+### 参数传递
 
 Go 语言只有值传递一种方式
 
-## 数组
+### 数组
 
 - 数量写在类型前
 
@@ -235,7 +235,7 @@ Go 语言只有值传递一种方式
   var grid [4][5]bool
 ```
 
-#### 数组的遍历
+##### 数组的遍历
 
 - 可通过\_省略变量
 - 不仅 range，任何地方都可通过\_省略变量
@@ -252,23 +252,23 @@ Go 语言只有值传递一种方式
 	}
 ```
 
-#### 为什么要使用 range
+##### 为什么要使用 range
 
 - 意义明确，美观
 - c++：没有类似的能力
 - Java/Python： 只有 for each value，不能同时获取 i，v
 
-#### 数组是值类型
+##### 数组是值类型
 
 - [10]int 和 [20]int 是不同类型
 - 调用 func f(arr [10]int) 会拷贝数组
 - 在 Go 语言中一般不直接使用数组
 
-## Slice（切片）
+### Slice（切片）
 
 - Slice 本身没有数据，是对底层 array 的一个 view
 
-#### Reslice
+##### Reslice
 
 ```go
 	arr := [...]int{0, 1, 2, 3, 4, 5, 6, 7}
@@ -278,14 +278,14 @@ Go 语言只有值传递一种方式
 	fmt.Println("arr[:]=", arr[:]) // arr[:]= [0 1 2 3 4 5 6 7]
 ```
 
-#### Slice 的实现
+##### Slice 的实现
 
 - Slice 可以向后扩展，不可以向前扩展
 - s[i] 不可以超越 len(s)，向后扩展不可以超越底层数组 cap(s)
 
 ![Slice实现](/public/images/golang-study/1-2.png)
 
-#### 向 Slice 添加元素
+##### 向 Slice 添加元素
 
 - 添加元素时如果超越 cap，系统会重新分配更大的底层数组
 - 由于值传递的关系，必须接收 append 的返回值
@@ -304,7 +304,7 @@ Go 语言只有值传递一种方式
   fmt.Println("arr= ", arr) // arr=  [0 1 2 3 4 5 6 10]
 ```
 
-#### create slice
+##### create slice
 
 ```go
   s1 := []int{2, 4, 6, 8, 10}
@@ -312,7 +312,7 @@ Go 语言只有值传递一种方式
 	s3 := make([]int, 10, 32)
 ```
 
-#### copying slice
+##### copying slice
 
 ```go
 	s1 := []int{2, 4, 6, 8, 10}
@@ -320,7 +320,7 @@ Go 语言只有值传递一种方式
 	copy(s2, s1)
 ```
 
-#### deleting elements from slice
+##### deleting elements from slice
 
 ```go
 	// 删除 8 在 [2 4 6 8 10 0 0 0 0 0 0 0 0 0 0 0]
@@ -328,21 +328,21 @@ Go 语言只有值传递一种方式
 	printSlice(s2)
 ```
 
-#### popping from front
+##### popping from front
 
 ```go
 	front := s2[0]
 	s2 = s2[1:]
 ```
 
-#### popping from back
+##### popping from back
 
 ```go
 	tail := s2[len(s2)-1]
 	s2 = s2[:len(s2)-1]
 ```
 
-## Map
+### Map
 
 - 创建：make(map[string]int)
 - 获取元素：m[key]
@@ -358,9 +358,9 @@ Go 语言只有值传递一种方式
 	}
 ```
 
-#### Map 的遍历
+##### Map 的遍历
 
-#### Map 的 key
+##### Map 的 key
 
 - map 使用哈希表，必须可以比较相等
 - 除了 slice、map、function 的内建类型都可以作为 key
@@ -370,7 +370,7 @@ Go 语言只有值传递一种方式
 - 不保证遍历顺序，如需顺序，需手动对 key 排序
 - 使用 len 获得元素个数
 
-#### traversing map
+##### traversing map
 
 ```go
 	for k, v := range m {
@@ -378,7 +378,7 @@ Go 语言只有值传递一种方式
 	}
 ```
 
-#### getting values
+##### getting values
 
 ```go
 	courseName, ok := m["course"]
@@ -391,7 +391,7 @@ Go 语言只有值传递一种方式
 	}
 ```
 
-#### deleting value
+##### deleting value
 
 ```go
 	name, ok := m["name"]
@@ -402,14 +402,14 @@ Go 语言只有值传递一种方式
 	fmt.Println(name, ok)
 ```
 
-## rune 相当于 Go 的 char
+### rune 相当于 Go 的 char
 
 - 使用 range 遍历 pos,rune 对
 - 使用 utf8.RuneCountInString 获得字符数量
 - 使用 len 获得字节长度
 - 使用 []byte 获得字节
 
-#### 其他字符串操作
+##### 其他字符串操作
 
 - Fields、Split、Join
 - Contains、index
@@ -436,3 +436,88 @@ s := "早睡早起身体好!" // UTF-8
 		fmt.Printf("%c ", ch)
 	}
 ```
+
+## 面向对象
+
+- Go 语言仅支持封装，不支持继承和多态
+- Go 语言没有 class，只有 struct
+- 无论地址还是本身，一律使用 . 来访问成员
+
+### 结构的创建
+
+```go
+type treeNode struct {
+	value       int
+	left, right *treeNode
+}
+
+func main() {
+	var root treeNode
+	root = treeNode{value: 3}
+	root.left = &treeNode{}
+	root.right = &treeNode{5, nil, nil}
+	root.right.left = new(treeNode)
+  root.left.right = createNode(2)
+}
+```
+
+![结构的创建](/public/images/golang-study/1-3.png)
+
+##### Go 语言没有构造函数，可以使用工厂函数
+
+- 使用自定义工厂函数
+- 注意返回了局部变量的地址！
+
+```go
+func createNode(value int) *treeNode {
+	return &treeNode{value: value}
+}
+```
+
+##### 为结构定义方法
+
+显示定义和命名方法接收者
+
+```go
+func (node treeNode) print() {
+	fmt.Print(node.value)
+}
+```
+
+##### 使用指针作为方法接收者
+
+- 只有使用指针才可以改变结构内容
+- nil 指针也可以调用方法
+
+```go
+func (node *treeNode) setValue(value int) {
+	node.value = value
+}
+```
+
+##### 值接收者 对比 指针接收者
+
+- 要改变内容必须使用指针接收者
+- 结构过大也考虑使用指针接收者
+- 一致性：如有指针接收者，最好都是指针接收者
+- 值接收者 是 go 语言特有
+- 值/指针接收者均可接收值/指针
+
+### 封装
+
+- 名字一般使用 CamelCase
+- 首字母大写： public
+- 首字母小写： private
+
+### 包
+
+- 每个目录一个包
+- main 包包含可执行入口
+- 为结构定义的方法必须放在同一个包内
+- 可以是不同文件
+
+##### 如何扩充系统类型或别人的类型
+
+- 定义别名：最简单
+- 使用组合：最常用
+- 使用内嵌：可以省下许多代码
