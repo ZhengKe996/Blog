@@ -1,5 +1,5 @@
 ---
-title: Golang
+title: Golang 小记📝
 date: 2022-08-03
 draft: true
 lang: zh
@@ -558,3 +558,209 @@ func (node *treeNode) setValue(value int) {
 
 - Stringer
 - Reader/Writer
+
+## 函数
+
+函数是一等公民：参数、变量、返回值都可以是函数
+
+### "正统“函数式编程
+
+- 不可变性：不能有状态，只有常量和函数
+- 函数只能用一个参数
+
+### Go 闭包
+
+- 更为自然，不需要修饰如何访问自由变量
+- 没有 Lambda 表达式，但有匿名函数
+
+```go
+func (node *Node) Traverse() {
+	node.TraverseFunc(func(n *Node) {
+		n.Print()
+	})
+	fmt.Println()
+}
+
+func (node *Node) TraverseFunc(f func(*Node)) {
+	if node == nil {
+		return
+	}
+	node.Left.TraverseFunc(f)
+	f(node)
+	node.Right.TraverseFunc(f)
+}
+
+```
+
+## 资源管理与出错处理
+
+### defer 调用
+
+- 确保调用在函数结束时发生
+- 参数在 defer 语句时计算
+- defer 列表为后进先出
+
+```go
+func tryDefer() {
+	for i := 0; i < 100; i++ {
+		defer fmt.Println(i)
+		if i == 30 {
+			panic("printed too many")
+		}
+	}
+}
+```
+
+### 何时使用 defer
+
+- Open/Close
+- Lock/Unlock
+- PrintHeader/PrintFooter
+
+### 错误处理
+
+```go
+	file, err := os.OpenFile(filename, os.O_EXCL|os.O_CREATE, 0666) // ❎ 强行出现错误
+	if err != nil {
+		if pathError, ok := err.(*os.PathError); !ok {
+			panic(err)
+		} else {
+			fmt.Printf("%s, %s, %s\n", pathError.Op, pathError.Path, pathError.Err)
+		}
+		return
+	}
+```
+
+统一的错误处理
+
+```go
+func HandleFileList(writer http.ResponseWriter, request *http.Request) error {
+	path := request.URL.Path[len("/list/"):]
+	file, err := os.Open(path)
+	if err != nil {
+		return err
+	}
+	defer file.Close()
+	all, err := ioutil.ReadAll(file)
+	if err != nil {
+		return err
+	}
+
+	writer.Write(all)
+	return nil
+}
+```
+
+```go
+type appHandler func(write http.ResponseWriter, request *http.Request) error
+
+func errWrapper(handler appHandler) func(http.ResponseWriter, *http.Request) {
+	return func(writer http.ResponseWriter, request *http.Request) {
+		err := handler(writer, request)
+		if err != nil {
+			log.Printf("Error handling request: %s", err.Error())
+			code := http.StatusOK
+			switch {
+			case os.IsNotExist(err):
+				code = http.StatusNotFound
+			case os.IsPermission(err):
+				code = http.StatusForbidden
+			default:
+				code = http.StatusInternalServerError
+			}
+			http.Error(writer, http.StatusText(code), code)
+		}
+	}
+}
+func main() {
+	http.HandleFunc("/list/", errWrapper(filelisting.HandleFileList))
+
+	err := http.ListenAndServe(":8888", nil)
+	if err != nil {
+		panic(err)
+	}
+
+}
+
+```
+
+### recover
+
+- 仅在 defer 调用中使用
+- 获取 panic 的值
+- 如果无法处理，可重新 panic
+
+### error vs panic
+
+- 意料之中的：使用 error，如：文件打不开
+- 意料之外的：使用 panic，如：数组越界
+
+## goroutine
+
+### 协程 Coroutine
+
+- 轻量级“线程”
+- 非抢占式多任务处理，由协程主动交出控制权
+- 编译器/解释器/虚拟机层面的多任务
+- 多个协程可能在一个或多个线程上运行
+
+##### Coroutines
+
+Subroutines are special cases of more general program
+components, called coroutines. In contrast to the unsymmetric
+—— Donnald Knuth "The Art of Computer Programming. Vol1"
+
+![Coroutines](/public/images/golang-study/1-5.png)
+
+## goroutine
+
+![goroutine](/public/images/golang-study/1-6.png)
+
+##### goroutine 的定义
+
+- 任何函数只需要加上 go 就能送给调度器运行
+- 不需要在定义时区分是否是异步函数
+- 调度器在合适的点进行切换
+- 使用-race 来检测数据访问冲突
+
+##### goroutine 可能的切换点
+
+- I/O, select
+- channel
+- 等待锁
+- 函数调用（有时)
+- runtime.Gosched()
+
+### channel
+
+- channel
+- buffered channel
+- range
+- 理论基础：Communication Sequential Process (CSP)
+
+![channel](/public/images/golang-study/1-7.png)
+
+Don't communicate by sharing memory; share memory by communicating.
+
+不要通过共享内存来通信；通过通信来共享内存
+
+### 传统同步机制
+
+- WaitGroup
+- Mutex
+- Cond
+
+### 并发编程模式
+
+- 生成器
+- 服务/任务
+- 同时等待多个服务：两种方法
+
+![channel](/public/images/golang-study/1-8.png)
+
+### 任务的控制
+
+- 非阻塞等待
+- 超时机制
+- 任务中断/退出
+- 优雅退出
