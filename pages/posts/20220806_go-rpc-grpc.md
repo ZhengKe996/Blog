@@ -107,6 +107,8 @@ func main() {
 
 ## 改造 RPC 的代码调用
 
+改造后仍存在的问题: server_proxy 和 client_proxy 能否自动为多种语言生成
+
 > rpc_demo
 > ├── client
 > │   └── main.go
