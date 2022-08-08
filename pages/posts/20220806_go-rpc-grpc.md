@@ -6,6 +6,8 @@ lang: zh
 duration: 15min
 ---
 
+![RPC](/public/images/go-rpc/1-1.jpg)
+
 ## 什么是 RPC
 
 1. RPC (Remote Procedure Call)远程过程调用，筒单的理解是一个节点请求另一个节点提供的服务。
@@ -53,11 +55,11 @@ print(total)
 ##### 网络传输
 
 HTTP 底层使用的是 TCP 协议 主流版本 1.x，存在性能问题
-HTTP 协议来说 有一个问题：一次性 一旦对方返回了结果 (HTTP2.0 支持长链接）
+HTTP 协议来说 有一个问题：一次性 一旦对方返回了结果 (HTTP/2 支持长链接）
 
 基于 TCP/UDP 协议去封装一层协议 （没有通用性）
 
-HTTP2.0 既有长连接的特性，又有 HTTP 的特性
+HTTP/2 既有长连接的特性，又有 HTTP 的特性
 
 ## Go 内置 RPC 使用
 
@@ -146,13 +148,7 @@ func (s *HelloService) Hello(request string, reply *string) error {
 server_proxy: 使用 interface 进行解耦
 
 ```go
-package server_proxy
-
-import (
-	"net/rpc"
-	"handle"
-)
-
+...
 type HelloServicer interface {
 	Hello(request string, reply *string) error
 }
@@ -166,15 +162,7 @@ func RegisterHelloService(srv HelloServicer) error {
 server：业务代码与注册处理逻辑分离
 
 ```go
-package main
-
-import (
-	"net"
-	"net/rpc"
-  "handle"
-	"server_proxy"
-)
-
+...
 func main() {
 	// 1. 实例化server
 	listener, _ := net.Listen("tcp", ":8080")
@@ -194,13 +182,7 @@ func main() {
 client_proxy：存放抽取的连接代码
 
 ```go
-package client_proxy
-
-import (
-	"net/rpc"
-	"handle"
-)
-
+...
 type HelloServiceStub struct {
 	*rpc.Client
 }
@@ -224,13 +206,7 @@ func (c *HelloServiceStub) Hello(request string, reply *string) error {
 client
 
 ```go
-package main
-
-import (
-	"fmt"
-	"client_proxy"
-)
-
+...
 func main() {
 	client := client_proxy.NewHelloServiceClient("tcp", ":8080")
 	var reply string
@@ -241,4 +217,256 @@ func main() {
 	fmt.Println(reply)
 }
 
+```
+
+## 什么是 gRPC
+
+gRPC 是一个高性能、通用的开源 RPC 框架，其由 Google 主要面向移动应用开发并基于 HTTP/2 协议标准而设计，基于 ProtoBuf(Protocol Buffers)序列化协议开发，且支持众多开发语言.
+
+gRPC 基于 HTTP/2 标准设计，带来诸如双向流、流控、头部压缩、单 TCP 连接上的多复用请求等特。这些特性使得其在移动设备上表现更好，更省电和节省空间占用。
+
+[参考地址:gRPC 官方文档](https://grpc.io/docs/)
+
+## 什么是 protobuf
+
+Protocol Buffer 其实是 Google 出品的一种轻量＆高效的结构化数据存储格式，性能比 Json、XML 的强太多！
+
+### protobuf 的优缺点
+
+##### 优点
+
+- 性能
+  - 压缩性好
+  - 序列化和反序列化快
+  - 传输速度快
+- 便携性
+  - 使用简单
+  - 维护成本低
+  - 向后兼容
+  - 加密性好
+- 跨语言
+  - 跨平台
+  - 主持各种主流语言
+
+##### 缺点
+
+- 通用性差
+  - 需要专门的解释器
+- 自解释性差
+  - 只有通过 proto 文件才能了解数据结构
+
+### 再生 gRPC 代码
+
+```bash
+protoc --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative helloworld/helloworld.proto
+```
+
+### Go gRPC DEMO
+
+hello.proto
+
+```proto
+syntax = "proto3";
+option go_package = ".;hello";
+service Greeter{
+  rpc SayHello(HelloRequest) returns (HelloReply);
+}
+
+message HelloRequest{
+  string name = 1;
+}
+message HelloReply{
+  string message = 1;
+}
+```
+
+server
+
+```go
+...
+type Server struct {
+	hello.UnimplementedGreeterServer
+}
+
+func (s *Server) SayHello(ctx context.Context, req *hello.HelloRequest) (*hello.HelloReply, error) {
+	return &hello.HelloReply{
+		Message: "Hello " + req.Name,
+	}, nil
+}
+
+func main() {
+	// 1. 实例化server
+	g := grpc.NewServer()
+	// 2. 注册
+	hello.RegisterGreeterServer(g, &Server{})
+	// 3. 启动服务
+	listen, err := net.Listen("tcp", ":8080")
+	if err != nil {
+		panic("failed to listen" + err.Error())
+	}
+	err = g.Serve(listen)
+	if err != nil {
+		panic("failed to start grpc" + err.Error())
+	}
+}
+
+```
+
+client 端
+
+```go
+...
+func main() {
+	conn, err := grpc.Dial("127.0.0.1:8080", grpc.WithTransportCredentials(insecure.NewCredentials()))
+	if err != nil {
+		panic(err)
+	}
+	defer conn.Close()
+
+	client := hello.NewGreeterClient(conn)
+	reply, err := client.SayHello(context.Background(), &hello.HelloRequest{Name: "zhangsan"})
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(reply.Message)
+}
+
+```
+
+## RPC 的四种数据流
+
+1. 简单模式 (Simple RPC)
+2. 服务端数据流模式 (Server-side streaming RPC)
+3. 客户端数据流模式 (Client-side streaming RPC)
+4. 双向数据流模式 (Bidirectional streaming RPC)
+
+### 简单模式
+
+这种模式最为传统，即客户端发起一次请求，服务端响应一个数据，
+
+### 服务端数据流
+
+这种模式是客户端发起一次请求，服务端返回一段连续的数据流。
+
+server
+
+```go
+func (s *Server) GetStream(req *proto.StreamReqData, res proto.Greeter_GetStreamServer) error {
+	i := 0
+	for {
+		i++
+		_ = res.Send(&proto.StreamResData{
+			Data: fmt.Sprintf("%v", time.Now().Unix()),
+		})
+		time.Sleep(time.Second)
+		if i > 10 {
+			break
+		}
+	}
+	return nil
+}
+```
+
+client
+
+```go
+	res, _ := client.GetStream(context.Background(), &proto.StreamReqData{Data: "Hello"})
+	for {
+		data, err := res.Recv()
+		if err != nil {
+			fmt.Println(err)
+			break
+		}
+		fmt.Println(data)
+	}
+```
+
+### 客户端数据流
+
+客户端数据流与服务端数据流模式相反，这次是客户端源源不断的向服务端发送数据流，而在发送结束后，由服务端返回一个响应。典型的例子是物联网终端向服务器报送数据。
+
+server
+
+```go
+func (s *Server) PostStream(res proto.Greeter_PostStreamServer) error {
+	for {
+		if data, err := res.Recv(); err != nil {
+			fmt.Println(err)
+			break
+		} else {
+			fmt.Println(data)
+		}
+	}
+	return nil
+}
+```
+
+client
+
+```go
+postStream, err := client.PostStream(context.Background())
+	i := 0
+	for {
+		i++
+		_ = postStream.Send(&proto.StreamReqData{Data: fmt.Sprintf("早上好! %d", i)})
+		time.Sleep(time.Second)
+		if i > 10 {
+			break
+		}
+	}
+
+```
+
+### 双向数据流
+
+顾名思义，这是客户端和服务端都可以向对方发送数据流，这个时候双方的数据可以同时互相发送，也就是可以实现实时交互。典型的例子是聊天机器人。
+
+server
+
+```go
+func (s *Server) ALLStream(allStr proto.Greeter_AllStreamServer) error {
+	wg := sync.WaitGroup{}
+	wg.Add(2)
+	go func() {
+		defer wg.Done()
+		for {
+			data, _ := allStr.Recv()
+			fmt.Println("收到客户端消息：" + data.Data)
+		}
+	}()
+
+	go func() {
+		defer wg.Done()
+		for {
+			_ = allStr.Send(&proto.StreamResData{Data: "我是服务器"})
+			time.Sleep(time.Second)
+		}
+	}()
+
+	wg.Wait()
+	return nil
+}
+```
+
+client
+
+```go
+allStream, err := client.AllStream(context.Background())
+	waitGroup := sync.WaitGroup{}
+	waitGroup.Add(2)
+	go func() {
+		defer waitGroup.Done()
+		for {
+			data, _ := allStream.Recv()
+			fmt.Println("收到服务器的消息", data.Data)
+		}
+	}()
+	go func() {
+		defer waitGroup.Done()
+		for {
+			_ = allStream.Send(&proto.StreamReqData{Data: "我是客户端"})
+			time.Sleep(time.Second)
+		}
+	}()
+	waitGroup.Wait()
 ```
