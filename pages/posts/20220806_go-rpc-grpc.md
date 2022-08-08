@@ -65,7 +65,7 @@ Go 语言的 RPC 序列化和反序列化的协议是 Gob
 
 ### Server DEMO
 
-```Go
+```go
 type HelloService struct {}
 
 func (s *HelloService) Hello(request string, reply *string) error {
@@ -87,7 +87,7 @@ func main() {
 
 ### Client DEMO
 
-```Go
+```go
 func main() {
 	// 1. 建立连接
 	client, err := rpc.Dial("tcp", ":8080")
@@ -125,7 +125,7 @@ func main() {
 
 抽取公共的代码
 
-```Go
+```go
 package handle
 
 const HelloServiceName = "handle/HelloService"
@@ -145,7 +145,7 @@ func (s *HelloService) Hello(request string, reply *string) error {
 
 server_proxy: 使用 interface 进行解耦
 
-```Go
+```go
 package server_proxy
 
 import (
@@ -165,7 +165,7 @@ func RegisterHelloService(srv HelloServicer) error {
 
 server：业务代码与注册处理逻辑分离
 
-```Go
+```go
 package main
 
 import (
@@ -193,7 +193,7 @@ func main() {
 
 client_proxy：存放抽取的连接代码
 
-```Go
+```go
 package client_proxy
 
 import (
@@ -223,7 +223,7 @@ func (c *HelloServiceStub) Hello(request string, reply *string) error {
 
 client
 
-```Go
+```go
 package main
 
 import (
