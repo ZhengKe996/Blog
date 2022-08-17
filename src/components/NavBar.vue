@@ -25,14 +25,15 @@ import { isDark } from "~/logics";
           <span class="lt-md:hidden">LeetCode</span>
           <ri-lightbulb-line class="md:hidden" />
         </router-link>
-        <router-link to="/projects">
+
+        <!-- <router-link to="/projects">
           <span class="lt-md:hidden">Projects</span>
           <ri-lightbulb-line class="md:hidden" />
-        </router-link>
+        </router-link> -->
 
-        <router-link to="/bookmarks" title="Bookmarks">
+        <!-- <router-link to="/bookmarks" title="Bookmarks">
           <ri-bookmark-line />
-        </router-link>
+        </router-link> -->
         <a
           href="https://github.com/ZhengKe996"
           target="_blank"
