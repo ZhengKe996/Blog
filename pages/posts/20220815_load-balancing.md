@@ -1,6 +1,7 @@
 ---
 title: grpc 负载均衡 📒
 date: 2022-08-15
+type: GoLang
 draft: true
 lang: zh
 duration: 15min

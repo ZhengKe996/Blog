@@ -2,6 +2,7 @@
 title: Golang 小记📝
 date: 2022-08-03
 draft: true
+type: GoLang
 lang: zh
 duration: 25min
 ---

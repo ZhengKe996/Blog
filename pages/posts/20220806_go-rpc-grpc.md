@@ -1,6 +1,7 @@
 ---
 title: Go RPC gRPC 📝
 date: 2022-08-06
+type: GoLang
 draft: true
 lang: zh
 duration: 15min

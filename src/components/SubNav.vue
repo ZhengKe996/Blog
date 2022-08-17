@@ -22,6 +22,13 @@
       >
         LeetCode
       </router-link>
+      <router-link
+        to="/golang"
+        class="!border-none !font-400"
+        :class="route.path === '/golang' ? '' : inactiveStyle"
+      >
+        Golang
+      </router-link>
     </div>
   </div>
 </template>
