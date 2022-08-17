@@ -15,19 +15,27 @@
       >
         Talks
       </router-link>
-      <router-link
-        to="/leetcode"
-        class="!border-none !font-400"
-        :class="route.path === '/leetcode' ? '' : inactiveStyle"
-      >
-        LeetCode
-      </router-link>
+
       <router-link
         to="/golang"
         class="!border-none !font-400"
         :class="route.path === '/golang' ? '' : inactiveStyle"
       >
         Golang
+      </router-link>
+      <router-link
+        to="/data-structure"
+        class="!border-none !font-400"
+        :class="route.path === '/data-structure' ? '' : inactiveStyle"
+      >
+        DataStructure
+      </router-link>
+      <router-link
+        to="/leetcode"
+        class="!border-none !font-400"
+        :class="route.path === '/leetcode' ? '' : inactiveStyle"
+      >
+        LeetCode
       </router-link>
     </div>
   </div>
