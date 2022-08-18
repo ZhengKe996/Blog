@@ -25,20 +25,6 @@ public class LinerSearch{
 }
 ```
 
-```java
-public class Main{
-  public static void main(String[] args){
-      int[] data = {24,18,12,9,16,66,32,4};
-
-      int result = LinerSearch.search(data,16);
-      System.out.println(result); // 4
-
-      int result2 = LinerSearch.search(data,166);
-      System.out.println(result2); // -1
-  }
-}
-```
-
 ## 如何禁止用户 New 一个 LinerSearch
 
 将构造函数设置为私有
@@ -67,18 +53,6 @@ public class LinerSearch{
         return -1;
     }
 }
-```
-
-```java
-   public static void main(String[] args){
-        Integer[] data = {24,18,12,9,16,66,32,4};
-        int result = LinerSearch.<Integer>search(data,16);
-        System.out.println(result);
-
-        int result2 = LinerSearch.search(data,166); // Java8之后可以省略泛型，自动进行类型推断
-        System.out.println(result2);
-    }
-
 ```
 
 ## 自定义类重写 equals 方法
