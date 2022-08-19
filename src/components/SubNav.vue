@@ -8,13 +8,7 @@
       >
         Blog
       </router-link>
-      <router-link
-        to="/talks"
-        class="!border-none !font-400"
-        :class="route.path === '/talks' ? '' : inactiveStyle"
-      >
-        Talks
-      </router-link>
+
       <router-link
         to="/javascript"
         class="!border-none !font-400"
@@ -22,33 +16,13 @@
       >
         JavaScript
       </router-link>
-      <router-link
-        to="/golang"
-        class="!border-none !font-400"
-        :class="route.path === '/golang' ? '' : inactiveStyle"
-      >
-        Golang
-      </router-link>
+
       <router-link
         to="/data-structure"
         class="!border-none !font-400"
         :class="route.path === '/data-structure' ? '' : inactiveStyle"
       >
-        DataStructure
-      </router-link>
-      <router-link
-        to="/interview"
-        class="!border-none !font-400"
-        :class="route.path === '/interview' ? '' : inactiveStyle"
-      >
-        Interview
-      </router-link>
-      <router-link
-        to="/leetcode"
-        class="!border-none !font-400"
-        :class="route.path === '/leetcode' ? '' : inactiveStyle"
-      >
-        LeetCode
+        数据结构
       </router-link>
     </div>
   </div>
