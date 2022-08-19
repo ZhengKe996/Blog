@@ -2,6 +2,7 @@
 title: 前端基础知识面试题
 date: 2022-04-26
 draft: true
+type: Interview
 lang: zh
 duration: 25min
 ---

@@ -2,6 +2,7 @@
 title: JavaScript 数据结构与算法面试题
 date: 2022-04-14
 draft: true
+type: Interview
 lang: zh
 duration: 25min
 ---

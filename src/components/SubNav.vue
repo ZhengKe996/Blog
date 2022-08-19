@@ -15,7 +15,13 @@
       >
         Talks
       </router-link>
-
+      <router-link
+        to="/javascript"
+        class="!border-none !font-400"
+        :class="route.path === '/javascript' ? '' : inactiveStyle"
+      >
+        JavaScript
+      </router-link>
       <router-link
         to="/golang"
         class="!border-none !font-400"
@@ -29,6 +35,13 @@
         :class="route.path === '/data-structure' ? '' : inactiveStyle"
       >
         DataStructure
+      </router-link>
+      <router-link
+        to="/interview"
+        class="!border-none !font-400"
+        :class="route.path === '/interview' ? '' : inactiveStyle"
+      >
+        Interview
       </router-link>
       <router-link
         to="/leetcode"

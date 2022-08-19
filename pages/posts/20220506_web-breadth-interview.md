@@ -2,6 +2,7 @@
 title: 前端知识广度面试题
 date: 2022-05-06
 draft: true
+type: Interview
 lang: zh
 duration: 25min
 ---

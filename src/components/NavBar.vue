@@ -22,13 +22,23 @@ import { isDark } from "~/logics";
 
         <router-link to="/talks" class="lt-md:hidden"> Talks </router-link>
 
+        <router-link to="/golang" title="golang">
+          <span class="lt-md:hidden">Golang</span>
+          <ri-lightbulb-line class="md:hidden" />
+        </router-link>
+
         <router-link to="/data-structure" title="DataStructure">
           <span class="lt-md:hidden">DataStructure</span>
           <ri-lightbulb-line class="md:hidden" />
         </router-link>
 
-        <router-link to="/leetcode" title="LeetCode">
-          <span class="lt-md:hidden">LeetCode</span>
+        <router-link to="/javascript" title="JavaScript">
+          <span class="lt-md:hidden">JavaScript</span>
+          <ri-lightbulb-line class="md:hidden" />
+        </router-link>
+
+        <router-link to="/interview" title="Interview">
+          <span class="lt-md:hidden">Interview</span>
           <ri-lightbulb-line class="md:hidden" />
         </router-link>
 
