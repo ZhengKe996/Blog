@@ -1,5 +1,5 @@
 ---
-title: 数据结构基础 📚
+title: 栈和队列 📖
 date: 2022-08-19
 type: DataStructure
 draft: true
@@ -102,3 +102,8 @@ duration: 15min
 #### 实现一个循环队列
 
 [实现一个循环队列](https://github.com/ZhengKe996/DataStructure/tree/main/src/LoopQueue)
+
+## 双端队列
+
+- 可以在队列的两端添加元素
+- 可以在队列的两端删除元素
