@@ -36,3 +36,7 @@ duration: 15min
 
 思路：merge 操作开辟空间是耗时的，当数据量不断增大，merge 开辟空间的次数趋向于 n 次。
 ![归并排序法内存优化](/public/images/data-structure/5-7.png)
+
+## 自底向上的归并排序法
+
+![自底向上的归并排序法](/public/images/data-structure/5-8.png)
