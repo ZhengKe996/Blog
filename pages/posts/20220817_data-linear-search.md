@@ -43,17 +43,7 @@ public class LinerSearch{
 - 每个基本数据类型都有对应的包装类
   `Boolean, Byte, Character, Short, Integer , Long, Float, Double`
 
-```java
-public class LinerSearch{
-    private  LinerSearch(){}
-    public static <T>int search(T[] data,T target){
-        for(int i = 0;i < data.length;i++){
-            if(data[i].equals( target)) return i; // equals 默认比较类的地址
-        }
-        return -1;
-    }
-}
-```
+![线性查找法](/public/images/data-structure/1-2.png)
 
 ## 自定义类重写 equals 方法
 

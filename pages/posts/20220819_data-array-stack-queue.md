@@ -15,7 +15,7 @@ duration: 15min
 
 #### 自定义数组类(Java)
 
-[自定义数组类](https://github.com/ZhengKe996/DataStructure/blob/main/src/Array/Array.java)
+![自定义数组类](/public/images/data-structure/0-4.png)
 
 #### 时间复杂度分析
 
@@ -72,7 +72,8 @@ duration: 15min
 
 #### 实现一个栈
 
-[实现一个栈](https://github.com/ZhengKe996/DataStructure/tree/main/src/Stack)
+![实现一个栈](/public/images/data-structure/0-5.png)
+![实现一个栈](/public/images/data-structure/0-6.png)
 
 ## 队列 Queue
 
@@ -85,7 +86,8 @@ duration: 15min
 
 #### 实现一个队列
 
-[实现一个队列](https://github.com/ZhengKe996/DataStructure/tree/main/src/Queue)
+![实现一个队列](/public/images/data-structure/0-7.png)
+![实现一个队列](/public/images/data-structure/0-8.png)
 
 ## 循环队列
 
@@ -95,9 +97,14 @@ duration: 15min
 
 #### 实现一个循环队列
 
+![实现一个循环队列](/public/images/data-structure/0-9.png)
+![实现一个循环队列](/public/images/data-structure/0-10.png)
+
 [实现一个循环队列](https://github.com/ZhengKe996/DataStructure/tree/main/src/LoopQueue)
 
 ## 双端队列
 
 - 可以在队列的两端添加元素
 - 可以在队列的两端删除元素
+
+![实现一个双端队列](/public/images/data-structure/0-11.png)
