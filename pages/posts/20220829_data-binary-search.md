@@ -16,4 +16,10 @@ duration: 15min
 
 如果计算排序时间：0(nLogn）
 
-### 递归实现二分查找法
+### 使用递归实现二分查找法
+
+![使用递归实现二分查找法](/public/images/data-structure/7-3.png)
+
+### 使用非递归实现二分查找法
+
+![使用非递归实现二分查找法](/public/images/data-structure/7-4.png)
