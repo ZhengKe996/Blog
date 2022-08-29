@@ -1,0 +1,19 @@
+---
+title: 二分查找法
+date: 2022-08-29
+type: DataStructure
+draft: true
+lang: zh
+duration: 15min
+---
+
+**对于有序数列，才能使用二分查找法（排序的作用）**
+
+![二分查找法](/public/images/data-structure/7-1.png)
+
+**排序叫做二分查找法的前置条件**
+![二分查找法](/public/images/data-structure/7-2.png)
+
+如果计算排序时间：0(nLogn）
+
+### 递归实现二分查找法

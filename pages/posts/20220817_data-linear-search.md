@@ -12,7 +12,7 @@ duration: 15min
 **输入：** 数组，和目标元素
 **输出：** 目标元素所在的索引；若不存在，返回-1
 
-## 实现线性查找法
+### 实现线性查找法
 
 ```java
 public class LinerSearch{
@@ -25,7 +25,7 @@ public class LinerSearch{
 }
 ```
 
-## 如何禁止用户 New 一个 LinerSearch
+### 如何禁止用户 New 一个 LinerSearch
 
 将构造函数设置为私有
 
@@ -36,7 +36,7 @@ public class LinerSearch{
 }
 ```
 
-## 使用泛型
+### 使用泛型
 
 - 不可以是基本数据类型，只能是类对象
   `boolean, byte , char, short, int, long, float, double`
@@ -45,7 +45,7 @@ public class LinerSearch{
 
 ![线性查找法](/public/images/data-structure/1-2.png)
 
-## 自定义类重写 equals 方法
+### 自定义类重写 equals 方法
 
 ```java
 public class Student{
