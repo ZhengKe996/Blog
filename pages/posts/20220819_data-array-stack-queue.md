@@ -1,5 +1,5 @@
 ---
-title: 栈和队列 📖
+title: 栈和队列
 date: 2022-08-19
 type: DataStructure
 draft: true

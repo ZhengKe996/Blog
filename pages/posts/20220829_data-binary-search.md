@@ -23,3 +23,22 @@ duration: 15min
 ### 使用非递归实现二分查找法
 
 ![使用非递归实现二分查找法](/public/images/data-structure/7-4.png)
+
+### 二分查找法变种 upper
+
+![二分查找法变种](/public/images/data-structure/7-5.png)
+
+### 二分查找法变种 upper-ceil
+
+![二分查找法变种](/public/images/data-structure/7-6.png)
+
+### 二分查找法变种 lower
+
+目前有小 bug
+![二分查找法变种](/public/images/data-structure/7-7.png)
+修 bug
+![二分查找法变种](/public/images/data-structure/7-7.png)
+
+### 二分查找模板
+
+![二分查找法变种](/public/images/data-structure/7-9.png)
