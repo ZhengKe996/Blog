@@ -74,3 +74,16 @@ class Node{
 ![二分搜索树](/public/images/data-structure/8-5.png)
 
 ![二分搜索树](/public/images/data-structure/8-7.png)
+![二分搜索树](/public/images/data-structure/8-8.png)
+![二分搜索树](/public/images/data-structure/8-9.png)
+
+**非递归前序遍历**
+![二分搜索树](/public/images/data-structure/8-10.png)
+
+### 广度优先遍历的意义
+
+- 更快的找到问题的解
+- 常用于算法设计中-最短路径
+
+**层序遍历**
+![二分搜索树](/public/images/data-structure/8-11.png)
