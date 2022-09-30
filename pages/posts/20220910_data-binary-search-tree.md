@@ -87,3 +87,11 @@ class Node{
 
 **层序遍历**
 ![二分搜索树](/public/images/data-structure/8-11.png)
+
+### 删除二分搜索树的最大值/最小值
+
+![二分搜索树](/public/images/data-structure/8-12.png)
+
+### 删除二分搜索树指定节点
+
+![二分搜索树](/public/images/data-structure/8-12.png)
