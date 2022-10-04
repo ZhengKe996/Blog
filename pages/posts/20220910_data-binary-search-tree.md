@@ -94,4 +94,4 @@ class Node{
 
 ### 删除二分搜索树指定节点
 
-![二分搜索树](/public/images/data-structure/8-12.png)
+![二分搜索树](/public/images/data-structure/8-13.png)
