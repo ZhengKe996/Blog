@@ -21,3 +21,8 @@ duration: 15min
 ### 优先队列
 
 ![优先队列](/public/images/data-structure/11-2.png)
+![优先队列](/public/images/data-structure/11-3.png)
+
+### 优先队列的优势
+
+优先队列的优势：不需要一次性知道所有数据。
