@@ -24,3 +24,18 @@ duration: 15min
 ### 线段树中的区间查询
 
 ![线段树](/public/images/data-structure/18-4.png)
+
+### 线段树中的更新操作
+
+![线段树](/public/images/data-structure/18-5.png)
+
+![线段树](/public/images/data-structure/18-6.png)
+
+### 二维线段树
+
+![线段树](/public/images/data-structure/18-7.png)
+![线段树](/public/images/data-structure/18-8.png)
+
+### 动态线段树
+
+![线段树](/public/images/data-structure/18-9.png)
