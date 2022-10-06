@@ -56,3 +56,16 @@ duration: 15min
 ### 实现 Quick Union
 
 ![并查集](/public/images/data-structure/20-16.png)
+
+### 基于 Size 优化
+
+![并查集](/public/images/data-structure/20-17.png)
+
+### 基于 Rank 优化
+
+**union(4,2)**
+![并查集](/public/images/data-structure/20-18.png)
+![并查集](/public/images/data-structure/20-19.png)
+
+rank[i] 表示根节点为 i 树的高度
+![并查集](/public/images/data-structure/20-20.png)
