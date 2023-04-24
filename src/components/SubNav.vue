@@ -1,29 +1,29 @@
 <template>
   <div class="prose m-auto mb-8 select-none">
-    <div mb-0 flex="~ gap-3" text-3xl>
-      <router-link
-        to="/posts"
-        class="!border-none !font-400"
-        :class="route.path === '/posts' ? '' : inactiveStyle"
-      >
+    <div mb-0
+         flex="~ gap-3"
+         text-3xl>
+      <router-link to="/posts"
+                   class="!border-none !font-400"
+                   :class="route.path === '/posts' ? '' : inactiveStyle">
         Blog
       </router-link>
 
-      <router-link
+      <!-- <router-link
         to="/javascript"
         class="!border-none !font-400"
         :class="route.path === '/javascript' ? '' : inactiveStyle"
       >
         JavaScript
-      </router-link>
+      </router-link> -->
 
-      <router-link
+      <!-- <router-link
         to="/data-structure"
         class="!border-none !font-400"
         :class="route.path === '/data-structure' ? '' : inactiveStyle"
       >
         数据结构
-      </router-link>
+      </router-link> -->
     </div>
   </div>
 </template>

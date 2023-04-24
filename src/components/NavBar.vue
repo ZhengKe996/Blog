@@ -4,13 +4,15 @@ import { isDark } from "~/logics";
 
 <template>
   <header class="header z-40">
-    <router-link
-      class="w-10 h-10 absolute lg:fixed m-6 select-none outline-none"
-      to="/"
-      focusable="false"
-    >
-      <img v-show="isDark" src="/logo-dark.svg?url" alt="logo" />
-      <img v-show="!isDark" src="/logo.svg?url" alt="logo" />
+    <router-link class="w-10 h-10 absolute lg:fixed m-6 select-none outline-none"
+                 to="/"
+                 focusable="false">
+      <img v-show="isDark"
+           src="/logo-dark.svg?url"
+           alt="logo" />
+      <img v-show="!isDark"
+           src="/logo.svg?url"
+           alt="logo" />
     </router-link>
     <nav class="nav">
       <div class="spacer" />
@@ -20,29 +22,32 @@ import { isDark } from "~/logics";
           <ri-article-line class="md:hidden" />
         </router-link>
 
-        <router-link to="/talks" class="lt-md:hidden"> Talks </router-link>
+        <router-link to="/talks"
+                     class="lt-md:hidden"> Talks </router-link>
 
-        <router-link to="/golang" title="golang">
+        <!-- <router-link to="/golang" title="golang">
           <span class="lt-md:hidden">Golang</span>
           <ri-lightbulb-line class="md:hidden" />
-        </router-link>
+        </router-link> -->
 
-        <router-link to="/data-structure" title="DataStructure">
+        <!-- <router-link to="/data-structure" title="DataStructure">
           <span class="lt-md:hidden">DataStructure</span>
           <ri-lightbulb-line class="md:hidden" />
-        </router-link>
+        </router-link> -->
 
-        <router-link to="/javascript" title="JavaScript">
+        <!-- <router-link to="/javascript"
+                     title="JavaScript">
           <span class="lt-md:hidden">JavaScript</span>
           <ri-lightbulb-line class="md:hidden" />
-        </router-link>
+        </router-link> -->
 
-        <router-link to="/interview" title="Interview">
+        <!-- <router-link to="/interview" title="Interview">
           <span class="lt-md:hidden">Interview</span>
           <ri-lightbulb-line class="md:hidden" />
-        </router-link>
+        </router-link> -->
 
-        <router-link to="/leetCode" title="LeetCode">
+        <router-link to="/leetCode"
+                     title="LeetCode">
           <span class="lt-md:hidden">LeetCode</span>
           <ri-lightbulb-line class="md:hidden" />
         </router-link>
@@ -55,12 +60,10 @@ import { isDark } from "~/logics";
         <!-- <router-link to="/bookmarks" title="Bookmarks">
           <ri-bookmark-line />
         </router-link> -->
-        <a
-          href="https://github.com/ZhengKe996"
-          target="_blank"
-          title="GitHub"
-          class="lt-md:hidden"
-        >
+        <a href="https://github.com/ZhengKe996"
+           target="_blank"
+           title="GitHub"
+           class="lt-md:hidden">
           <uil-github-alt />
         </a>
         <toggle-theme />
