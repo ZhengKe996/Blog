@@ -9,13 +9,11 @@
         Blog
       </router-link>
 
-      <!-- <router-link
-        to="/javascript"
-        class="!border-none !font-400"
-        :class="route.path === '/javascript' ? '' : inactiveStyle"
-      >
-        JavaScript
-      </router-link> -->
+      <router-link to="/talks"
+                   class="!border-none !font-400"
+                   :class="route.path === '/talks' ? '' : inactiveStyle">
+        Talks
+      </router-link>
 
       <!-- <router-link
         to="/data-structure"
