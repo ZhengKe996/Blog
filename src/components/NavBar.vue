@@ -25,10 +25,11 @@ import { isDark } from "~/logics";
         <router-link to="/talks"
                      class="lt-md:hidden"> Talks </router-link>
 
-        <!-- <router-link to="/golang" title="golang">
-          <span class="lt-md:hidden">Golang</span>
+        <router-link to="/computer-science-notes"
+                     title="ComputerScienceNotes">
+          <span class="lt-md:hidden">Computer Science Notes</span>
           <ri-lightbulb-line class="md:hidden" />
-        </router-link> -->
+        </router-link>
 
         <!-- <router-link to="/data-structure" title="DataStructure">
           <span class="lt-md:hidden">DataStructure</span>
