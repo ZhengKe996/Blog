@@ -18,7 +18,7 @@
       <router-link to="/computer-science-notes"
                    class="!border-none !font-400"
                    :class="route.path === '/computer-science-notes' ? '' : inactiveStyle">
-        导论学习笔记
+        计导笔记
       </router-link>
     </div>
   </div>
