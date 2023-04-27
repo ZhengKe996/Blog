@@ -1,6 +1,6 @@
 ---
 title: 第二章：数字系统
-# date: 2023-04-23
+date: 2023-04-23
 draft: true
 type: ComputerScienceNotes
 lang: zh

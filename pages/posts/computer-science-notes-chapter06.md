@@ -1,6 +1,6 @@
 ---
 title: 第六章：计算机网络和因特网
-# date: 2023-04-27
+date: 2023-04-27
 draft: true
 type: ComputerScienceNotes
 lang: zh
