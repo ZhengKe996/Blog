@@ -1,6 +1,6 @@
 ---
 title: 第五章：计算机组成
-date: 2023-04-26
+# date: 2023-04-26
 draft: true
 type: ComputerScienceNotes
 lang: zh

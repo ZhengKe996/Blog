@@ -1,6 +1,6 @@
 ---
 title: 第四章：数据运算
-date: 2023-04-25
+# date: 2023-04-25
 draft: true
 type: ComputerScienceNotes
 lang: zh
