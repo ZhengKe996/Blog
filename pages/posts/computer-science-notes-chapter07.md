@@ -88,7 +88,7 @@ lang: zh
 3. 具有设备无关性
 
 UNIX 由 4 个主要部分构成：内核、命令解释器、一组标准工具和应用程序。
-![UNIX](/public/images/computer-science-notes/6.7.png)
+![UNIX](/public/images/computer-science-notes/7.1.png)
 
 **Linux**：1991 年芬兰 Helsinki 大学学生 Linus Torvalds；由内核、系统库、系统工具组成；支持标准因特网协议，支持三层：套接字接口、协议驱动和网络驱动；Linux 的安全机制提供了传统上为 UNIX 定义的安全特性。如身份验证和访问控制。
 
@@ -100,4 +100,4 @@ UNIX 由 4 个主要部分构成：内核、命令解释器、一组标准工具
 - 能运行其他操作系统编写的程序
 - 运行在操作系统顶部的应用程序，具有快速响应时间。
 
-![Windows](/public/images/computer-science-notes/6.8.png)
+![Windows](/public/images/computer-science-notes/7.2.png)
