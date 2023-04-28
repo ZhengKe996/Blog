@@ -1,6 +1,8 @@
 ---
 title: 机器学习小记
 subtitle: '一块最难啃的硬骨头'
+display: Projects
+description: List of projects that I am proud of
 ---
 
 <SubNav/>
