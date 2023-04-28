@@ -18,7 +18,7 @@
       <router-link to="/computer-science-notes"
                    class="!border-none !font-400"
                    :class="route.path === '/computer-science-notes' ? '' : inactiveStyle">
-        计导
+        CSN
       </router-link>
       <router-link to="/machine-learning"
                    class="!border-none !font-400"
