@@ -31,6 +31,12 @@ import { isDark } from "~/logics";
           <ri-lightbulb-line class="md:hidden" />
         </router-link>
 
+        <router-link to="/machine-learning"
+                     title="ML">
+          <span class="lt-md:hidden">ML</span>
+          <ri-lightbulb-line class="md:hidden" />
+        </router-link>
+
         <!-- <router-link to="/data-structure" title="DataStructure">
           <span class="lt-md:hidden">DataStructure</span>
           <ri-lightbulb-line class="md:hidden" />
