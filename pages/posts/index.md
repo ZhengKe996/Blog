@@ -1,9 +1,9 @@
 ---
 title: Blog - ZK
-display: ""
+display: ''
 ---
 
-<SubNav/>
+<!-- <SubNav/> -->
 
 <ClientOnly>
   <Plum/>

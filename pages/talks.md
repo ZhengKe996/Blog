@@ -1,9 +1,9 @@
 ---
 title: Talks - ZK
-display: ""
+display: ''
 ---
 
-<SubNav/>
+<!-- <SubNav/> -->
 
 <ClientOnly>
   <Plum/>

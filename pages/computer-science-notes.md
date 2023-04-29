@@ -4,7 +4,7 @@ subtitle: '想要终结一直都在慵懒地虚度人生，颓废的自己。就
 display: 《计算机科学导论》
 ---
 
-<SubNav/>
+<!-- <SubNav/> -->
 
 <ClientOnly>
   <Plum/>
