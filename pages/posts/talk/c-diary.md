@@ -7,7 +7,7 @@ subtitle: '踩坑日记 C语言篇'
 display: 记录踩过的每一个坑
 ---
 
-# Scanf 多次输入的一个细节
+## Scanf 多次输入的一个细节
 
 **问题描述**：使用 Scanf 多次输入，第二次 Scanf 不被阻塞。
 
