@@ -44,3 +44,33 @@ int main() {
     printf("c=%c\n", c);
 }
 ```
+
+## Scanf 多次输入的小细节
+
+**问题代码**
+
+```c
+#include <stdio.h>
+//scanf 一次读取多种数据类型
+int main() {
+    int i, ret;
+    float f;
+    char c;
+    ret = scanf("%d%c%f", &i, &c, &f); // 输入：100 a 98.2
+    printf("i=%d,c=%c,f=%5.2f\n", i, c, f); // 输出：i=100,c= ,f= 0.00；此处的c是32（空格的ASCII码）
+}
+```
+
+**解决方法**：在 %d 和%c 中间加个空格
+
+```c
+int main() {
+    int i, ret;
+    float f;
+    char c;
+    ret = scanf("%d %c%f", &i, &c, &f); // 在 %d 和%c中间加个空格 输入：100 a 98.2
+    printf("i=%d,c=%c,f=%5.2f\n", i, c, f);// 输出：i=100,c=a,f=98.20
+    return 0;
+}
+
+```
