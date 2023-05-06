@@ -27,7 +27,7 @@ import { isDark } from "~/logics";
 
         <router-link to="/computer-science-notes"
                      title="ComputerScienceNotes">
-          <span class="lt-md:hidden">Computer Science Notes</span>
+          <span class="lt-md:hidden">Computer Science</span>
           <ri-lightbulb-line class="md:hidden" />
         </router-link>
 
