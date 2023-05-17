@@ -1,18 +1,16 @@
 <script setup lang="ts">
-import { isDark } from "~/logics";
+import { isDark } from '~/logics'
 </script>
 
 <template>
   <header class="header z-40">
-    <router-link class="w-10 h-10 absolute lg:fixed m-6 select-none outline-none"
-                 to="/"
-                 focusable="false">
-      <img v-show="isDark"
-           src="/logo-dark.svg?url"
-           alt="logo" />
-      <img v-show="!isDark"
-           src="/logo.svg?url"
-           alt="logo" />
+    <router-link
+      class="w-10 h-10 absolute lg:fixed m-6 select-none outline-none"
+      to="/"
+      focusable="false"
+    >
+      <img v-show="isDark" src="/logo-dark.svg?url" alt="logo" />
+      <img v-show="!isDark" src="/logo.svg?url" alt="logo" />
     </router-link>
     <nav class="nav">
       <div class="spacer" />
@@ -22,17 +20,14 @@ import { isDark } from "~/logics";
           <ri-article-line class="md:hidden" />
         </router-link>
 
-        <router-link to="/talks"
-                     class="lt-md:hidden"> Talks </router-link>
+        <router-link to="/talks" class="lt-md:hidden"> Talks </router-link>
 
-        <router-link to="/computer-science-notes"
-                     title="ComputerScienceNotes">
+        <router-link to="/computer-science-notes" title="ComputerScienceNotes">
           <span class="lt-md:hidden">Computer Science</span>
           <ri-lightbulb-line class="md:hidden" />
         </router-link>
 
-        <router-link to="/machine-learning"
-                     title="ML">
+        <router-link to="/machine-learning" title="ML">
           <span class="lt-md:hidden">ML</span>
           <ri-lightbulb-line class="md:hidden" />
         </router-link>
@@ -67,10 +62,12 @@ import { isDark } from "~/logics";
         <!-- <router-link to="/bookmarks" title="Bookmarks">
           <ri-bookmark-line />
         </router-link> -->
-        <a href="https://github.com/ZhengKe996"
-           target="_blank"
-           title="GitHub"
-           class="lt-md:hidden">
+        <a
+          href="https://github.com/ZhengKe996"
+          target="_blank"
+          title="GitHub"
+          class="lt-md:hidden"
+        >
           <uil-github-alt />
         </a>
         <toggle-theme />
