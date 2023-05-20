@@ -19,12 +19,13 @@ display: 算法刷题集
 
 ## 算法模版
 
-|    Name    |                                          Version                                           |
-| :--------: | :----------------------------------------------------------------------------------------: |
-|  快速排序  |   [C++](https://github.com/ZhengKe996/Algorithms/tree/main/00QuickSortTemplate/main.cpp)   |
-|  归并排序  |   [C++](https://github.com/ZhengKe996/Algorithms/tree/main/00MergeSortTemplate/main.cpp)   |
-|  整数二分  | [C++](https://github.com/ZhengKe996/Algorithms/tree/main/00IntegerBinaryTemplate/main.cpp) |
-| 浮点数二分 |  [C++](https://github.com/ZhengKe996/Algorithms/tree/main/00FloatBinaryTemplate/main.cpp)  |
+|        Name         |                                          Version                                           |
+| :-----------------: | :----------------------------------------------------------------------------------------: |
+|      快速排序       |   [C++](https://github.com/ZhengKe996/Algorithms/tree/main/00QuickSortTemplate/main.cpp)   |
+|      归并排序       |   [C++](https://github.com/ZhengKe996/Algorithms/tree/main/00MergeSortTemplate/main.cpp)   |
+|      整数二分       | [C++](https://github.com/ZhengKe996/Algorithms/tree/main/00IntegerBinaryTemplate/main.cpp) |
+|     浮点数二分      |  [C++](https://github.com/ZhengKe996/Algorithms/tree/main/00FloatBinaryTemplate/main.cpp)  |
+| 高精度运算（C/C++） | [C++](https://github.com/ZhengKe996/Algorithms/tree/main/00HighPrecisionTemplate/main.cpp) |
 
 ## 刷题集
 
