@@ -17,8 +17,8 @@ display: 算法刷题集
 | 88  |    合并两个有序数组    |       Array        | [C++](https://github.com/ZhengKe996/Algorithms/blob/main/L-88-cpp/main.cpp)  |                                                                                     |
 | 206 |        反转链表        | Single linked list | [C++](https://github.com/ZhengKe996/Algorithms/blob/main/L-206-cpp/main.cpp) | [Java](https://github.com/ZhengKe996/Algorithms/blob/main/L-206-java/src/Main.java) |
 | 25  |    K 个一组翻转链表    | Single linked list | [C++](https://github.com/ZhengKe996/Algorithms/blob/main/L-25-cpp/main.cpp)  | [Java](https://github.com/ZhengKe996/Algorithms/blob/main/L-25-java/src/Main.java)  |
-| 141 |        环形链表        | Single linked list | [C++](https://github.com/ZhengKe996/Algorithms/blob/main/L-141-cpp/main.cpp) |                                                                                     |
-| 142 |      环形链表 II       | Single linked list | [C++](https://github.com/ZhengKe996/Algorithms/blob/main/L-142-cpp/main.cpp) |                                                                                     |
+| 141 |        环形链表        | Doubly linked list | [C++](https://github.com/ZhengKe996/Algorithms/blob/main/L-141-cpp/main.cpp) |                                                                                     |
+| 142 |      环形链表 II       | Doubly linked list | [C++](https://github.com/ZhengKe996/Algorithms/blob/main/L-142-cpp/main.cpp) |                                                                                     |
 
 ## Acwing 合集
 
