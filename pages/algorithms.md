@@ -10,18 +10,6 @@ display: 算法刷题集
   <Plum/>
 </ClientOnly>
 
-## 算法模版
-
-|        Name         |                                            Version                                            |                                                                                                |
-| :-----------------: | :-------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------: |
-|      快速排序       |    [C++](https://github.com/ZhengKe996/Algorithms/tree/main/00QuickSortTemplate/main.cpp)     |
-|      归并排序       |    [C++](https://github.com/ZhengKe996/Algorithms/tree/main/00MergeSortTemplate/main.cpp)     |
-|      整数二分       |  [C++](https://github.com/ZhengKe996/Algorithms/tree/main/00IntegerBinaryTemplate/main.cpp)   |
-|     浮点数二分      |   [C++](https://github.com/ZhengKe996/Algorithms/tree/main/00FloatBinaryTemplate/main.cpp)    |
-| 高精度运算（C/C++） |  [加减](https://github.com/ZhengKe996/Algorithms/tree/main/00HighPrecisionTemplate/main.cpp)  |  [乘除](https://github.com/ZhengKe996/Algorithms/tree/main/00HighPrecisionTemplate2/main.cpp)  |
-|    前缀和与差分     | [一维前缀和](https://github.com/ZhengKe996/Algorithms/tree/main/00PrefixSumTemplate/main.cpp) | [二维前缀和](https://github.com/ZhengKe996/Algorithms/tree/main/00PrefixSumTemplate2/main.cpp) |
-|                     | [一维差分](https://github.com/ZhengKe996/Algorithms/tree/main/00DifferenceTemplate/main.cpp)  | [二维差分](https://github.com/ZhengKe996/Algorithms/tree/main/00DifferenceTemplate2/main.cpp)  |
-
 ## 刷题合集
 
 **平台 [洛谷](https://github.com/ZhengKe996/Algorithms/tree/main/https://www.luogu.com.cn)**
