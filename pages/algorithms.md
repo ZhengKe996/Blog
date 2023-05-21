@@ -8,8 +8,59 @@ display: 算法刷题集
   <Plum/>
 </ClientOnly>
 
-## 数组、链表题解集
+## LeetCode 合集
 
-**数组**：数组是内存中是一段连续的存储空间；支持随机访问；关键：索引与寻址；
+| ID  |          Name          |        Type        |                                     C++                                      |                                        Java                                         |
+| :-: | :--------------------: | :----------------: | :--------------------------------------------------------------------------: | :---------------------------------------------------------------------------------: |
+| 26  | 删除有序数组中的重复项 |       Array        | [C++](https://github.com/ZhengKe996/Algorithms/blob/main/L-26-cpp/main.cpp)  |                                                                                     |
+| 283 |         移动零         |       Array        | [C++](https://github.com/ZhengKe996/Algorithms/blob/main/L-283-cpp/main.cpp) |                                                                                     |
+| 88  |    合并两个有序数组    |       Array        | [C++](https://github.com/ZhengKe996/Algorithms/blob/main/L-88-cpp/main.cpp)  |                                                                                     |
+| 206 |        反转链表        | Single linked list | [C++](https://github.com/ZhengKe996/Algorithms/blob/main/L-206-cpp/main.cpp) | [Java](https://github.com/ZhengKe996/Algorithms/blob/main/L-206-java/src/Main.java) |
+| 25  |    K 个一组翻转链表    | Single linked list | [C++](https://github.com/ZhengKe996/Algorithms/blob/main/L-25-cpp/main.cpp)  | [Java](https://github.com/ZhengKe996/Algorithms/blob/main/L-25-java/src/Main.java)  |
+| 141 |        环形链表        | Single linked list | [C++](https://github.com/ZhengKe996/Algorithms/blob/main/L-141-cpp/main.cpp) |                                                                                     |
+| 142 |      环形链表 II       | Single linked list | [C++](https://github.com/ZhengKe996/Algorithms/blob/main/L-142-cpp/main.cpp) |                                                                                     |
+
+## Acwing 合集
+
+| ID  |   Name   | level  |                                     C++                                     | Java |
+| :-: | :------: | :----: | :-------------------------------------------------------------------------: | :--: |
+| 136 | 邻值查找 | Medium | [C++](https://github.com/ZhengKe996/Algorithms/blob/main/L-25-cpp/main.cpp) |      |
+
+## 洛谷合集
+
+|    ID    |            Name            |                                   Thinking                                   |                                       C++                                       |
+| :------: | :------------------------: | :--------------------------------------------------------------------------: | :-----------------------------------------------------------------------------: |
+|  P1000   |        超级玛丽游戏        |                                                                              |  [C++](https://github.com/ZhengKe996/Algorithms/blob/main/P1000-cpp/main.cpp)   |
+|  P1001   |        A+B Problem         |                                                                              |  [C++](https://github.com/ZhengKe996/Algorithms/blob/main/P1001-cpp/main.cpp)   |
+|  P1421   |         小玉买文具         |                                                                              |  [C++](https://github.com/ZhengKe996/Algorithms/blob/main/P1421-cpp/main.cpp)   |
+|  P1420   |          最长连号          |                                                                              |  [C++](https://github.com/ZhengKe996/Algorithms/blob/main/P1420-cpp/main.cpp)   |
+|  P1425   |       小鱼的游泳时间       |                                                                              |  [C++](https://github.com/ZhengKe996/Algorithms/blob/main/P1425-cpp/main.cpp)   |
+|  P2956   |      The Robot Plow G      |                                                                              |  [C++](https://github.com/ZhengKe996/Algorithms/blob/main/P2956-cpp/main.cpp)   |
+|  P4325   |           Modulo           |                                                                              |  [C++](https://github.com/ZhengKe996/Algorithms/blob/main/P4325-cpp/main.cpp)   |
+|  P4413   |             R2             |                                                                              |  [C++](https://github.com/ZhengKe996/Algorithms/blob/main/P4413-cpp/main.cpp)   |
+|  P1151   |          子数整数          |                                                                              |  [C++](https://github.com/ZhengKe996/Algorithms/blob/main/P1151-cpp/main.cpp)   |
+|  P1634   |        禽兽的传染病        |                                                                              |  [C++](https://github.com/ZhengKe996/Algorithms/blob/main/P1634-cpp/main.cpp)   |
+|  P3742   |         umi 的函数         | [思路](https://github.com/ZhengKe996/Algorithms/blob/main/P3742-cpp/IDEA.md) |  [C++](https://github.com/ZhengKe996/Algorithms/blob/main/P3742-cpp/main.cpp)   |
+|  P1554   |         梦中的统计         |                                                                              |  [C++](https://github.com/ZhengKe996/Algorithms/blob/main/P1554-cpp/main.cpp)   |
+|  UVA101  |     The Blocks Problem     |                                                                              |  [C++](https://github.com/ZhengKe996/Algorithms/blob/main/UVA101-cpp/main.cpp)  |
+| UVA11988 | 破损的键盘 Broken Keyboard |                                  Char 链表                                   | [C++](https://github.com/ZhengKe996/Algorithms/blob/main/UVA11988-cpp/main.cpp) |
+| UVA12657 |  移动盒子 Boxes in a Line  |                                   静态链表                                   | [C++](https://github.com/ZhengKe996/Algorithms/blob/main/UVA12657-cpp/main.cpp) |
+|  P1739   |       表达式括号匹配       |                                      栈                                      |  [C++](https://github.com/ZhengKe996/Algorithms/blob/main/P1739-cpp/main.cpp)   |
+|  UVA514  |            铁轨            |                                      栈                                      |  [C++](https://github.com/ZhengKe996/Algorithms/blob/main/UVA514-cpp/main.cpp)  |
+|  UVA442  |          矩阵链乘          |                                      栈                                      |  [C++](https://github.com/ZhengKe996/Algorithms/blob/main/UVA442-cpp/main.cpp)  |
+| UVA12100 |   打印队列 Printer Queue   |                                     队列                                     | [C++](https://github.com/ZhengKe996/Algorithms/blob/main/UVA12100-cpp/main.cpp) |
+|  P1138   |        第 k 小整数         |                                     数组                                     |  [C++](https://github.com/ZhengKe996/Algorithms/blob/main/P1138-cpp/main.cpp)   |
+|  P2550   |          彩票摇奖          |                                     数组                                     |  [C++](https://github.com/ZhengKe996/Algorithms/blob/main/P1138-cpp/main.cpp)   |
+|  P1320   |     压缩技术（续集版）     |                                                                              |  [C++](https://github.com/ZhengKe996/Algorithms/blob/main/P1320-cpp/main.cpp)   |
+|  P1830   |          轰炸 III          |                               一维数组&结构体                                |  [C++](https://github.com/ZhengKe996/Algorithms/blob/main/P1830-cpp/main.cpp)   |
+|  P1789   |           插火把           |                                   二维数组                                   |  [C++](https://github.com/ZhengKe996/Algorithms/blob/main/P1789-cpp/main.cpp)   |
+|  UVA210  |        并行程序模拟        |                                  队列&数组                                   |  [C++](https://github.com/ZhengKe996/Algorithms/blob/main/UVA210-cpp/main.cpp)  |
+|  P5015   |          标题统计          |                                                                              |  [C++](https://github.com/ZhengKe996/Algorithms/blob/main/P5015-cpp/main.cpp)   |
+|  P3375   |       KMP 字符串匹配       |                                                                              |  [C++](https://github.com/ZhengKe996/Algorithms/blob/main/P3375-cpp/main.cpp)   |
+|  UVA455  |  周期串 Periodic Strings   |                                                                              |  [C++](https://github.com/ZhengKe996/Algorithms/blob/main/UVA455-cpp/main.cpp)  |
+|  UVA401  |     回文词 Palindromes     |                                                                              |  [C++](https://github.com/ZhengKe996/Algorithms/blob/main/UVA401-cpp/main.cpp)  |
+|  UVA401  |     回文词 Palindromes     |                                                                              |  [C++](https://github.com/ZhengKe996/Algorithms/blob/main/UVA401-cpp/main.cpp)  |
+|  UVA642  |     Word Amalgamation      |                                                                              |  [C++](https://github.com/ZhengKe996/Algorithms/blob/main/UVA642-cpp/main.cpp)  |
+| UVA1584  | 环状序列 Circular Sequence |                                                                              | [C++](https://github.com/ZhengKe996/Algorithms/blob/main/UVA1584-cpp/main.cpp)  |
 
 <ListPosts type="Algorithms"/>
