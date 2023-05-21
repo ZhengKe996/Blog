@@ -8,6 +8,8 @@ display: 算法刷题集
   <Plum/>
 </ClientOnly>
 
-## 题解
+## 数组、链表题解集
+
+**数组**：数组是内存中是一段连续的存储空间；支持随机访问；关键：索引与寻址；
 
 <ListPosts type="Algorithms"/>
