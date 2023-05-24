@@ -6,4 +6,22 @@ lang: zh
 duration: 35min
 ---
 
-敬请期待
+# CICD
+
+### 持续集成 (CI-Continuous Integration)
+
+![持续集成](/public/images/blog/go-action/2023-05-24-14-09-03.png)
+
+### 持续部署(CD-Continuous Deployment)
+
+![持续部署](/public/images/blog/go-action/2023-05-24-14-10-28.png)
+
+### CICD 流程
+
+![CICD](/public/images/blog/go-action/2023-05-24-14-11-24.png)
+
+# GitLab
+
+![GitLab](/public/images/blog/go-action/2023-05-24-14-12-53.png)
+
+## Ubuntu 系统环境安装前准备
