@@ -87,3 +87,9 @@ admin.serverPort=9000
 #### react-simplemde-editor v5 版本改变内容自动失去焦点
 
 解决: 下载 4.x 版本即可
+
+#### mac 批量删除
+
+```sh
+find ./ -name "*.mp4" -exec rm -rf {} \;
+```
