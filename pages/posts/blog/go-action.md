@@ -24,4 +24,12 @@ duration: 35min
 
 ![GitLab](/public/images/blog/go-action/2023-05-24-14-12-53.png)
 
-## Ubuntu 系统环境安装前准备
+## Ubuntu 系统环境安装 GitLab
+
+```sh
+# 拉取gitlab安装包（来源 清华大学镜像站）
+wget https://mirrors.tuna.tsinghua.edu.cn/gitlab-ce/apt/packages.gitlab.com/gitlab/gitlab-ce/ubuntu/pool/focal/main/g/gitlab-ce/gitlab-ce_15.9.8-ce.0_amd64.deb
+
+# dpkg无法运行时 使用sudo dpkg
+dpkg -i gitlab-ce_15.9.8-ce.0_amd64.deb
+```
