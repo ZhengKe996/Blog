@@ -45,6 +45,8 @@ display: 算法刷题集
 | 226  |         翻转二叉树          |     Recursion      |                                                                               | [Java](https://github.com/ZhengKe996/Algorithms/tree/main/L-226-java/src/Main.java) |                                                                          |        |
 |  98  |       验证二叉搜索树        |     Recursion      |                                                                               | [Java](https://github.com/ZhengKe996/Algorithms/tree/main/L-98-java/src/Main.java)  |                                                                          |        |
 | 104  |      二叉树的最大深度       |     Recursion      | [C++](https://github.com/ZhengKe996/Algorithms/tree/main/L-104-cpp/main.cpp)  | [Java](https://github.com/ZhengKe996/Algorithms/tree/main/L-104-java/src/Main.java) |                                                                          |        |
+|  50  |          Pow(x, n)          | Divide-and-conquer |  [C++](https://github.com/ZhengKe996/Algorithms/tree/main/L-50-cpp/main.cpp)  |                                                                                     |                                                                          |        |
+|  22  |          括号生成           | Divide-and-conquer |  [C++](https://github.com/ZhengKe996/Algorithms/tree/main/L-22-cpp/main.cpp)  |                                                                                     |                                                                          |        |
 
 ## Acwing 合集
 
