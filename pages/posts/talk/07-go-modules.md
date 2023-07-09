@@ -1,10 +1,8 @@
 ---
 title: 'Go Modules timeout 问题'
-description: 芜湖
 date: 2022-10-30
 lang: zh
 type: talk
-duration: 30min
 ---
 
 #### Go Modules timeout 问题

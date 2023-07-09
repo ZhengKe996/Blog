@@ -1,10 +1,8 @@
 ---
 title: 'ZooKeeper 启动时报: Starting zookeeper … FAILED TO START'
-description: 芜湖
 date: 2022-04-28
 lang: zh
 type: talk
-duration: 30min
 ---
 
 问题: ZooKeeper 启动时报: Starting zookeeper … FAILED TO START<br />

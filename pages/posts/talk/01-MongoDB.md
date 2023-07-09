@@ -1,10 +1,8 @@
 ---
 title: 'MongoDB 无法被外部机器访问'
-description: 芜湖
 date: 2022-04-22
 lang: zh
 type: talk
-duration: 30min
 ---
 
 问题: 端口允许被外部访问的情况下，仍然无法被外部访问<br />

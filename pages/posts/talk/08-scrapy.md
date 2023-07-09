@@ -1,10 +1,8 @@
 ---
 title: "Scrapy 运行报错：ModuleNotFoundError: No module named 'xxx.xxx'"
-description: 芜湖
 date: 2023-04-30
 lang: zh
 type: talk
-duration: 30min
 ---
 
 解决问题注意两点：

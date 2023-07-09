@@ -1,10 +1,8 @@
 ---
 title: '本地无法连接服务器上 Redis'
-description: 芜湖
 date: 2022-04-30
 lang: zh
 type: talk
-duration: 30min
 ---
 
 #### Redis 连接问题

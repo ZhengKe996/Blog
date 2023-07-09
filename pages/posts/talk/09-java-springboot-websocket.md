@@ -1,10 +1,8 @@
 ---
 title: 'WebSocket RedisTemplate is null'
-description: 芜湖
 date: 2023-04-30
 lang: zh
 type: talk
-duration: 30min
 ---
 
 产生的原因：spring 默认是单例的，而 WebSocket 是多对象的，也就是每次会产生不同的对象。
