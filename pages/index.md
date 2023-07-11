@@ -6,4 +6,4 @@ title: Hello.
   <Plum/>
 </ClientOnly>
 
-### I am (Zhèng kē)..
+![首页](/public/home.jpg)
