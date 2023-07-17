@@ -32,18 +32,11 @@
         ML
       </router-link>
       <router-link
-        to="/machine-learning"
+        to="/ds"
         class="!border-none !font-400"
-        :class="route.path === '/machine-learning' ? '' : inactiveStyle"
+        :class="route.path === '/ds' ? '' : inactiveStyle"
       >
-        ML
-      </router-link>
-      <router-link
-        to="/algorithms"
-        class="!border-none !font-400"
-        :class="route.path === '/algorithms' ? '' : inactiveStyle"
-      >
-        Algorithms
+        DS
       </router-link>
     </div>
   </div>

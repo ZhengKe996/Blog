@@ -31,12 +31,8 @@ import { isDark } from '~/logics'
           <span class="lt-md:hidden">ML</span>
           <ri-lightbulb-line class="md:hidden" />
         </router-link>
-        <router-link to="/408" title="408">
-          <span class="lt-md:hidden">408</span>
-          <ri-lightbulb-line class="md:hidden" />
-        </router-link>
-        <router-link to="/algorithms" title="Algorithms">
-          <span class="lt-md:hidden">Algorithms</span>
+        <router-link to="/ds" title="DS">
+          <span class="lt-md:hidden">DS</span>
           <ri-lightbulb-line class="md:hidden" />
         </router-link>
 
