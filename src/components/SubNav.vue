@@ -22,7 +22,7 @@
         class="!border-none !font-400"
         :class="route.path === '/computer-science-notes' ? '' : inactiveStyle"
       >
-        CSN
+        CS
       </router-link>
       <router-link
         to="/machine-learning"
