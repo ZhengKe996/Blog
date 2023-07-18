@@ -1,7 +1,6 @@
 ---
 title: 'Maven 某些包拉不下来'
 date: 2023-07-10
-lang: zh
 type: talk
 ---
 

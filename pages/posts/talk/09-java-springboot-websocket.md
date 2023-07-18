@@ -1,7 +1,6 @@
 ---
 title: 'WebSocket RedisTemplate is null'
 date: 2023-04-30
-lang: zh
 type: talk
 ---
 

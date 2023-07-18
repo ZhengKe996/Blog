@@ -1,7 +1,6 @@
 ---
 title: 'zsh: command not found: godoc'
 date: 2022-03-30
-lang: zh
 type: talk
 ---
 

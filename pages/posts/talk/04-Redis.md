@@ -1,7 +1,6 @@
 ---
 title: '本地无法连接服务器上 Redis'
 date: 2022-04-30
-lang: zh
 type: talk
 ---
 

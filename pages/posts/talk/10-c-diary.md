@@ -1,10 +1,7 @@
 ---
-title: C 小记
+title: C 细节
 date: 2023-05-01
-lang: zh
 type: talk
-subtitle: '小记 C语言篇'
-display: 记录踩过的每一个坑
 ---
 
 ## Scanf 多次输入的一个细节

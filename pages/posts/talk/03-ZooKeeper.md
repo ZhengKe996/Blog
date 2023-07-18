@@ -1,7 +1,6 @@
 ---
 title: 'ZooKeeper 启动时报: Starting zookeeper … FAILED TO START'
 date: 2022-04-28
-lang: zh
 type: talk
 ---
 

@@ -1,7 +1,6 @@
 ---
 title: '无法在mac上运行graalvm gu命令'
 date: 2023-07-09
-lang: zh
 type: talk
 ---
 

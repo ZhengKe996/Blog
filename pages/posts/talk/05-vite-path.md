@@ -1,10 +1,7 @@
 ---
 title: Vite vue-ts 配置'@'路径别名
 date: 2022-04-14
-draft: true
 type: talk
-lang: zh
-duration: 25min
 ---
 
 1. 安装 node 依赖(类型)

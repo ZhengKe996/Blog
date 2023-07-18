@@ -1,7 +1,6 @@
 ---
 title: 'Go Modules timeout 问题'
 date: 2022-10-30
-lang: zh
 type: talk
 ---
 

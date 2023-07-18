@@ -1,7 +1,6 @@
 ---
 title: 'MongoDB 无法被外部机器访问'
 date: 2022-04-22
-lang: zh
 type: talk
 ---
 
