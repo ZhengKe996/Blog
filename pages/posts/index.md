@@ -5,10 +5,10 @@ display: ''
 
 <!-- <SubNav/> -->
 
+![blog](/public/blog.jpg)
+
 <ClientOnly>
   <Plum/>
 </ClientOnly>
 
 <ListPosts />
-
-![blog](/public/blog.jpg)
