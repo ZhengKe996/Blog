@@ -10,3 +10,5 @@ display: ''
 </ClientOnly>
 
 <ListPosts />
+
+![blog](/public/blog.jpg)
