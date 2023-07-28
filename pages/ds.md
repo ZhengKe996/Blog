@@ -1,7 +1,7 @@
 ---
 title: LeetCode
 subtitle: '其实并没有那么难'
-display: 刷题集
+display: LeetCode合集
 ---
 
 <ClientOnly>
@@ -23,4 +23,5 @@ display: 刷题集
 | 206 |     反转链表     | [C++](https://github.com/ZhengKe996/LeetCode/blob/main/C++/206/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/blob/main/Java/src/L206/Solution.java) |
 | 25  | K 个一组翻转链表 | [C++](https://github.com/ZhengKe996/LeetCode/blob/main/C++/25/main.cpp)  | [Java](https://github.com/ZhengKe996/LeetCode/blob/main/Java/src/L25/Solution.java)  |
 
+<hr/>
 <ListPosts type="DS"/>
