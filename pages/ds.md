@@ -1,7 +1,7 @@
 ---
 title: LeetCode
 subtitle: '其实并没有那么难'
-display: LeetCode合集
+display: LeetCode
 ---
 
 <ClientOnly>
