@@ -44,5 +44,38 @@ display: LeetCode
 | 42  |     接雨水     | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/42/main.cpp)  | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L42/Solution.java)  |
 | 239 | 滑动窗口最大值 | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/239/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L239/Solution.java) |
 
+### 映射
+
+| ID  |        Name        |                                   C++                                    |                                         Java                                         |
+| :-: | :----------------: | :----------------------------------------------------------------------: | :----------------------------------------------------------------------------------: |
+|  1  |      两数之和      |  [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/1/main.cpp)  |  [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L1/Solution.java)  |
+| 49  |   字母异位词分组   | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/49/main.cpp)  | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L49/Solution.java)  |
+| 30  | 串联所有单词的子串 | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/30/main.cpp)  | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L30/Solution.java)  |
+| 146 |      LRU 缓存      | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/146/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L146/LRUCache.java) |
+
+### 集合
+
+| ID  |      Name      |                                   C++                                    |                                         Java                                         |
+| :-: | :------------: | :----------------------------------------------------------------------: | :----------------------------------------------------------------------------------: |
+| 874 | 模拟行走机器人 | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/874/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L874/Solution.java) |
+
+### 前缀和、差分
+
+|  ID  |            Name             |                                    C++                                    |                                          Java                                          |
+| :--: | :-------------------------: | :-----------------------------------------------------------------------: | :------------------------------------------------------------------------------------: |
+| 1248 |     统计「优美子数组」      | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/1248/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L1248/Solution.java)  |
+|  53  |        最大子数组和         |  [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/53/main.cpp)  |  [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L53/Solution.java)   |
+| 304  | 二维区域和检索 - 矩阵不可变 | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/304/main.cpp)  | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L304/NumMatrix.java)  |
+| 1109 |        航班预订统计         | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/1109/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L1109/NumMatrix.java) |
+
+### 双指针扫描
+
+| ID  |            Name            |                                   C++                                    |                                         Java                                         |
+| :-: | :------------------------: | :----------------------------------------------------------------------: | :----------------------------------------------------------------------------------: |
+|  1  |          两数之和          |  [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/1/main.cpp)  |  [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L1/Solution.java)  |
+| 167 | 两数之和 II - 输入有序数组 | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/167/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L167/Solution.java) |
+| 15  |          三数之和          | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/15/main.cpp)  | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L15/Solution.java)  |
+| 11  |       盛最多水的容器       | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/11/main.cpp)  | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L11/Solution.java)  |
+
 <hr/>
 <ListPosts type="DS"/>
