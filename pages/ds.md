@@ -77,5 +77,25 @@ display: LeetCode
 | 15  |          三数之和          | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/15/main.cpp)  | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L15/Solution.java)  |
 | 11  |       盛最多水的容器       | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/11/main.cpp)  | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L11/Solution.java)  |
 
+## 递归
+
+| ID  |   Name    |                                   C++                                   |                                        Java                                         |
+| :-: | :-------: | :---------------------------------------------------------------------: | :---------------------------------------------------------------------------------: |
+| 78  |   子集    | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/78/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L78/Solution.java) |
+| 77  |   组合    | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/77/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L77/Solution.java) |
+| 46  |  全排列   | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/46/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L46/Solution.java) |
+| 47  | 全排列 II | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/47/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L47/Solution.java) |
+| 50  | Pow(x, n) | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/50/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L50/Solution.java) |
+| 22  | 括号生成  | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/22/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L22/Solution.java) |
+
+## 树 🌲
+
+| ID  |       Name       |                                   C++                                    |                                         Java                                         |
+| :-: | :--------------: | :----------------------------------------------------------------------: | :----------------------------------------------------------------------------------: |
+| 226 |    翻转二叉树    | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/226/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L226/Solution.java) |
+| 98  |  验证二叉搜索树  | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/98/main.cpp)  | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L98/Solution.java)  |
+| 104 | 二叉树的最大深度 | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/104/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L104/Solution.java) |
+| 111 | 二叉树的最小深度 | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/111/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L111/Solution.java) |
+
 <hr/>
 <ListPosts type="DS"/>
