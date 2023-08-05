@@ -128,5 +128,26 @@ display: LeetCode
 | 23  | 合并 K 个升序链表 | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/23/main.cpp)  | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L23/Solution.java)  |
 | 239 |  滑动窗口最大值   | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/239/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L239/Solution.java) |
 
+## 二叉搜索树(BST)
+
+|      ID      |          Name          |                                     C++                                      |                                          Java                                           |
+| :----------: | :--------------------: | :--------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------: |
+|     701      | 二叉搜索树中的插入操作 |   [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/701/main.cpp)   |  [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L701/Solution.java)   |
+| 面试题 04.06 |         后继者         | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/LMS0406/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/LMS0406/Solution.java) |
+|     450      | 删除二叉搜索树中的节点 |   [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/450/main.cpp)   |  [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L450/Solution.java)   |
+
+## 二分
+
+| ID  |                     Name                      |                                   C++                                    |                                         Java                                         |
+| :-: | :-------------------------------------------: | :----------------------------------------------------------------------: | :----------------------------------------------------------------------------------: |
+| 704 |                   二分查找                    | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/704/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L704/Solution.java) |
+| 153 |          寻找旋转排序数组中的最小值           | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/153/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L153/Solution.java) |
+| 154 |         寻找旋转排序数组中的最小值 II         | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/154/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L154/Solution.java) |
+| 34  | 在排序数组中查找元素的第一个和最后一个位置 II | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/34/main.cpp)  | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L34/Solution.java)  |
+| 69  |                 x 的平方根 II                 | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/69/main.cpp)  | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L69/Solution.java)  |
+| 162 |                  寻找峰值 II                  | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/162/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L162/Solution.java) |
+| 374 |                  猜数字大小                   | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/374/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L374/Solution.java) |
+| 410 |               分割数组的最大值                | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/410/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L410/Solution.java) |
+
 <hr/>
 <ListPosts type="DS"/>
