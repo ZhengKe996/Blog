@@ -77,7 +77,7 @@ display: LeetCode
 | 15  |          三数之和          | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/15/main.cpp)  | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L15/Solution.java)  |
 | 11  |       盛最多水的容器       | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/11/main.cpp)  | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L11/Solution.java)  |
 
-## 递归
+### 递归
 
 | ID  |   Name    |                                   C++                                   |                                        Java                                         |
 | :-: | :-------: | :---------------------------------------------------------------------: | :---------------------------------------------------------------------------------: |
@@ -102,6 +102,31 @@ display: LeetCode
 | 297 |  二叉树的序列化与反序列化 ⭐️  | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/297/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L297/Solution.java) |
 | 105 | 从前序与中序遍历序列构造二叉树 | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/105/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L105/Solution.java) |
 | 106 | 从中序与后序遍历序列构造二叉树 | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/106/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L106/Solution.java) |
+| 236 |   二叉树的最近公共祖先(LCA)    | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/236/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L236/Solution.java) |
+
+### 图
+
+| ID  |   Name   |                                   C++                                    |                                         Java                                         |
+| :-: | :------: | :----------------------------------------------------------------------: | :----------------------------------------------------------------------------------: |
+| 207 |  课程表  | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/207/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L207/Solution.java) |
+| 684 | 冗余连接 | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/684/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L684/Solution.java) |
+
+### 深度优先搜索(DFS)/广度优先搜索(BFS)
+
+| ID  |         Name         |                                   C++                                    |                                         Java                                         |
+| :-: | :------------------: | :----------------------------------------------------------------------: | :----------------------------------------------------------------------------------: |
+| 17  |  电话号码的字母组合  | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/17/main.cpp)  | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L17/Solution.java)  |
+| 51  |        N 皇后        | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/51/main.cpp)  | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L51/Solution.java)  |
+| 200 |       岛屿数量       | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/200/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L200/Solution.java) |
+| 433 |     最小基因变化     | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/433/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L433/Solution.java) |
+| 329 | 矩阵中的最长递增路径 | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/329/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L329/Solution.java) |
+
+### 堆(最大、最小堆)
+
+| ID  |       Name        |                                   C++                                    |                                         Java                                         |
+| :-: | :---------------: | :----------------------------------------------------------------------: | :----------------------------------------------------------------------------------: |
+| 23  | 合并 K 个升序链表 | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/23/main.cpp)  | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L23/Solution.java)  |
+| 239 |  滑动窗口最大值   | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/239/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L239/Solution.java) |
 
 <hr/>
 <ListPosts type="DS"/>
