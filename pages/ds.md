@@ -150,7 +150,7 @@ display: LeetCode
 | 410  |               分割数组的最大值                | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/410/main.cpp)  | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L410/Solution.java)  |
 | 1482 |           制作 m 束花所需的最少天数           | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/1482/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L1482/Solution.java) |
 
-## 排序(Sort)
+### 排序(Sort)
 
 |  ID  |          Name           |                                    C++                                    |                                         Java                                          |
 | :--: | :---------------------: | :-----------------------------------------------------------------------: | :-----------------------------------------------------------------------------------: |
@@ -159,6 +159,25 @@ display: LeetCode
 |  56  |        合并区间         |  [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/56/main.cpp)  |  [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L56/Solution.java)  |
 | 215  | 数组中的第 K 个最大元素 | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/215/main.cpp)  | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L215/Solution.java)  |
 | 493  |         翻转对          | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/493/main.cpp)  | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L493/Solution.java)  |
+
+### 贪心
+
+|  ID  |             Name              |                                    C++                                    |                                         Java                                          |
+| :--: | :---------------------------: | :-----------------------------------------------------------------------: | :-----------------------------------------------------------------------------------: |
+| 322  |           零钱兑换            | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/322/main.cpp)  | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L322/Solution.java)  |
+| 860  |          柠檬水找零           | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/860/main.cpp)  | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L860/Solution.java)  |
+| 455  |           分发饼干            | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/455/main.cpp)  | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L455/Solution.java)  |
+| 122  |     买卖股票的最佳时机 II     | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/122/main.cpp)  | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L122/Solution.java)  |
+|  45  |          跳跃游戏 II          |  [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/45/main.cpp)  |  [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L45/Solution.java)  |
+| 1665 | 完成所有任务的最少初始能量 II | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/1665/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L1665/Solution.java) |
+
+### 动态规划
+
+|  ID  |        Name         |                                    C++                                    |                                         Java                                          |
+| :--: | :-----------------: | :-----------------------------------------------------------------------: | :-----------------------------------------------------------------------------------: |
+| 1143 | 最长公共子序列(LCS) | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/1143/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L1143/Solution.java) |
+| 300  | 最长递增子序列(LIS) | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/300/main.cpp)  | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L300/Solution.java)  |
+|  53  |    最大子数组和     |  [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/53/main.cpp)  |  [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L53/Solution.java)  |
 
 <hr/>
 <ListPosts type="DS"/>
