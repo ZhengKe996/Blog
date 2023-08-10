@@ -196,5 +196,45 @@ display: LeetCode
 | 1000 |     合并石头的最低成本     | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/1000/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L1000/Solution.java) |
 | 337  |        打家劫舍 III        | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/337/main.cpp)  | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L337/Solution.java)  |
 
+### 字典树(Trie)
+
+| ID  |        Name        |           C++           |                Java                 |
+| :-: | :----------------: | :---------------------: | :---------------------------------: |
+| 208 | 实现 Trie (前缀树) | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/208/main.cpp) |   [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L208/Trie.java)   |
+| 212 |    单词搜索 II     | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/212/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L212/Solution.java) |
+
+### 并查集
+
+| ID  |     Name     |           C++           |                Java                 |
+| :-: | :----------: | :---------------------: | :---------------------------------: |
+| 547 |   省份数量   | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/547/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L547/Solution.java) |
+| 130 | 被围绕的区域 | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/130/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L130/Solution.java) |
+
+### 最短路径 (Bellman Ford 贝尔曼-福特)
+
+| ID  |     Name     |           C++           |                Java                 |
+| :-: | :----------: | :---------------------: | :---------------------------------: |
+| 743 | 网络延迟时间 | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/743/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L743/Solution.java) |
+
+### 最短路径(Dijkstra 迪杰斯特拉)
+
+基于贪心思想的，只适用于所有边的长度都是非负数的图
+
+| ID  |     Name     |           C++           |                Java                 |
+| :-: | :----------: | :---------------------: | :---------------------------------: |
+| 743 | 网络延迟时间 | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/743/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L743/Solution.java) |
+
+### 最短路径(Floyd 弗洛伊德)
+
+|  ID  |           Name           |           C++            |                 Java                 |
+| :--: | :----------------------: | :----------------------: | :----------------------------------: |
+| 1334 | 阈值距离内邻居最少的城市 | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/1334/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L1334/Solution.java) |
+
+### 最小生成树(Kruskal 克鲁斯卡尔)
+
+|  ID  |         Name         |           C++            |                 Java                 |
+| :--: | :------------------: | :----------------------: | :----------------------------------: |
+| 1584 | 连接所有点的最小费用 | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/1584/main.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Java/src/L1584/Solution.java) |
+
 <hr/>
 <ListPosts type="DS"/>
