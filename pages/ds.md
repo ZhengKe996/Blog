@@ -308,5 +308,11 @@ display: LeetCode
 | :-: | :------: | :---------------------------------------------------------------------------: | :-----------------------------------------------------------------------------: |
 | 127 | 单词接龙 | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/Code/127.单词接龙.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Code/127.单词接龙.java) |
 
+### A\*
+
+| ID  |   Name   |                                      C++                                      | Java |
+| :-: | :------: | :---------------------------------------------------------------------------: | :--: |
+| 773 | 滑动谜题 | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/Code/773.滑动谜题.cpp) |      |
+
 <hr/>
 <ListPosts type="DS"/>
