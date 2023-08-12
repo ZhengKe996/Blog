@@ -293,5 +293,20 @@ display: LeetCode
 | 44  |           通配符匹配           |                   [C++](https://github.com/ZhengKe996/LeetCode/tree/main/Code/)                    |                    [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Code/)                    |
 | 115 |          不同的子序列          |         [C++](https://github.com/ZhengKe996/LeetCode/tree/main/Code/115.不同的子序列.cpp)          |         [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Code/115.不同的子序列.java)          |
 
+### 搜索剪枝 ✂️
+
+| ID  |    Name    |                                      C++                                       |                                       Java                                       |
+| :-: | :--------: | :----------------------------------------------------------------------------: | :------------------------------------------------------------------------------: |
+| 22  |  括号生成  |  [C++](https://github.com/ZhengKe996/LeetCode/tree/main/Code/22.括号生成.cpp)  |  [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Code/22.括号生成.java)  |
+| 51  |   N 皇后   |    [C++](https://github.com/ZhengKe996/LeetCode/tree/main/C++/51/main.cpp)     |                        [Java](Java/src/L51/Solution.java)                        |
+| 36  | 有效的数独 | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/Code/36.有效的数独.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Code/36.有效的数独.java) |
+| 37  |   解数独   |   [C++](https://github.com/ZhengKe996/LeetCode/tree/main/Code/37.解数独.cpp)   |                                                                                  |
+
+### 折半搜索
+
+| ID  |   Name   |                                      C++                                      |                                      Java                                       |
+| :-: | :------: | :---------------------------------------------------------------------------: | :-----------------------------------------------------------------------------: |
+| 127 | 单词接龙 | [C++](https://github.com/ZhengKe996/LeetCode/tree/main/Code/127.单词接龙.cpp) | [Java](https://github.com/ZhengKe996/LeetCode/tree/main/Code/127.单词接龙.java) |
+
 <hr/>
 <ListPosts type="DS"/>
