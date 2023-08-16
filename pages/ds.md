@@ -1,7 +1,6 @@
 ---
-title: LeetCode
+title: DS
 subtitle: '其实并没有那么难'
-display: LeetCode
 ---
 
 <ClientOnly>
@@ -10,7 +9,7 @@ display: LeetCode
 <ListPosts type="DS"/>
 <hr/>
 
-# LeetCode
+## LeetCode
 
 <p align="center">
 <img src="https://img.shields.io/badge/language-C++-green?style=for-the-badge">
