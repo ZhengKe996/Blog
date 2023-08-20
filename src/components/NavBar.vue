@@ -27,15 +27,15 @@ import { isDark } from '~/logics'
           <ri-lightbulb-line class="md:hidden" />
         </router-link>
 
-        <router-link to="/machine-learning" title="ML">
-          <span class="lt-md:hidden">ML</span>
-          <ri-lightbulb-line class="md:hidden" />
-        </router-link>
         <router-link to="/ds" title="DS">
           <span class="lt-md:hidden">DS</span>
-          <ri-lightbulb-line class="md:hidden" />
+          <ri-ball-pen-line class="md:hidden" />
         </router-link>
 
+        <!-- <router-link to="/machine-learning" title="ML">
+          <span class="lt-md:hidden">ML</span>
+          <ri-lightbulb-line class="md:hidden" />
+        </router-link> -->
         <!-- <router-link to="/data-structure" title="DataStructure">
           <span class="lt-md:hidden">DataStructure</span>
           <ri-lightbulb-line class="md:hidden" />
@@ -66,6 +66,7 @@ import { isDark } from '~/logics'
         <!-- <router-link to="/bookmarks" title="Bookmarks">
           <ri-bookmark-line />
         </router-link> -->
+
         <a
           href="https://github.com/ZhengKe996"
           target="_blank"
