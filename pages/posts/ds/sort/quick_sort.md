@@ -1,7 +1,7 @@
 ---
 title: '快排'
 date: 2023-08-25
-type: DS
+type: Sort
 ---
 
 | [C++](https://github.com/ZhengKe996/DS/blob/main/src/quick_sort/partition_and_quick_sort.cpp) | [Java](https://github.com/ZhengKe996/DS/blob/main/src/quick_sort/partition_and_quick_sort.java) |

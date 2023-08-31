@@ -1,7 +1,7 @@
 ---
 title: '归并'
 date: 2023-08-21
-type: DS
+type: Sort
 ---
 
 | [C++](https://github.com/ZhengKe996/DS/blob/main/src/merge_sort/merge_sort.cpp) | [Java](https://github.com/ZhengKe996/DS/blob/main/src/merge_sort/merge_sort.java) |
