@@ -13,5 +13,7 @@ type: DS
 - 数组实现
 - 哈希表实现
 
+<hr/>
+
 | [C++](https://github.com/ZhengKe996/DS/blob/main/src/trie/trie.cpp) | [Java](https://github.com/ZhengKe996/DS/blob/main/src/trie/trie.java) |
 | :-----------------------------------------------------------------: | :-------------------------------------------------------------------: |

@@ -1,5 +1,5 @@
 ---
-title: '二分'
+title: '二分查找'
 date: 2023-08-16
 type: DS
 ---

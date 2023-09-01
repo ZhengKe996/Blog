@@ -1,45 +1,12 @@
 ---
-title: '归并'
+title: '归并排序'
 date: 2023-08-21
 type: Sort
 ---
 
-| [C++](https://github.com/ZhengKe996/DS/blob/main/src/merge_sort/merge_sort.cpp) | [Java](https://github.com/ZhengKe996/DS/blob/main/src/merge_sort/merge_sort.java) |
-| :-----------------------------------------------------------------------------: | :-------------------------------------------------------------------------------: |
+![计数排序](/public/images/ds/mergeSort.gif)
 
 ## 归并排序（递归）
-
-C++
-
-```cpp
-class Solution {
- private:
-  void process(vector<int>& arr, int l, int r) {
-    if (l == r) return;
-    int mid = l + ((r - l) >> 1);
-    process(arr, l, mid);
-    process(arr, mid + 1, r);
-    merge(arr, l, mid, r);
-  }
-  void merge(vector<int>& arr, int l, int mid, int r) {
-    vector<int> help((r - l + 1), 0);
-    int i = 0, p1 = l, p2 = mid + 1;
-    while (p1 <= mid && p2 <= r) {
-      help[i++] = arr[p1] <= arr[p2] ? arr[p1++] : arr[p2++];
-    }
-
-    while (p1 <= mid) help[i++] = arr[p1++];
-    while (p2 <= r) help[i++] = arr[p2++];
-    for (i = 0; i < help.size(); i++) arr[l + i] = help[i];
-  }
-
- public:
-  void merge_sort(vector<int>& arr) {
-    if (arr.size() < 2) return;
-    process(arr, 0, arr.size() - 1);
-  }
-};
-```
 
 Java
 
@@ -100,31 +67,6 @@ private void merge(int[] arr, int l, int mid, int r) {
 
 ## 归并排序（迭代）
 
-C++
-
-```cpp
-class Solution {
- public:
-  void merge_sort(vector<int>& arr) {
-    if (arr.size() < 2) return;
-    int N = arr.size(), merge_size = 1;  // merge_size 步长
-    while (merge_size < N) {
-      int l = 0;
-      while (l < N) {
-        if (merge_size >= N - l) break;
-
-        int mid = l + merge_size - 1;
-        int r = mid + min(merge_size, (N - mid - 1));
-        merge(arr, l, mid, r);
-        l = r + 1;
-      }
-      if (merge_size > N / 2) break;
-      merge_size <<= 1;
-    }
-  }
-};
-```
-
 Java
 
 ```java
@@ -155,6 +97,11 @@ public void mergeSort(int[] arr) {
   }
 }
 ```
+
+<hr/>
+
+| [C++](https://github.com/ZhengKe996/DS/blob/main/src/merge_sort/merge_sort.cpp) | [Java](https://github.com/ZhengKe996/DS/blob/main/src/merge_sort/merge_sort.java) |
+| :-----------------------------------------------------------------------------: | :-------------------------------------------------------------------------------: |
 
 <hr/>
 <ListPosts type="Merge"/>

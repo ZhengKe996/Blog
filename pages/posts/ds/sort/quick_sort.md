@@ -1,11 +1,10 @@
 ---
-title: '快排'
+title: '快速排序'
 date: 2023-08-25
 type: Sort
 ---
 
-| [C++](https://github.com/ZhengKe996/DS/blob/main/src/quick_sort/partition_and_quick_sort.cpp) | [Java](https://github.com/ZhengKe996/DS/blob/main/src/quick_sort/partition_and_quick_sort.java) |
-| :-------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------: |
+![计数排序](/public/images/ds/quickSort.gif)
 
 ## 快速排序基础版
 
@@ -103,6 +102,11 @@ private void process3(int[] arr, int l, int r) {
   process3(arr, equalArea[1] + 1, r);
 }
 ```
+
+<hr/>
+
+| [C++](https://github.com/ZhengKe996/DS/blob/main/src/quick_sort/partition_and_quick_sort.cpp) | [Java](https://github.com/ZhengKe996/DS/blob/main/src/quick_sort/partition_and_quick_sort.java) |
+| :-------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------: |
 
 <hr/>
 <ListPosts type="QuickSort"/>
