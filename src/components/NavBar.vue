@@ -32,10 +32,10 @@ import { isDark } from '~/logics'
           <ri-ball-pen-line class="md:hidden" />
         </router-link>
 
-        <!-- <router-link to="/machine-learning" title="ML">
-          <span class="lt-md:hidden">ML</span>
-          <ri-lightbulb-line class="md:hidden" />
-        </router-link> -->
+        <router-link to="/juc" title="JUC">
+          <span class="lt-md:hidden">JUC</span>
+          <ri-hammer-line class="md:hidden" />
+        </router-link>
         <!-- <router-link to="/data-structure" title="DataStructure">
           <span class="lt-md:hidden">DataStructure</span>
           <ri-lightbulb-line class="md:hidden" />
