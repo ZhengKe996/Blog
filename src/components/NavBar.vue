@@ -63,9 +63,9 @@ import { isDark } from '~/logics'
           <ri-lightbulb-line class="md:hidden" />
         </router-link> -->
 
-        <!-- <router-link to="/bookmarks" title="Bookmarks">
+        <router-link to="/network" title="NetWork">
           <ri-bookmark-line />
-        </router-link> -->
+        </router-link>
 
         <a
           href="https://github.com/ZhengKe996"

@@ -25,11 +25,11 @@
         CS
       </router-link>
       <router-link
-        to="/machine-learning"
+        to="/network"
         class="!border-none !font-400"
-        :class="route.path === '/machine-learning' ? '' : inactiveStyle"
+        :class="route.path === '/network' ? '' : inactiveStyle"
       >
-        ML
+        NetWork
       </router-link>
       <router-link
         to="/ds"
