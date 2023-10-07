@@ -58,14 +58,14 @@ import { isDark } from '~/logics'
           <ri-lightbulb-line class="md:hidden" />
         </router-link> -->
 
-        <!-- <router-link to="/projects">
-          <span class="lt-md:hidden">Projects</span>
-          <ri-lightbulb-line class="md:hidden" />
-        </router-link> -->
-
-        <router-link to="/network" title="NetWork">
-          <ri-bookmark-line />
+        <router-link to="/network">
+          <span class="lt-md:hidden">NetWork</span>
+          <x-entypo-network class="md:hidden" />
         </router-link>
+
+        <!-- <router-link to="/network" title="NetWork">
+          <ri-bookmark-line />
+        </router-link> -->
 
         <a
           href="https://github.com/ZhengKe996"
