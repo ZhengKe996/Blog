@@ -64,7 +64,7 @@ import { isDark } from '~/logics'
         </router-link>
 
         <router-link to="/notes" title="Notes">
-          <ri-sticky-note-line />
+          <ri-sticky-note-line class="lt-md:hidden" />
         </router-link>
 
         <a
