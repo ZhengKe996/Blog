@@ -63,9 +63,9 @@ import { isDark } from '~/logics'
           <x-entypo-network class="md:hidden" />
         </router-link>
 
-        <!-- <router-link to="/network" title="NetWork">
-          <ri-bookmark-line />
-        </router-link> -->
+        <router-link to="/notes" title="Notes">
+          <ri-sticky-note-line />
+        </router-link>
 
         <a
           href="https://github.com/ZhengKe996"
