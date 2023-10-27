@@ -15,8 +15,8 @@ type: DP
 public static int win1(int[] arr) {
   if (arr == null || arr.length == 0)
     return 0;
-  int frist = f1(arr, 0, arr.length - 1);
-  int second = g1(arr, 0, arr.length - 1);
+  int frist = f1(arr, 0, arr.length - 1); // 先手操作（拿大）
+  int second = g1(arr, 0, arr.length - 1);// 后手操作(拿小)
   return Math.max(frist, second);
 }
 

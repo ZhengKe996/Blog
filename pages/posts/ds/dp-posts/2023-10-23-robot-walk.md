@@ -30,14 +30,9 @@ public static int ways1(int N, int start, int aim, int K) {
  * @return
  */
 private static int process1(int cur, int rest, int aim, int N) {
-  if (rest == 0)
-    return cur == aim ? 1 : 0;
-  if (cur == 1)
-    return process1(2, rest - 1, aim, N);
-
-  if (cur == N)
-    return process1(N - 1, rest - 1, aim, N);
-
+  if (rest == 0) return cur == aim ? 1 : 0; // 没有剩余步可以走了,当前是否命中？
+  if (cur == 1) return process1(2, rest - 1, aim, N); // 到1位置的情况，下一步要往右边走
+  if (cur == N) return process1(N - 1, rest - 1, aim, N);// 到N位置的情况，下一步要往左边走
   return process1(cur - 1, rest - 1, aim, N) + process1(cur + 1, rest - 1, aim, N);
 }
 ```
