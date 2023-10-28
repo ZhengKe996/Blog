@@ -1,6 +1,6 @@
 ---
 title: 计算机网络
-subtitle: '《计算机网络（第8版）》考点记录'
+subtitle: '《计算机网络（第8版）》考点笔记'
 ---
 
 <ClientOnly>
