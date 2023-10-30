@@ -4,7 +4,7 @@ date: 2023-10-30
 type: DP
 ---
 
-[题目链接](https://leetcode.cn/problems/longest-common-subsequence)
+[题目链接 🔗](https://leetcode.cn/problems/longest-common-subsequence)
 
 > 给定两个字符串 text1 和 text2，返回这两个字符串的最长 公共子序列 的长度。如果不存在 公共子序列 ，返回 0 。
 >

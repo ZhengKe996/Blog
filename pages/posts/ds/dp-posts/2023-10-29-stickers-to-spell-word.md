@@ -10,7 +10,7 @@ type: DP
 > 返回你需要拼出 target 的最小贴纸数量。如果任务不可能，则返回 -1 。
 > 注意：在所有的测试用例中，所有的单词都是从 1000 个最常见的美国英语单词中随机选择的，并且 target 被选择为两个随机单词的连接。
 
-[题目链接](https://leetcode.cn/problems/stickers-to-spell-word/)
+[题目链接 🔗](https://leetcode.cn/problems/stickers-to-spell-word/)
 
 ## 暴力解一（超时）
 
