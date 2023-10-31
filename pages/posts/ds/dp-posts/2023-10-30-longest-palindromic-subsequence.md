@@ -60,6 +60,8 @@ private static int f(char[] str, int L, int R) {
 
 **一张`N*N`的二维表**
 
+![DP](/public/images/ds/dp/dp-longest-palindromic-subsequence.drawio.png)
+
 ```java
 public int longestPalindromeSubseq2(String s) {
   if (s == null || s.length() == 0)   return 0;
