@@ -56,7 +56,7 @@ private static int f(char[] str, int L, int R) {
 }
 ```
 
-## DP
+## DP(从左到右的尝试模型)
 
 **一张`N*N`的二维表**
 

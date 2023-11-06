@@ -36,10 +36,10 @@ import { isDark } from '~/logics'
           <span class="lt-md:hidden">JUC</span>
           <ri-hammer-line class="md:hidden" />
         </router-link>
-        <router-link to="/cookbooks" title="菜谱">
+        <!-- <router-link to="/cookbooks" title="菜谱">
           <span class="lt-md:hidden">菜谱😃</span>
           <ri-bar-chart-box-line class="md:hidden" />
-        </router-link>
+        </router-link> -->
 
         <!-- <router-link to="/javascript"
                      title="JavaScript">

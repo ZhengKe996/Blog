@@ -32,7 +32,7 @@ private static int process(int x, int y, int rest, int a, int b) {
 
 ```
 
-## DP
+## DP(范围模型)
 
 **每一层依赖下一层的位置（rest 为 Z 轴）**
 

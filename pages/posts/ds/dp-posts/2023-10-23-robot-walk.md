@@ -16,8 +16,7 @@ type: DP
 
 ```java
 public static int ways1(int N, int start, int aim, int K) {
-  if (N < 2 || start < 1 || start > N || aim < 1 || aim > N || K < 1)
-    return -1;
+  if (N < 2 || start < 1 || start > N || aim < 1 || aim > N || K < 1) return -1;
   return process1(start, K, aim, N);
 }
 
@@ -54,13 +53,11 @@ public static int ways2(int N, int start, int aim, int K) {
 }
 
 private static int process2(int cur, int rest, int aim, int N, int[][] dp) {
-  if (dp[cur][rest] != -1)
-    return dp[cur][rest];
+  if (dp[cur][rest] != -1) return dp[cur][rest];
 
   // 之前没算过
   int ans = 0;
-  if (rest == 0)
-    ans = cur == aim ? 1 : 0;
+  if (rest == 0) ans = cur == aim ? 1 : 0;
   else if (cur == 1)
     ans = process2(2, rest - 1, aim, N, dp);
   else if (cur == N)
@@ -82,8 +79,7 @@ private static int process2(int cur, int rest, int aim, int N, int[][] dp) {
 
 ```java
 public static int ways3(int N, int start, int aim, int K) {
-  if (N < 2 || start < 1 || start > N || aim < 1 || aim > N || K < 1)
-    return -1;
+  if (N < 2 || start < 1 || start > N || aim < 1 || aim > N || K < 1)return -1;
 
   int[][] dp = new int[N + 1][K + 1];
   dp[aim][0] = 1;

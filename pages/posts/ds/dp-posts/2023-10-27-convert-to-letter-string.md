@@ -26,7 +26,7 @@ private static int process(char[] str, int i) {
 }
 ```
 
-## DP
+## DP(从右到左的尝试模型)
 
 **由暴力递归的参数转移方程改动而来**
 

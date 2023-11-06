@@ -13,8 +13,7 @@ type: DP
 
 ```java
 public static int win1(int[] arr) {
-  if (arr == null || arr.length == 0)
-    return 0;
+  if (arr == null || arr.length == 0) return 0;
   int frist = f1(arr, 0, arr.length - 1); // 先手操作（拿大）
   int second = g1(arr, 0, arr.length - 1);// 后手操作(拿小)
   return Math.max(frist, second);
@@ -22,8 +21,7 @@ public static int win1(int[] arr) {
 
 // 先手操作
 private static int f1(int[] arr, int L, int R) {
-  if (L == R)
-    return arr[L];
+  if (L == R) return arr[L];
   int p1 = arr[L] + g1(arr, L + 1, R);
   int p2 = arr[R] + g1(arr, L, R - 1);
   return Math.max(p1, p2);
@@ -31,8 +29,7 @@ private static int f1(int[] arr, int L, int R) {
 
 // 后手
 private static int g1(int[] arr, int L, int R) {
-  if (L == R)
-    return 0;
+  if (L == R) return 0;
   int p1 = f1(arr, L + 1, R);
   int p2 = f1(arr, L, R - 1);
   return Math.min(p1, p2);
@@ -46,8 +43,7 @@ private static int g1(int[] arr, int L, int R) {
 
 ```java
 public static int win2(int[] arr) {
-  if (arr == null || arr.length == 0)
-    return 0;
+  if (arr == null || arr.length == 0) return 0;
   int N = arr.length;
   int[][] fmap = new int[N][N];
   int[][] gmap = new int[N][N];
@@ -65,11 +61,9 @@ public static int win2(int[] arr) {
 
 // 先手操作
 private static int f2(int[] arr, int L, int R, int[][] fmap, int[][] gmap) {
-  if (fmap[L][R] != -1)
-    return fmap[L][R];
+  if (fmap[L][R] != -1) return fmap[L][R];
   int ans = 0;
-  if (L == R)
-    ans = arr[L];
+  if (L == R) ans = arr[L];
   else {
     int p1 = arr[L] + g2(arr, L + 1, R, fmap, gmap);
     int p2 = arr[R] + g2(arr, L, R - 1, fmap, gmap);
@@ -81,8 +75,7 @@ private static int f2(int[] arr, int L, int R, int[][] fmap, int[][] gmap) {
 
 // 后手
 private static int g2(int[] arr, int L, int R, int[][] fmap, int[][] gmap) {
-  if (gmap[L][R] != -1)
-    return gmap[L][R];
+  if (gmap[L][R] != -1) return gmap[L][R];
   int ans = 0;
   if (L != R) {
     int p1 = f2(arr, L + 1, R, fmap, gmap);
@@ -101,8 +94,7 @@ private static int g2(int[] arr, int L, int R, int[][] fmap, int[][] gmap) {
 
 ```java
 public static int win3(int[] arr) {
-  if (arr == null || arr.length == 0)
-    return 0;
+  if (arr == null || arr.length == 0) return 0;
   int N = arr.length;
   int[][] fmap = new int[N][N];
   int[][] gmap = new int[N][N];
