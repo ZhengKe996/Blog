@@ -6,13 +6,4 @@
   </main>
 </template>
 
-<script setup lang="ts">
-useHead({
-  meta: [
-    { property: 'og:title', content: 'Fenta' },
-    { name: 'description', content: 'Fenta\'s Portfolio' },
-    { name: 'twitter:card', content: 'summary' },
-    { name: 'twitter:creator', content: '@Fenta' },
-  ],
-})
-</script>
+<script setup lang="ts"></script>
