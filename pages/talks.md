@@ -1,6 +1,6 @@
 ---
 title: Talks - ZK
-display: '开发中遇到的一些小问题及其解决办法'
+display: '汇总了一些小问题及其解决办法'
 ---
 
 <!-- <SubNav/> -->
