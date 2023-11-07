@@ -33,7 +33,7 @@ private static long process(int times, int M, int hp) {
 }
 ```
 
-## DP
+## DP(多样本位置全对应的尝试模型)
 
 ```java
  public static double dp1(int N, int M, int k) {
