@@ -8,8 +8,6 @@ type: Sort
 
 ## 快速排序基础版
 
-Java
-
 ```java
 public void swap(int[] arr, int i, int j) {
   int temp = arr[i];
@@ -51,8 +49,6 @@ private void process(int[] arr, int l, int r) {
 
 ## 2.0 划分区间优化
 
-Java
-
 ```java
 public int[] netherlandsFlag(int[] arr, int L, int R) {
   if (L > R) { // L...R L>R
@@ -91,16 +87,16 @@ private void process2(int[] arr, int l, int r) {
 
 ## 3.0 随机数优化（时间复杂度最好为 O(logn)）
 
-```java
 // ......
 private void process3(int[] arr, int l, int r) {
-  if (l >= r)
-    return;
-  swap(arr, l + (int) (Math.random() * (r - l + 1)), r);
-  int[] equalArea = netherlandsFlag(arr, l, r);
-  process3(arr, l, equalArea[0] - 1);
-  process3(arr, equalArea[1] + 1, r);
+if (l >= r)
+return;
+swap(arr, l + (int) (Math.random() \* (r - l + 1)), r);
+int[] equalArea = netherlandsFlag(arr, l, r);
+process3(arr, l, equalArea[0] - 1);
+process3(arr, equalArea[1] + 1, r);
 }
+
 ```
 
 <hr/>
@@ -110,3 +106,4 @@ private void process3(int[] arr, int l, int r) {
 
 <hr/>
 <ListPosts type="QuickSort"/>
+```

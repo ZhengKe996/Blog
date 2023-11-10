@@ -8,8 +8,6 @@ type: Sort
 
 ## 归并排序（递归）
 
-Java
-
 ```java
 /**
  * 归并排序：递归
@@ -66,8 +64,6 @@ private void merge(int[] arr, int l, int mid, int r) {
 ```
 
 ## 归并排序（迭代）
-
-Java
 
 ```java
 /**

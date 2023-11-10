@@ -6,8 +6,6 @@ type: Sort
 
 ![计数排序](/public/images/ds/countingSort.gif)
 
-Java 实现
-
 ```java
 public void countingSort(int[] arr) {
   if (arr == null || arr.length < 2)

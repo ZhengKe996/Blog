@@ -6,8 +6,6 @@ type: Sort
 
 ![基数排序（LSD）](/public/images/ds/radixSort.gif)
 
-Java
-
 ```java
 /**
  * only for no-negative value

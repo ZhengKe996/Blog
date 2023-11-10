@@ -6,11 +6,9 @@ type: QuickSort
 
 [题目链接 🔗](https://leetcode.cn/problems/sort-colors/)
 
-## Dutch National Flag Problem 荷兰国旗问题描述了这样一个问题：荷兰国旗由红、白、蓝三种颜色组成。现在给定 n 个这三种颜色的小球，且乱序排列在一起。现期望对这些小球进行排序，使得所有相同颜色的球在一起，且颜色顺序依次为红、白、蓝。该问题对于排序算法的设计具有重要意义
+> Dutch National Flag Problem 荷兰国旗问题描述了这样一个问题：荷兰国旗由红、白、蓝三种颜色组成。现在给定 n 个这三种颜色的小球，且乱序排列在一起。现期望对这些小球进行排序，使得所有相同颜色的球在一起，且颜色顺序依次为红、白、蓝。该问题对于排序算法的设计具有重要意义
 
 ### 划分区间（快排 3.0）
-
-Java
 
 ```java
 class Solution {
@@ -55,8 +53,6 @@ class Solution {
 
 ### 快排非递归（栈）
 
-Java
-
 ```java
 class Solution {
     public class Op {
@@ -93,8 +89,6 @@ class Solution {
 ```
 
 ### 快排非递归（队列）
-
-Java
 
 ```java
 
