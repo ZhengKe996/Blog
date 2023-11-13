@@ -1,7 +1,7 @@
 ---
 title: '窗口内的最大值'
 date: 2023-11-13
-type: DS
+type: SlideWIndow
 ---
 
 > 假设一个固定大小的 W 的窗口，依次划过 arr，返回每一次滑出窗口的最大值
