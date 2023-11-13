@@ -1,5 +1,5 @@
 ---
-title: '剪纸问题'
+title: '贴纸问题'
 date: 2023-10-29
 type: DP
 ---
@@ -101,9 +101,9 @@ private static int process2(int[][] stickers, String t) {
 }
 ```
 
-## DP（傻缓存）
+## DP（记忆化搜索 🔍）
 
-**基于暴力解二实现动态规划**
+**单一可变参数的暴力递归改动态规划**
 
 ```java
 public static int minStickers3(String[] stickers, String target) {
