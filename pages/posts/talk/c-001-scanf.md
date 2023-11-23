@@ -40,3 +40,5 @@ int main() {
     return 0;
 }
 ```
+
+![Scanf](/public/images/talks/c-408/c-scanf-2.png)
