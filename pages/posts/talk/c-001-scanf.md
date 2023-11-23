@@ -18,4 +18,25 @@ int main() {
 }
 ```
 
+## 为什么会发生?
+
 ![Scanf](/public/images/talks/c-408/c-scanf.png)
+
+## 如何解决?
+
+添加代码`fflush(stdin);` 清空标准输入缓冲区
+
+完整代码如下
+
+```c
+int main() {
+    int i;
+    char c;
+    scanf("%d", &i);
+    printf("i=%d\n", i);
+    fflush(stdin); // 清空标准输入缓冲区
+    scanf("%c", &c);
+    printf("c=%c\n", c);
+    return 0;
+}
+```
