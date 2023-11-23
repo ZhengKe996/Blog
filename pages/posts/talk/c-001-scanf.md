@@ -1,5 +1,5 @@
 ---
-title: 'C Scanf 阻塞问题'
+title: 'C scanf 阻塞问题'
 date: 2023-11-22
 type: talk
 ---
@@ -20,7 +20,7 @@ int main() {
 
 ## 为什么会发生?
 
-![Scanf](/public/images/talks/c-408/c-scanf.png)
+![scanf](/public/images/talks/c-408/c-scanf.png)
 
 ## 如何解决?
 
@@ -41,4 +41,10 @@ int main() {
 }
 ```
 
-![Scanf](/public/images/talks/c-408/c-scanf-2.png)
+![scanf](/public/images/talks/c-408/c-scanf-2.png)
+
+## 关于 scanf
+
+1. 为什么 scanf 会阻塞？
+
+> 答：因为标准输入缓存区是空的，scanf 函数在读取 整型数、浮点数、字符串时会忽略 `\n(回车) and 空格`等字符，而字符`%c`不会忽略任何字符 📢
