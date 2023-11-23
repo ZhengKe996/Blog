@@ -43,7 +43,7 @@ jobs:
       - name: Build site
         run: yarn build
       - name: echo cname
-        run: echo 'fanzhengke.top' > dist/CNAME
+        run: echo 'timu.fun' > dist/CNAME
 
       # 查看 workflow 的文档来获取更多信息
       # @see https://github.com/crazy-max/ghaction-github-pages
