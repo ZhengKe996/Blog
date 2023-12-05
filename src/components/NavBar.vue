@@ -52,11 +52,10 @@ import { isDark } from '~/logics'
           <ri-lightbulb-line class="md:hidden" />
         </router-link> -->
 
-        <!-- <router-link to="/leetCode"
-                     title="LeetCode">
-          <span class="lt-md:hidden">LeetCode</span>
-          <ri-lightbulb-line class="md:hidden" />
-        </router-link> -->
+        <router-link to="/CLRS" title="CLRS">
+          <span class="lt-md:hidden">CLRS</span>
+          <ri-landscape-line class="md:hidden" />
+        </router-link>
 
         <router-link to="/network">
           <span class="lt-md:hidden">NetWork</span>
