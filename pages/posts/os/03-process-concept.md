@@ -1,10 +1,10 @@
 ---
-title: 'Process Concept'
+title: 'Process Concept(进程概念)'
 date: 2023-12-08
 type: OS
 ---
 
-## 进程的定义
+# 进程的定义
 
 1. A program is a **passive entity**, such as a file containing a list of instructions stored on disk(often called an **executable file**).
 2. A program becomes a process when an executable file is loaded into memory.
@@ -46,6 +46,8 @@ CPU 在取完一条指令之后会将 PC 寄存器的值加“1”，以计算�
    - 执行过程是可并发的
 
 2. 进程是资源分配、保护和调度的基本单位
+
+# 进程状态
 
 ## 进程状态（PROCESS STATE）
 
