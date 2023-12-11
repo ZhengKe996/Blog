@@ -39,6 +39,7 @@ type: OS
 ## M:1 模型(已淘汰)
 
 优点: "逻辑上"的多个执行流(抽象)
+
 缺点: 实际上共享一个 KLT(不是并发、并行)，当一个线程占用时 CPU 时，可能会导致其他线程处于等待(Wait)状态(用户无法感知)
 
 ![M:1](/public/images/os/05/m-1-model.png)
@@ -46,11 +47,15 @@ type: OS
 ## 1:1 模型(NPTL)
 
 优点: 并发+并行
+
 缺点: 内核开销大(时间、空间)
+
 ![1:1](/public/images/os/05/1-1-model.png)
 
 ## M:M 模型(NGPT)
 
 优点: 节省内核开销
+
 缺点: 实现复杂
+
 ![M:M](/public/images/os/05/m-m-model.png)
