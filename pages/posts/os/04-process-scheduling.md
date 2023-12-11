@@ -86,6 +86,6 @@ A Process Control Block（PCB）contains many pieces of information associated w
 
 ## 进程调度（PROCESS SCHEDULING）
 
-进程在整个生命周期中会在各个调度队列中迁移，由操作系统的一个**调度器（scheduler）**来执行。
+进程在整个生命周期中会在各个调度队列中迁移，由操作系统的一个 **调度器（scheduler）** 来执行。
 
 ![进程调度](/public/images/os/04/process-scheduler.png)
