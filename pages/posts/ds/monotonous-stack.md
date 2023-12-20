@@ -12,7 +12,7 @@ type: DS
 
 如果想得到 arr 中所有位置的两个信息，怎么能让得到信息的过程尽量快?
 
-![单调栈](/public/images/ds/monotonous-stack/monotonous-stack.svg)
+![单调栈](/public/images/ds/monotonous-stack/monotonous-stack.png)
 
 ## Java 实现单调栈(此版本无法处理重复元素)
 
