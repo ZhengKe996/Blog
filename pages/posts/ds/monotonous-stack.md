@@ -11,7 +11,7 @@ type: DS
 2. `arr[i]`的右侧离 i 最近并且小于（或者大于）`arr[i]` 的数在哪？
 
 如果想得到 arr 中所有位置的两个信息，怎么能让得到信息的过程尽量快?
-![](/public/images/ds/monotonous-stack/monotonous-stack.drawio.svg)
+![单调栈](/public/images/ds/monotonous-stack/monotonous-stack.svg)
 
 ## Java 实现单调栈(此版本无法处理重复元素)
 
