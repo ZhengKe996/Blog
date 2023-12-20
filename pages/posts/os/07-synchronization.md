@@ -4,6 +4,8 @@ date: 2023-12-14
 type: OS
 ---
 
+![](/public/images/os/07/synchronization.png)
+
 # 并发
 
 ## 并发进程/线程
