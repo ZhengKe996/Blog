@@ -52,8 +52,8 @@ import { isDark } from '~/logics'
           <ri-lightbulb-line class="md:hidden" />
         </router-link> -->
 
-        <router-link to="/CLRS" title="CLRS">
-          <span class="lt-md:hidden">CLRS</span>
+        <router-link to="/CS408" title="CS408">
+          <span class="lt-md:hidden">408</span>
           <ri-landscape-line class="md:hidden" />
         </router-link>
 
