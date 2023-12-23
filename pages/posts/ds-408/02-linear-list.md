@@ -6,7 +6,7 @@ type: DS408
 
 # 线性表
 
-![线性表](/public/images/cs408/ds/linear-list/liner-list.png)
+![线性表](/public/images/ds408/linear-list/liner-list.png)
 
 **定义**：由 n（n≥0）个相同类型的元素组成的有序集合。
 
@@ -22,7 +22,7 @@ type: DS408
 
 # 顺序表(线性表的顺序表示)
 
-![顺序表](/public/images/cs408/ds/linear-list/sequence-list.png)
+![顺序表](/public/images/ds408/linear-list/sequence-list.png)
 
 ```c++
 // 顺序表的定义
@@ -44,7 +44,7 @@ typedef struct{
 
 ## 插入操作
 
-![顺序表](/public/images/cs408/ds/linear-list/sequence-insert.png)
+![顺序表](/public/images/ds408/linear-list/sequence-insert.png)
 
 ```c++
 for(int j = L.len;j>=i;j--){
@@ -56,7 +56,7 @@ L.len++;
 
 ## 删除操作
 
-![顺序表](/public/images/cs408/ds/linear-list/sequence-remove.png)
+![顺序表](/public/images/ds408/linear-list/sequence-remove.png)
 
 ```c++
 e = L.data[i-1];
@@ -85,7 +85,7 @@ L.data = new ElemType[InitSize];
 
 # 链表(线性表的链式表示)
 
-![链表](/public/images/cs408/ds/linear-list/linked-list.png)
+![链表](/public/images/ds408/linear-list/linked-list.png)
 
 ```c++
 typedef int ElemType;
@@ -112,7 +112,7 @@ typedef struct LNode{
 
 ## 插入操作
 
-![链表](/public/images/cs408/ds/linear-list/linked-insert.png)
+![链表](/public/images/ds408/linear-list/linked-insert.png)
 
 ```c++
 // 创建新结点

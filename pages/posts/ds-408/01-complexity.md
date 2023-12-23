@@ -8,9 +8,9 @@ type: DS408
 
 **时间复杂度指算法中所有语句的频度（执行次数）之和**
 
-![时间复杂度](/public/images/cs408/ds/complexity/time.png)
+![时间复杂度](/public/images/ds408/complexity/time.png)
 
-![时间复杂度](/public/images/cs408/ds/complexity/2020090715523511.png)
+![时间复杂度](/public/images/ds408/complexity/2020090715523511.png)
 
 _最高阶数越小，说明算法的时间性能越好_
 
