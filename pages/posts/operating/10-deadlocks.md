@@ -1,7 +1,7 @@
 ---
 title: 'Deadlocks(死锁)'
 date: 2023-12-23
-type: OS
+type: Operating
 ---
 
 # DEADLOCK

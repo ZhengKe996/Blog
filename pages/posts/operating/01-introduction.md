@@ -1,7 +1,7 @@
 ---
 title: 'Introduction(操作系统介绍)'
 date: 2023-12-06
-type: OS
+type: Operating
 ---
 
 ## 什么是操作系统？

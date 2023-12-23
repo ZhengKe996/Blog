@@ -1,7 +1,7 @@
 ---
 title: 'Process Concept(进程概念)'
 date: 2023-12-08
-type: OS
+type: Operating
 ---
 
 # 进程的定义

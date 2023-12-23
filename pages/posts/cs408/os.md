@@ -1,9 +1,9 @@
 ---
 title: 操作系统
-type: CS408
+type: CS
 ---
 
 <ClientOnly>
   <Plum/>
 </ClientOnly>
-<ListPosts type="OS408"/>
+<ListPosts type="OS"/>

@@ -1,9 +1,9 @@
 ---
 title: 计算机组成原理
-type: CS408
+type: CS
 ---
 
 <ClientOnly>
   <Plum/>
 </ClientOnly>
-<ListPosts type="CO408"/>
+<ListPosts type="CO"/>
