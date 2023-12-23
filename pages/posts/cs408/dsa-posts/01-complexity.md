@@ -1,7 +1,7 @@
 ---
 title: '复杂度'
 date: 2023-12-15
-type: DS408
+type: DSA
 ---
 
 # 时间复杂度

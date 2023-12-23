@@ -6,4 +6,4 @@ type: CS
 <ClientOnly>
   <Plum/>
 </ClientOnly>
-<ListPosts type="DS"/>
+<ListPosts type="DSA"/>
