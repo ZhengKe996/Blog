@@ -41,18 +41,7 @@ import { isDark } from '~/logics'
           <ri-microsoft-line class="md:hidden" />
         </router-link>
 
-        <!-- <router-link to="/javascript"
-                     title="JavaScript">
-          <span class="lt-md:hidden">JavaScript</span>
-          <ri-lightbulb-line class="md:hidden" />
-        </router-link> -->
-
-        <!-- <router-link to="/interview" title="Interview">
-          <span class="lt-md:hidden">Interview</span>
-          <ri-lightbulb-line class="md:hidden" />
-        </router-link> -->
-
-        <router-link to="/CS408" title="CS408">
+        <router-link to="/cs408" title="CS408">
           <span class="lt-md:hidden">408</span>
           <ri-landscape-line class="md:hidden" />
         </router-link>
