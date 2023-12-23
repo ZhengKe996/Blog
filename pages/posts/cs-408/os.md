@@ -1,9 +1,9 @@
 ---
-title: 计算机组成原理
+title: 操作系统
 type: CS
 ---
 
 <ClientOnly>
   <Plum/>
 </ClientOnly>
-<ListPosts type="CO"/>
+<ListPosts type="OS408"/>

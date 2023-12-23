@@ -1,7 +1,7 @@
 ---
 title: 'Synchronization(同步)'
 date: 2023-12-14
-type: Operating
+type: OperatingSystem
 ---
 
 ![](/public/images/os/07/synchronization.png)

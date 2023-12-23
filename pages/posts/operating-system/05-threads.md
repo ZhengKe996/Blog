@@ -1,7 +1,7 @@
 ---
 title: 'Threads(线程)'
 date: 2023-12-10
-type: Operating
+type: OperatingSystem
 ---
 
 # 线程定义

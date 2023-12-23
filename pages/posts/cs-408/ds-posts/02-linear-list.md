@@ -1,7 +1,7 @@
 ---
 title: '线性表'
 date: 2023-12-23
-type: DSA
+type: DS408
 ---
 
 # 线性表

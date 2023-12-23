@@ -1,9 +1,9 @@
 ---
-title: 操作系统
+title: 计算机网络
 type: CS
 ---
 
 <ClientOnly>
   <Plum/>
 </ClientOnly>
-<ListPosts type="OS"/>
+<ListPosts type="CN408"/>

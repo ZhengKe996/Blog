@@ -1,9 +1,9 @@
 ---
-title: 数据结构
+title: 计算机组成原理
 type: CS
 ---
 
 <ClientOnly>
   <Plum/>
 </ClientOnly>
-<ListPosts type="DSA"/>
+<ListPosts type="CO408"/>

@@ -1,7 +1,7 @@
 ---
 title: 'Mutex Locks(互斥锁)'
 date: 2023-12-17
-type: Operating
+type: OperatingSystem
 ---
 
 # CRITICAL-SECTION PROBLEM(临界区问题)

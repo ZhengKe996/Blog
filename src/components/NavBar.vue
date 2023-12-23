@@ -36,7 +36,7 @@ import { isDark } from '~/logics'
           <span class="lt-md:hidden">JUC</span>
           <ri-hammer-line class="md:hidden" />
         </router-link>
-        <router-link to="/operating" title="OS">
+        <router-link to="/operating-system" title="OS">
           <span class="lt-md:hidden">OS</span>
           <ri-microsoft-line class="md:hidden" />
         </router-link>

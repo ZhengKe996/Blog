@@ -6,4 +6,4 @@ title: 操作系统
   <Plum/>
 </ClientOnly>
 
-<ListPosts type="Operating"/>
+<ListPosts type="OperatingSystem"/>

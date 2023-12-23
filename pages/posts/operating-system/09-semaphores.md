@@ -1,7 +1,7 @@
 ---
 title: 'Semaphores(信号量)'
 date: 2023-12-20
-type: Operating
+type: OperatingSystem
 ---
 
 ![信号量](/public/images/os/09/Semaphores.png)

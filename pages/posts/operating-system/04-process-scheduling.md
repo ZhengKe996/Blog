@@ -1,7 +1,7 @@
 ---
 title: 'Process Scheduling(进程调度)'
 date: 2023-12-09
-type: Operating
+type: OperatingSystem
 ---
 
 # 进程切换

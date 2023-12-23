@@ -1,7 +1,7 @@
 ---
 title: 'CPU Scheduling(CPU调度)'
 date: 2023-12-12
-type: Operating
+type: OperatingSystem
 ---
 
 # CPU 调度程序

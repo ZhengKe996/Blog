@@ -1,7 +1,7 @@
 ---
 title: 'Operating System Structures(操作系统结构)'
 date: 2023-12-07
-type: Operating
+type: OperatingSystem
 ---
 
 # 操作系统的服务

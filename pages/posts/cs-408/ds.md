@@ -1,9 +1,9 @@
 ---
-title: 计算机网络
+title: 数据结构
 type: CS
 ---
 
 <ClientOnly>
   <Plum/>
 </ClientOnly>
-<ListPosts type="CN"/>
+<ListPosts type="DS408"/>
