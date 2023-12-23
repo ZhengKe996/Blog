@@ -1,9 +1,9 @@
 ---
 title: 数据结构
-type: CS408
+type: CS
 ---
 
 <ClientOnly>
   <Plum/>
 </ClientOnly>
-<ListPosts type="DS408"/>
+<ListPosts type="DS"/>

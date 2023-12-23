@@ -41,7 +41,7 @@ import { isDark } from '~/logics'
           <ri-microsoft-line class="md:hidden" />
         </router-link>
 
-        <router-link to="/cs408" title="CS408">
+        <router-link to="/cs" title="CS">
           <span class="lt-md:hidden">408</span>
           <ri-landscape-line class="md:hidden" />
         </router-link>

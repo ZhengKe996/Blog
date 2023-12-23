@@ -1,9 +1,9 @@
 ---
 title: 计算机网络
-type: CS408
+type: CS
 ---
 
 <ClientOnly>
   <Plum/>
 </ClientOnly>
-<ListPosts type="CN408"/>
+<ListPosts type="CN"/>
