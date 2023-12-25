@@ -156,3 +156,144 @@ while(p!=NULL && p->data != e){
 }
 return p;
 ```
+
+# 链表代码实现
+
+## 链表结构体
+
+```cpp
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef int ElementType;
+typedef struct LNode {
+    ElementType data;
+    struct LNode *next;
+} LNode, *LinkedList;
+
+```
+
+## 头插法
+
+![头插法](/public/images/ds408/linear-list/linked-head-insert-flow.png)
+
+```cpp
+/**
+ * 头查法
+ * @param Node
+ */
+void LinkedHeadInsert(LNode *&Node) {
+    Node = (LinkedList) malloc(sizeof(Node));
+    Node->next = NULL;
+    ElementType x;
+    scanf("%d", &x);
+    LNode *s;
+    while (x != 9999) {
+        s = (LinkedList) malloc(sizeof(Node));
+        s->data = x;
+        s->next = Node->next;
+        Node->next = s;
+        scanf("%d", &x);
+    }
+}
+```
+
+![尾插法](/public/images/ds408/linear-list/linked-tail-insert-flow.png)
+
+## 尾插法
+
+```cpp
+void LinkedTailInsert(LNode *&Node) {
+    Node = (LinkedList) malloc(sizeof(LNode));
+    Node->next = NULL;
+    ElementType x;
+    scanf("%d", &x);
+    LNode *s, *r = Node; // s 是新结点，r始终指向链表尾部
+    while (x != 9999) {
+        s = (LinkedList) malloc(sizeof(LNode));
+        s->data = x;
+
+        r->next = s;
+        r = s; // r指向新的尾部
+        scanf("%d", &x);
+    }
+    r->next = NULL;// 让尾结点的Next置空
+}
+```
+
+## 打印结点
+
+```cpp
+/**
+ * 打印结点
+ * @param Node
+ */
+void PrintList(LinkedList Node) {
+    Node = Node->next;
+    while (Node != NULL) {
+        printf("%3d", Node->data);
+        Node = Node->next;
+    }
+    printf("\n");
+}
+```
+
+## 按位置、值查找
+
+![按位置、值查找](/public/images/ds408/linear-list/linked-search.png)
+
+```cpp
+/**
+ * 按位置查找
+ * @param Node
+ * @param pos
+ * @return
+ */
+LinkedList GetElement(LinkedList Node, int pos) {
+    int i = 0;
+    if (pos < 0) return NULL;
+    while (Node && i < pos) {
+        Node = Node->next;
+        i++;
+    }
+    return Node;
+}
+
+/**
+ * 按值查找
+ * @param Node
+ * @param value
+ * @return
+ */
+LinkedList LocateElement(LinkedList Node, ElementType value) {
+    while (Node) {
+        if (Node->data == value) return Node;
+        Node = Node->next;
+    }
+    return NULL;
+}
+```
+
+## 在指定位置 i 插入值
+
+![在指定位置插入值](/public/images/ds408/linear-list/linked-insert-i-flow.png)
+
+```cpp
+/**
+ * 在指定位置插入值
+ * @param Node
+ * @param index
+ * @param value
+ * @return
+ */
+bool LinkedFrontInsert(LinkedList Node, int index, ElementType value) {
+    LinkedList p = GetElement(Node, index - 1);
+    if (NULL == p) return false;
+    LinkedList newNode;
+    newNode = (LinkedList) malloc(sizeof(Node));
+    newNode->data = value;
+    newNode->next = p->next;
+    p->next = newNode;
+    return true;
+}
+```
