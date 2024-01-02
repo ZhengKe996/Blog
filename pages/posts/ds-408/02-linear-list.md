@@ -126,6 +126,8 @@ p->next = q;
 
 ## 删除操作
 
+![删除操作](/public/images/ds408/linear-list/linked-remove.png)
+
 ```c++
 p = GetElem(L,i-1); // 查找删除当前位置的前驱结点
 
