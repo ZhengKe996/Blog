@@ -299,5 +299,3 @@ bool LinkedFrontInsert(LinkedList Node, int index, ElementType value) {
     return true;
 }
 ```
-
-[模版链接 🔗](https://github.com/ZhengKe996/LeetCode-C/blob/main/Template/linkedlist/main.cpp)
