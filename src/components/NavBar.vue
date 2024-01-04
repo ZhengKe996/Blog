@@ -40,6 +40,10 @@ import { isDark } from '~/logics'
           <span class="lt-md:hidden">OS</span>
           <ri-microsoft-line class="md:hidden" />
         </router-link>
+        <router-link to="/computer-organization" title="CO">
+          <span class="lt-md:hidden">CO</span>
+          <ri-hourglass-line class="md:hidden" />
+        </router-link>
 
         <router-link to="/ds-408" title="DS">
           <span class="lt-md:hidden">DS 408</span>
