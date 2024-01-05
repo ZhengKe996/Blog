@@ -4,6 +4,8 @@ date: 2023-01-05
 type: DS408
 ---
 
+![队列](/public/images/ds408/05-link-queue/link-queue.png)
+
 ```cpp
 typedef int ElementType;
 typedef struct LinkNode {

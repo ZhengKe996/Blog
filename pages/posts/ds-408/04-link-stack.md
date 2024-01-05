@@ -4,6 +4,10 @@ date: 2023-01-05
 type: DS408
 ---
 
+![stack](/public/images/ds408/03-sqstack/stack.png)
+
+**栈**：只允许在一端进行插入或删除操作的线性表 栈顶（Top）
+
 ```cpp
 
 typedef int ElementType;
