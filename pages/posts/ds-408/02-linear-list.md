@@ -6,7 +6,7 @@ type: DS408
 
 # 线性表
 
-![线性表](/public/images/ds408/linear-list/liner-list.png)
+![线性表](/public/images/ds408/02-linear-list/liner-list.png)
 
 **定义**：由 n（n≥0）个相同类型的元素组成的有序集合。
 
@@ -22,7 +22,7 @@ type: DS408
 
 # 顺序表(线性表的顺序表示)
 
-![顺序表](/public/images/ds408/linear-list/sequence-list.png)
+![顺序表](/public/images/ds408/02-linear-list/sequence-list.png)
 
 ```c++
 // 顺序表的定义
@@ -44,7 +44,7 @@ typedef struct{
 
 ## 插入操作
 
-![顺序表](/public/images/ds408/linear-list/sequence-insert.png)
+![顺序表](/public/images/ds408/02-linear-list/sequence-insert.png)
 
 ```c++
 for(int j = L.len;j>=i;j--){
@@ -56,7 +56,7 @@ L.len++;
 
 ## 删除操作
 
-![顺序表](/public/images/ds408/linear-list/sequence-remove.png)
+![顺序表](/public/images/ds408/02-linear-list/sequence-remove.png)
 
 ```c++
 e = L.data[i-1];
@@ -85,7 +85,7 @@ L.data = new ElemType[InitSize];
 
 # 链表(线性表的链式表示)
 
-![链表](/public/images/ds408/linear-list/linked-list.png)
+![链表](/public/images/ds408/02-linear-list/linked-list.png)
 
 ```c++
 typedef int ElemType;
@@ -112,7 +112,7 @@ typedef struct LNode{
 
 ## 插入操作
 
-![链表](/public/images/ds408/linear-list/linked-insert.png)
+![链表](/public/images/ds408/02-linear-list/linked-insert.png)
 
 ```c++
 // 创建新结点
@@ -126,7 +126,7 @@ p->next = q;
 
 ## 删除操作
 
-![删除操作](/public/images/ds408/linear-list/linked-remove.png)
+![删除操作](/public/images/ds408/02-linear-list/linked-remove.png)
 
 ```c++
 p = GetElem(L,i-1); // 查找删除当前位置的前驱结点
@@ -177,7 +177,7 @@ typedef struct LNode {
 
 ## 头插法
 
-![头插法](/public/images/ds408/linear-list/linked-head-insert-flow.png)
+![头插法](/public/images/ds408/02-linear-list/linked-head-insert-flow.png)
 
 ```cpp
 /**
@@ -200,7 +200,7 @@ void LinkedHeadInsert(LNode *&Node) {
 }
 ```
 
-![尾插法](/public/images/ds408/linear-list/linked-tail-insert-flow.png)
+![尾插法](/public/images/ds408/02-linear-list/linked-tail-insert-flow.png)
 
 ## 尾插法
 
@@ -242,7 +242,7 @@ void PrintList(LinkedList Node) {
 
 ## 按位置、值查找
 
-![按位置、值查找](/public/images/ds408/linear-list/linked-search.png)
+![按位置、值查找](/public/images/ds408/02-linear-list/linked-search.png)
 
 ```cpp
 /**
@@ -278,7 +278,7 @@ LinkedList LocateElement(LinkedList Node, ElementType value) {
 
 ## 在指定位置 i 插入值
 
-![在指定位置插入值](/public/images/ds408/linear-list/linked-insert-i-flow.png)
+![在指定位置插入值](/public/images/ds408/02-linear-list/linked-insert-i-flow.png)
 
 ```cpp
 /**
