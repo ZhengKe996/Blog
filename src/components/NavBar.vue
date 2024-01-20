@@ -36,28 +36,29 @@ import { isDark } from '~/logics'
           <span class="lt-md:hidden">JUC</span>
           <ri-hammer-line class="md:hidden" />
         </router-link>
-        <router-link to="/operating-system" title="OS">
+
+        <!-- <router-link to="/operating-system" title="OS">
           <span class="lt-md:hidden">OS</span>
           <ri-microsoft-line class="md:hidden" />
-        </router-link>
-        <router-link to="/computer-organization" title="CO">
+        </router-link> -->
+        <!-- <router-link to="/computer-organization" title="CO">
           <span class="lt-md:hidden">CO</span>
           <ri-hourglass-line class="md:hidden" />
-        </router-link>
+        </router-link> -->
 
-        <router-link to="/ds-408" title="DS">
+        <!-- <router-link to="/ds-408" title="DS">
           <span class="lt-md:hidden">DS 408</span>
           <ri-landscape-line class="md:hidden" />
-        </router-link>
+        </router-link> -->
 
-        <router-link to="/network">
+        <!-- <router-link to="/network">
           <span class="lt-md:hidden">NetWork</span>
           <x-entypo-network class="md:hidden" />
-        </router-link>
+        </router-link> -->
 
-        <router-link to="/notes" title="Notes">
+        <!-- <router-link to="/notes" title="Notes">
           <ri-sticky-note-line class="lt-md:hidden" />
-        </router-link>
+        </router-link> -->
 
         <a
           href="https://github.com/ZhengKe996"

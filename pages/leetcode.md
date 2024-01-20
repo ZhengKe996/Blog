@@ -8,4 +8,4 @@ title: 'DS 408'
   <Plum/>
 </ClientOnly>
 
-<ListPosts type="DS408"/>
+<ListPosts type="LeetCode"/>

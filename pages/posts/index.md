@@ -3,7 +3,7 @@ title: Blog - ZK
 display: ''
 ---
 
-<!-- <SubNav/> -->
+<SubNav/>
 
 ![blog](/public/blog.jpg)
 

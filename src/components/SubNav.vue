@@ -16,27 +16,19 @@
       >
         Talks
       </router-link>
-
-      <router-link
-        to="/computer-science-notes"
-        class="!border-none !font-400"
-        :class="route.path === '/computer-science-notes' ? '' : inactiveStyle"
-      >
-        CS
-      </router-link>
-      <router-link
-        to="/network"
-        class="!border-none !font-400"
-        :class="route.path === '/network' ? '' : inactiveStyle"
-      >
-        NetWork
-      </router-link>
       <router-link
         to="/ds"
         class="!border-none !font-400"
         :class="route.path === '/ds' ? '' : inactiveStyle"
       >
         DS
+      </router-link>
+      <router-link
+        to="/network"
+        class="!border-none !font-400"
+        :class="route.path === '/leetcode' ? '' : inactiveStyle"
+      >
+        LeetCode
       </router-link>
     </div>
   </div>
