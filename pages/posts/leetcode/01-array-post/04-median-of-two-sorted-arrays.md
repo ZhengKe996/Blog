@@ -6,6 +6,8 @@ type: LeetCodeArray
 
 [题目链接 🔗](https://leetcode.cn/problems/median-of-two-sorted-arrays/)
 
+解题思路：将两个给定数组按正序合并 找到中位数（区分奇偶的情况）
+
 ```cpp
 /**
 * 4. 寻找两个正序数组的中位数
