@@ -1,5 +1,5 @@
 ---
-title: 'DS 408'
+title: 'LeetCode'
 ---
 
 <SubNav/>
