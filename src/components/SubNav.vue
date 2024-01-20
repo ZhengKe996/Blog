@@ -24,7 +24,7 @@
         DS
       </router-link>
       <router-link
-        to="/network"
+        to="/leetcode"
         class="!border-none !font-400"
         :class="route.path === '/leetcode' ? '' : inactiveStyle"
       >
