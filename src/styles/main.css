@@ -56,7 +56,8 @@ html {
 ::-webkit-scrollbar:horizontal {
   height: 6px;
 }
-::-webkit-scrollbar-track, ::-webkit-scrollbar-corner {
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
   background: var(--c-bg);
   border-radius: 10px;
 }

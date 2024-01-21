@@ -21,17 +21,13 @@ declare module 'vue-router' {
 const routes = autoRoutes.map((i) => {
   return {
     ...i,
-    alias: i.path.endsWith('/')
-      ? `${i.path}index.html`
-      : `${i.path}.html`,
+    alias: i.path.endsWith('/') ? `${i.path}index.html` : `${i.path}.html`,
   }
 })
 
 const scrollBehavior: RouterScrollBehavior = (to, from, savedPosition) => {
-  if (savedPosition)
-    return savedPosition
-  else
-    return { top: 0 }
+  if (savedPosition) return savedPosition
+  else return { top: 0 }
 }
 
 export const createApp = ViteSSG(
@@ -41,8 +37,12 @@ export const createApp = ViteSSG(
     dayjs.extend(LocalizedFormat)
 
     if (isClient) {
-      router.beforeEach(() => { NProgress.start() })
-      router.afterEach(() => { NProgress.done() })
+      router.beforeEach(() => {
+        NProgress.start()
+      })
+      router.afterEach(() => {
+        NProgress.done()
+      })
     }
-  },
+  }
 )
