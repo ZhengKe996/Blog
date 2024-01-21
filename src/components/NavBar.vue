@@ -32,10 +32,10 @@ import { isDark } from '~/logics'
           <ri-ball-pen-line class="md:hidden" />
         </router-link>
 
-        <router-link to="/juc" title="JUC">
+        <!-- <router-link to="/juc" title="JUC">
           <span class="lt-md:hidden">JUC</span>
           <ri-hammer-line class="md:hidden" />
-        </router-link>
+        </router-link> -->
 
         <!-- <router-link to="/operating-system" title="OS">
           <span class="lt-md:hidden">OS</span>

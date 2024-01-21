@@ -69,5 +69,4 @@ type: DS
   x & 1
   ```
 
-<hr/>
 <ListPosts type="XOR"/>

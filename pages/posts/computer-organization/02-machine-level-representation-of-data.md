@@ -1,4 +1,4 @@
----
+<!-- ---
 title: '数据的机器级表示'
 date: 2024-01-09
 type: ComputerOrganization
@@ -111,4 +111,4 @@ Alignment: 要求数据的地址是相应的边界地址
 
 # 小结
 
-![小结](/public/images/computer-organization/02/data6.png)
+![小结](/public/images/computer-organization/02/data6.png) -->

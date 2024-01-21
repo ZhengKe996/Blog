@@ -11,5 +11,4 @@ type: DS
 3. 有当得到了子问题的结果之后的决策过程
 4. 不记录每一个子问题的解
 
-<hr/>
 <ListPosts type="Recursion"/>

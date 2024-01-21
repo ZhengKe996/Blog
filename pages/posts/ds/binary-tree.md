@@ -6,5 +6,4 @@ type: DS
 
 ![二叉树](/public/images/ds/bt/bt-info.jpg)
 
-<hr/>
 <ListPosts type="BinaryTree"/>
