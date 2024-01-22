@@ -1,7 +1,7 @@
 ---
 title: '前缀树'
 date: 2023-08-30
-type: DS
+type: Algorithm
 ---
 
 [题目来源](https://leetcode.cn/problems/implement-trie-ii-prefix-tree/)

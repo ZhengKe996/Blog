@@ -1,7 +1,7 @@
 ---
 title: 'Map'
 date: 2023-08-20
-type: DS
+type: Algorithm
 ---
 
 ## 哈希表

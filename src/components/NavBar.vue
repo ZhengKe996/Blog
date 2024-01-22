@@ -27,8 +27,8 @@ import { isDark } from '~/logics'
           <ri-lightbulb-line class="md:hidden" />
         </router-link>
 
-        <router-link to="/ds" title="DS">
-          <span class="lt-md:hidden">DS</span>
+        <router-link to="/algorithm" title="DS">
+          <span class="lt-md:hidden">Algorithm</span>
           <ri-ball-pen-line class="md:hidden" />
         </router-link>
 

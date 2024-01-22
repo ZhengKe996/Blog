@@ -1,7 +1,7 @@
 ---
 title: '排序算法总结'
 date: 2023-08-21
-type: DS
+type: Algorithm
 ---
 
 |          | 时间复杂度 | 额外空间复杂度 | 稳定性 |

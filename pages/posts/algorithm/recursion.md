@@ -1,7 +1,7 @@
 ---
 title: '暴力递归'
 date: 2023-10-16
-type: DS
+type: Algorithm
 ---
 
 **暴力递归就是尝试**

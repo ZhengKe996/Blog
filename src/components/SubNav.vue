@@ -24,6 +24,13 @@
         DS
       </router-link>
       <router-link
+        to="/algorithm"
+        class="!border-none !font-400"
+        :class="route.path === '/algorithm' ? '' : inactiveStyle"
+      >
+        Algorithm
+      </router-link>
+      <router-link
         to="/leetcode"
         class="!border-none !font-400"
         :class="route.path === '/leetcode' ? '' : inactiveStyle"

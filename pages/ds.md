@@ -1,6 +1,5 @@
 ---
-title: DS
-subtitle: '其实并没有那么难'
+title: 数据结构
 ---
 
 <SubNav/>

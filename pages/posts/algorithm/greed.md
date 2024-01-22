@@ -1,7 +1,7 @@
 ---
 title: '贪心'
 date: 2023-09-25
-type: DS
+type: Algorithm
 ---
 
 <ListPosts type="Greed"/>

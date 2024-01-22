@@ -1,7 +1,7 @@
 ---
 title: '二分查找'
 date: 2023-08-16
-type: DS
+type: Algorithm
 ---
 
 ## 常用二分查找模版（注意边界）

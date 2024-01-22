@@ -1,7 +1,7 @@
 ---
 title: '异或 XOR'
 date: 2023-08-16
-type: DS
+type: Algorithm
 ---
 
 ### XOR 的运算真值表

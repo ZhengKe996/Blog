@@ -1,7 +1,7 @@
 ---
 title: '链表'
 date: 2023-08-16
-type: DS
+type: Algorithm
 ---
 
 ## 单向链表

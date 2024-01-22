@@ -1,7 +1,7 @@
 ---
 title: '滑动窗口'
 date: 2023-11-13
-type: DS
+type: Algorithm
 ---
 
 ## 滑动窗口是什么？

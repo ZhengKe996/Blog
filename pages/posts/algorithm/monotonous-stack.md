@@ -1,7 +1,7 @@
 ---
 title: '单调栈'
 date: 2023-11-20
-type: DS
+type: Algorithm
 ---
 
 一种特别设计的栈结构，为了解决如下的问题：
