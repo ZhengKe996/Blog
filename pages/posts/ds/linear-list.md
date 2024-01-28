@@ -50,4 +50,4 @@ ADT List{
 
 ```
 
-<!-- <ListPosts type="DSLinearList"/> -->
+<ListPosts type="DSLinearList"/>
