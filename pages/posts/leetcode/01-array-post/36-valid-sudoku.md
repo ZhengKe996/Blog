@@ -1,7 +1,7 @@
 ---
 title: '36. 有效的数独'
 date: 2024-01-25
-type: LeetCodeArray`
+type: LeetCodeArray
 ---
 
 [题目链接 🔗](https://leetcode.cn/problems/valid-sudoku/)

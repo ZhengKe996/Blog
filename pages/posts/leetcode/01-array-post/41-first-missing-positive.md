@@ -1,7 +1,7 @@
 ---
 title: '41. 缺失的第一个正数'
 date: 2024-01-27
-type: LeetCodeArray`
+type: LeetCodeArray
 ---
 
 [题目链接 🔗](https://leetcode.cn/problems/first-missing-positive/)

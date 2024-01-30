@@ -1,7 +1,7 @@
 ---
 title: '42. 接雨水'
 date: 2024-01-28
-type: LeetCodeArray`
+type: LeetCodeArray
 ---
 
 [题目链接 🔗](https://leetcode.cn/problems/trapping-rain-water/)

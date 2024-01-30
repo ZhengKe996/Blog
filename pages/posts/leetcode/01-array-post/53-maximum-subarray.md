@@ -1,7 +1,7 @@
 ---
 title: '53. 最大子数组和'
 date: 2024-01-30
-type: LeetCodeArray`
+type: LeetCodeArray
 ---
 
 [题目链接 🔗](https://leetcode.cn/problems/maximum-subarray/)

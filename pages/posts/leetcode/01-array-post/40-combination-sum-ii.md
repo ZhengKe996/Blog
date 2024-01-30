@@ -1,7 +1,7 @@
 ---
 title: '40. 组合总和 II'
 date: 2024-01-26
-type: LeetCodeArray`
+type: LeetCodeArray
 ---
 
 [题目链接 🔗](https://leetcode.cn/problems/combination-sum-ii/)

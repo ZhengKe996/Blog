@@ -1,7 +1,7 @@
 ---
 title: '45. 跳跃游戏 II'
 date: 2024-01-28
-type: LeetCodeArray`
+type: LeetCodeArray
 ---
 
 [题目链接 🔗](https://leetcode.cn/problems/jump-game-ii/)
