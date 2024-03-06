@@ -1,0 +1,30 @@
+import{_ as e}from"./Post.67e73c9b.js";import{u as p,c,w as u,o as l,a as n,k as s}from"./app.bec8d703.js";const r=n("div",{class:"prose m-auto"},[n("p",null,[n("a",{href:"https://leetcode.cn/problems/pascals-triangle/",target:"_blank",rel:"noopener"},"\u9898\u76EE\u94FE\u63A5 \u{1F517}")]),n("pre",{class:"language-cpp"},[n("code",{class:"language-cpp"},[n("span",{class:"token comment"},`/**
+ * \u751F\u6210 \u6768\u8F89\u4E09\u89D2
+ * @param numRows
+ * @return
+ */`),s(`
+vector`),n("span",{class:"token operator"},"<"),s("vector"),n("span",{class:"token operator"},"<"),n("span",{class:"token keyword"},"int"),n("span",{class:"token operator"},">>"),s(),n("span",{class:"token function"},"generate"),n("span",{class:"token punctuation"},"("),n("span",{class:"token keyword"},"int"),s(" numRows"),n("span",{class:"token punctuation"},")"),s(),n("span",{class:"token punctuation"},"{"),s(`
+    vector`),n("span",{class:"token operator"},"<"),s("vector"),n("span",{class:"token operator"},"<"),n("span",{class:"token keyword"},"int"),n("span",{class:"token operator"},">>"),s(" result"),n("span",{class:"token punctuation"},";"),s(`
+    vector`),n("span",{class:"token operator"},"<"),n("span",{class:"token keyword"},"int"),n("span",{class:"token operator"},">"),s(" list"),n("span",{class:"token punctuation"},";"),s(`
+
+    `),n("span",{class:"token comment"},"// \u7B2C\u4E00\u5C42"),s(`
+    list`),n("span",{class:"token punctuation"},"."),n("span",{class:"token function"},"push_back"),n("span",{class:"token punctuation"},"("),n("span",{class:"token number"},"1"),n("span",{class:"token punctuation"},")"),n("span",{class:"token punctuation"},";"),s(`
+    result`),n("span",{class:"token punctuation"},"."),n("span",{class:"token function"},"push_back"),n("span",{class:"token punctuation"},"("),s("list"),n("span",{class:"token punctuation"},")"),n("span",{class:"token punctuation"},";"),s(`
+
+    `),n("span",{class:"token comment"},"// \u9664\u7B2C\u4E00\u5C42\u5916"),s(`
+    `),n("span",{class:"token keyword"},"for"),s(),n("span",{class:"token punctuation"},"("),n("span",{class:"token keyword"},"int"),s(" i "),n("span",{class:"token operator"},"="),s(),n("span",{class:"token number"},"1"),n("span",{class:"token punctuation"},";"),s(" i "),n("span",{class:"token operator"},"<"),s(" numRows"),n("span",{class:"token punctuation"},";"),s(" i"),n("span",{class:"token operator"},"++"),n("span",{class:"token punctuation"},")"),s(),n("span",{class:"token punctuation"},"{"),s(`
+        vector`),n("span",{class:"token operator"},"<"),n("span",{class:"token keyword"},"int"),n("span",{class:"token operator"},">"),s(" curRow"),n("span",{class:"token punctuation"},";"),s(`
+        curRow`),n("span",{class:"token punctuation"},"."),n("span",{class:"token function"},"push_back"),n("span",{class:"token punctuation"},"("),n("span",{class:"token number"},"1"),n("span",{class:"token punctuation"},")"),n("span",{class:"token punctuation"},";"),s(`
+        vector`),n("span",{class:"token operator"},"<"),n("span",{class:"token keyword"},"int"),n("span",{class:"token operator"},">"),s(" preRow "),n("span",{class:"token operator"},"="),s(" result"),n("span",{class:"token punctuation"},"["),s("i "),n("span",{class:"token operator"},"-"),s(),n("span",{class:"token number"},"1"),n("span",{class:"token punctuation"},"]"),n("span",{class:"token punctuation"},";"),s(`
+        `),n("span",{class:"token keyword"},"for"),s(),n("span",{class:"token punctuation"},"("),n("span",{class:"token keyword"},"int"),s(" j "),n("span",{class:"token operator"},"="),s(),n("span",{class:"token number"},"1"),n("span",{class:"token punctuation"},";"),s(" j "),n("span",{class:"token operator"},"<"),s(" i"),n("span",{class:"token punctuation"},";"),s(" j"),n("span",{class:"token operator"},"++"),n("span",{class:"token punctuation"},")"),s(),n("span",{class:"token punctuation"},"{"),s(`
+            `),n("span",{class:"token keyword"},"int"),s(" x "),n("span",{class:"token operator"},"="),s(" preRow"),n("span",{class:"token punctuation"},"["),s("j"),n("span",{class:"token punctuation"},"]"),s(),n("span",{class:"token operator"},"+"),s(" preRow"),n("span",{class:"token punctuation"},"["),s("j "),n("span",{class:"token operator"},"-"),s(),n("span",{class:"token number"},"1"),n("span",{class:"token punctuation"},"]"),n("span",{class:"token punctuation"},";"),s(`
+            curRow`),n("span",{class:"token punctuation"},"."),n("span",{class:"token function"},"push_back"),n("span",{class:"token punctuation"},"("),s("x"),n("span",{class:"token punctuation"},")"),n("span",{class:"token punctuation"},";"),s(`
+        `),n("span",{class:"token punctuation"},"}"),s(`
+
+        curRow`),n("span",{class:"token punctuation"},"."),n("span",{class:"token function"},"push_back"),n("span",{class:"token punctuation"},"("),n("span",{class:"token number"},"1"),n("span",{class:"token punctuation"},")"),n("span",{class:"token punctuation"},";"),s(`
+        result`),n("span",{class:"token punctuation"},"."),n("span",{class:"token function"},"push_back"),n("span",{class:"token punctuation"},"("),s("curRow"),n("span",{class:"token punctuation"},")"),n("span",{class:"token punctuation"},";"),s(`
+    `),n("span",{class:"token punctuation"},"}"),s(`
+    `),n("span",{class:"token keyword"},"return"),s(" result"),n("span",{class:"token punctuation"},";"),s(`
+`),n("span",{class:"token punctuation"},"}"),s(`
+
+`)])])],-1),y="118. \u6768\u8F89\u4E09\u89D2",f="2024-03-06T00:00:00.000Z",b="LeetCodeArray",h=[{property:"og:title",content:"118. \u6768\u8F89\u4E09\u89D2"}],g={__name:"118-pascals-triangle",setup(k,{expose:t}){const a={title:"118. \u6768\u8F89\u4E09\u89D2",date:"2024-03-06T00:00:00.000Z",type:"LeetCodeArray",meta:[{property:"og:title",content:"118. \u6768\u8F89\u4E09\u89D2"}]};return t({frontmatter:a}),p({title:"118. \u6768\u8F89\u4E09\u89D2",meta:[{property:"og:title",content:"118. \u6768\u8F89\u4E09\u89D2"}]}),(m,d)=>{const o=e;return l(),c(o,{frontmatter:a},{default:u(()=>[r]),_:1})}}};export{f as date,g as default,h as meta,y as title,b as type};
