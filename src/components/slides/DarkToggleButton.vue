@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { useToggle } from '@vueuse/core'
-import { isDark } from '~/logics'
+import { useToggle } from "@vueuse/core";
+import { isDark } from "~/logics";
 
-const toggleDark = useToggle(isDark)
+const toggleDark = useToggle(isDark);
 </script>
 
 <template>
@@ -13,7 +13,7 @@ const toggleDark = useToggle(isDark)
     <div class="flex">
       <carbon:moon v-if="isDark" />
       <carbon:sun v-else />
-      <span class="mr-1 ml-2">{{ isDark ? 'Dark' : 'Light' }}</span>
+      <span class="mr-1 ml-2">{{ isDark ? "Dark" : "Light" }}</span>
     </div>
   </button>
 </template>

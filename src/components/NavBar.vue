@@ -22,43 +22,12 @@ import { isDark } from '~/logics'
 
         <router-link to="/talks" class="lt-md:hidden"> Talks </router-link>
 
-        <router-link to="/computer-science-notes" title="ComputerScienceNotes">
-          <span class="lt-md:hidden">CS</span>
-          <ri-lightbulb-line class="md:hidden" />
-        </router-link>
 
-        <router-link to="/algorithm" title="DS">
+        <!-- <router-link to="/algorithm" title="DS">
           <span class="lt-md:hidden">Algorithm</span>
           <ri-ball-pen-line class="md:hidden" />
-        </router-link>
-
-        <!-- <router-link to="/juc" title="JUC">
-          <span class="lt-md:hidden">JUC</span>
-          <ri-hammer-line class="md:hidden" />
         </router-link> -->
 
-        <!-- <router-link to="/operating-system" title="OS">
-          <span class="lt-md:hidden">OS</span>
-          <ri-microsoft-line class="md:hidden" />
-        </router-link> -->
-        <!-- <router-link to="/computer-organization" title="CO">
-          <span class="lt-md:hidden">CO</span>
-          <ri-hourglass-line class="md:hidden" />
-        </router-link> -->
-
-        <!-- <router-link to="/ds-408" title="DS">
-          <span class="lt-md:hidden">DS 408</span>
-          <ri-landscape-line class="md:hidden" />
-        </router-link> -->
-
-        <!-- <router-link to="/network">
-          <span class="lt-md:hidden">NetWork</span>
-          <x-entypo-network class="md:hidden" />
-        </router-link> -->
-
-        <!-- <router-link to="/notes" title="Notes">
-          <ri-sticky-note-line class="lt-md:hidden" />
-        </router-link> -->
 
         <a
           href="https://github.com/ZhengKe996"
