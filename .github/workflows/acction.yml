@@ -21,7 +21,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           # 选择要使用的 node 版本
-          node-version: '18'
+          node-version: "18"
 
       # 缓存 node_modules
       - name: Cache dependencies
@@ -43,7 +43,7 @@ jobs:
       - name: Build site
         run: yarn build
       - name: echo cname
-        run: echo 'timu.fun' > dist/CNAME
+        run: echo 'blog.timu.fun' > dist/CNAME
 
       # 查看 workflow 的文档来获取更多信息
       # @see https://github.com/crazy-max/ghaction-github-pages
