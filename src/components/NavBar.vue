@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { isDark } from '~/logics'
+import { isDark } from "~/logics";
 </script>
 
 <template>
@@ -22,15 +22,13 @@ import { isDark } from '~/logics'
 
         <router-link to="/talks" class="lt-md:hidden"> Talks </router-link>
 
-
         <!-- <router-link to="/algorithm" title="DS">
           <span class="lt-md:hidden">Algorithm</span>
           <ri-ball-pen-line class="md:hidden" />
         </router-link> -->
 
-
         <a
-          href="https://github.com/ZhengKe996"
+          href="https://github.com/ZhengKe0110"
           target="_blank"
           title="GitHub"
           class="lt-md:hidden"
