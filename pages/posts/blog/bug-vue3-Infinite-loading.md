@@ -5,8 +5,6 @@ draft: true
 lang: zh
 ---
 
-# Vue3 默认图片无限加载问题
-
 [解决图片重复加载问题的 Commit](https://github.com/Zhengke0110/MyPictures/commit/6cbd76b5d3324c02b29db2422551934ef5efb238)
 
 ## 问题描述
